@@ -1,0 +1,289 @@
+{
+  "$description": "Component tokens: component-specific values. Reference semantic tokens (primitive where no semantic role exists). Raw values only where the style guide specifies a component-specific measurement.",
+  "button": {
+    "height": {
+      "$value": "36px",
+      "$source": "documented",
+      "$description": "Style guide: button height."
+    },
+    "radius": {
+      "$value": "{radius.control}",
+      "$description": "Style guide: button corner radius."
+    },
+    "font-size": {
+      "$value": "{type.button.size}"
+    },
+    "font-weight-notes": {
+      "$value": "{type.button.weight-notes}",
+      "$description": "Button label weight per the type notes. No single button.font-weight exists until the button weight is decided."
+    },
+    "font-weight-rendered": {
+      "$value": "{type.button.weight-rendered}",
+      "$description": "Button label weight as rendered on the style guide page."
+    },
+    "icon-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Style guide icon button note: line icon size (stroke follows currentColor)."
+    },
+    "icon-gap": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Style guide icon button note: gap between icon and label. Not on the spacing scale."
+    },
+    "padding-icon-side": {
+      "$value": "{space.control-padding-icon-side}",
+      "$description": "Style guide icon button note: padding on the icon side."
+    },
+    "padding-text-side": {
+      "$value": "{space.control-padding-text-side}",
+      "$description": "Style guide icon button note: padding on the text side."
+    },
+    "focus-ring-width": {
+      "$value": "3px",
+      "$source": "documented",
+      "$description": "Style guide: focus ring width."
+    },
+    "focus-ring-color": {
+      "$value": "{color.focus.ring}"
+    },
+    "pressed-scale": {
+      "$value": "0.96",
+      "$source": "documented",
+      "$description": "Style guide: scale applied while pressed."
+    },
+    "pressed-duration": {
+      "$value": "150ms",
+      "$source": "documented",
+      "$description": "Style guide: press animation duration."
+    },
+    "pressed-easing": {
+      "$value": "ease-out",
+      "$source": "documented",
+      "$description": "Style guide: ease-out."
+    },
+    "primary": {
+      "bg": {
+        "$value": "{color.action.default}"
+      },
+      "text": {
+        "$value": "{color.text.on-action}"
+      },
+      "border": {
+        "$value": "{color.action.default}"
+      },
+      "bg-hover": {
+        "$value": "{color.action.hover}",
+        "$description": "Style guide hover state fill for the primary button."
+      },
+      "border-hover": {
+        "$value": "{color.action.hover}"
+      }
+    },
+    "secondary": {
+      "bg": {
+        "$value": "{color.surface.default}"
+      },
+      "text": {
+        "$value": "{color.text.body}"
+      },
+      "border": {
+        "$value": "{color.border.control}"
+      },
+      "bg-hover": {
+        "$value": "{color.surface.page}",
+        "$description": "Style guide hover state fill for the secondary button."
+      }
+    },
+    "outline": {
+      "bg": {
+        "$value": "{color.surface.default}"
+      },
+      "text": {
+        "$value": "{color.action.text}"
+      },
+      "border": {
+        "$value": "{color.action.default}"
+      }
+    },
+    "danger": {
+      "bg": {
+        "$value": "{color.danger.solid}"
+      },
+      "text": {
+        "$value": "{color.text.on-action}"
+      },
+      "border": {
+        "$value": "{color.danger.solid}"
+      }
+    },
+    "disabled": {
+      "bg": {
+        "$value": "{color.surface.default}"
+      },
+      "text": {
+        "$value": "{color.text.disabled}"
+      },
+      "border": {
+        "$value": "{color.border.disabled}"
+      },
+      "border-style": {
+        "$value": "dashed",
+        "$source": "documented",
+        "$description": "Style guide: disabled buttons use a dashed border."
+      }
+    }
+  },
+  "chip": {
+    "font-size": {
+      "$value": "{type.chip-label.size}"
+    },
+    "font-weight": {
+      "$value": "{type.chip-label.weight}"
+    },
+    "radius": {
+      "$value": "{radius.chip}"
+    },
+    "high": {
+      "bg": {
+        "$value": "{color.risk.high.tint}"
+      },
+      "text": {
+        "$value": "{color.risk.high.text}"
+      }
+    },
+    "watch": {
+      "bg": {
+        "$value": "{color.risk.watch.tint}"
+      },
+      "text": {
+        "$value": "{color.risk.watch.text}"
+      }
+    },
+    "neutral": {
+      "bg": {
+        "$value": "{color.chip.neutral.bg}"
+      },
+      "text": {
+        "$value": "{color.chip.neutral.text}"
+      }
+    },
+    "online": {
+      "bg": {
+        "$value": "{color.status.online.bg}"
+      },
+      "text": {
+        "$value": "{color.status.online.text}"
+      }
+    },
+    "offline": {
+      "bg": {
+        "$value": "{color.status.offline.bg}"
+      },
+      "text": {
+        "$value": "{color.status.offline.text}"
+      }
+    },
+    "reconnecting": {
+      "bg": {
+        "$value": "{color.status.reconnecting.bg}"
+      },
+      "text": {
+        "$value": "{color.status.reconnecting.text}"
+      }
+    },
+    "watching": {
+      "bg": {
+        "$value": "{color.status.watching.bg}"
+      },
+      "text": {
+        "$value": "{color.status.watching.text}"
+      }
+    },
+    "more": {
+      "bg": {
+        "$value": "{color.surface.default}",
+        "$description": "'+N more' chip: white background."
+      },
+      "text": {
+        "$value": "{color.risk.high.text}"
+      },
+      "border": {
+        "$value": "{color.risk.high.text}"
+      }
+    }
+  },
+  "risk-card": {
+    "radius": {
+      "$value": "{radius.card}"
+    },
+    "gap": {
+      "$value": "{space.card-gap}"
+    },
+    "high": {
+      "stripe": {
+        "$value": "{color.risk.high.solid}"
+      },
+      "border": {
+        "$value": "{color.risk.high.solid}"
+      }
+    },
+    "watch": {
+      "stripe": {
+        "$value": "{color.risk.watch.solid}"
+      },
+      "border": {
+        "$value": "{color.risk.watch.solid}"
+      }
+    },
+    "low": {
+      "stripe": {
+        "$value": "{color.risk.low.solid}"
+      },
+      "border": {
+        "$value": "{color.border.default}"
+      }
+    },
+    "talking": {
+      "stripe": {
+        "$value": "{color.action.default}"
+      },
+      "border": {
+        "$value": "{color.action.default}"
+      }
+    }
+  },
+  "question-strip": {
+    "cell": {
+      "answered": {
+        "$value": "{color.question.answered}"
+      },
+      "high": {
+        "$value": "{color.question.high}"
+      },
+      "watch": {
+        "$value": "{color.question.watch}"
+      },
+      "current-ring": {
+        "$value": "{color.question.current}"
+      },
+      "not-reached-bg": {
+        "$value": "{color.question.not-reached-bg}"
+      },
+      "not-reached-border": {
+        "$value": "{color.question.not-reached-border}"
+      },
+      "radius-documented": {
+        "$value": "{radius.chip}",
+        "$description": "UNRESOLVED: the radius table documents a chip and cell radius that differs from what the question strip cells render.",
+        "$status": "unresolved"
+      },
+      "radius-rendered": {
+        "$value": "2px",
+        "$source": "observed",
+        "$description": "UNRESOLVED: the radius the question strip cells actually render on the style guide page, which differs from the documented chip and cell radius.",
+        "$status": "unresolved"
+      }
+    }
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "$description": "Semantic tokens: roles and meanings. Reference primitive tokens only.",
+  "color": {
+    "action": {
+      "default": {
+        "$value": "{color.blue.0071eb}",
+        "$description": "Primary buttons, links, active nav, focus, talking."
+      },
+      "hover": {
+        "$value": "{color.blue.0059b8}",
+        "$description": "Hover fill for primary actions (style guide hover state)."
+      },
+      "text": {
+        "$value": "{color.blue.0059b8}",
+        "$description": "Text on blue tints, outline buttons."
+      },
+      "tint": {
+        "$value": "{color.blue.e4f0fe}",
+        "$description": "Active nav, panel headers."
+      }
+    },
+    "focus": {
+      "ring": {
+        "$value": "{color.blue.0071eb-30}",
+        "$description": "Focus ring colour."
+      }
+    },
+    "text": {
+      "heading": {
+        "$value": "{color.black.000000}",
+        "$description": "Names, risk scores, headings."
+      },
+      "body": {
+        "$value": "{color.grey.373d3f}",
+        "$description": "Body text, nav items, ghost buttons."
+      },
+      "muted": {
+        "$value": "{color.grey.5f6770}",
+        "$description": "Secondary text, captions, IDs."
+      },
+      "disabled": {
+        "$value": "{color.grey.98a2b3}",
+        "$description": "Disabled text, empty values. Contrast on white is too low for readable text."
+      },
+      "on-action": {
+        "$value": "{color.white.ffffff}",
+        "$description": "Observed on the style guide page as the label colour on solid buttons; not a named palette entry.",
+        "$status": "provisional"
+      }
+    },
+    "icon": {
+      "nav": {
+        "$value": "{color.grey.505058}",
+        "$description": "Nav icons, location pill."
+      }
+    },
+    "brand": {
+      "teal": {
+        "$value": "{color.teal.41b8d1}",
+        "$description": "Logo 'Skill', chart bars."
+      },
+      "indigo": {
+        "$value": "{color.indigo.44439d}",
+        "$description": "Logo 'Wiz', brand accents."
+      }
+    },
+    "surface": {
+      "page": {
+        "$value": "{color.grey.f5f6f8}",
+        "$description": "Page background (Canvas)."
+      },
+      "default": {
+        "$value": "{color.white.ffffff}",
+        "$description": "Nav, cards, panels."
+      },
+      "footer": {
+        "$value": "{color.grey.f9fafb}",
+        "$description": "Card bottom bar."
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.grey.e2e8f0}",
+        "$description": "Nav divider, card and panel borders."
+      },
+      "control": {
+        "$value": "{color.grey.d9dce1}",
+        "$description": "Buttons, dropdowns, chips."
+      },
+      "strong": {
+        "$value": "{color.grey.cbd5e1}",
+        "$description": "Top panels, emphasis."
+      },
+      "disabled": {
+        "$value": "{color.grey.d0d5dd}",
+        "$description": "Disabled control border (dashed)."
+      }
+    },
+    "risk": {
+      "high": {
+        "solid": {
+          "$value": "{color.red.d92d20}",
+          "$description": "Solid for high risk, alerts, errors."
+        },
+        "tint": {
+          "$value": "{color.red.fee4e2}",
+          "$description": "Tint background for high risk."
+        },
+        "text": {
+          "$value": "{color.red.912018}",
+          "$description": "Text on the high risk tint."
+        }
+      },
+      "watch": {
+        "solid": {
+          "$value": "{color.orange.f79009}",
+          "$description": "Solid for medium risk, warnings."
+        },
+        "tint": {
+          "$value": "{color.orange.fef0c7}",
+          "$description": "Tint background for watch risk."
+        },
+        "text": {
+          "$value": "{color.orange.93370d}",
+          "$description": "Text on the watch risk tint."
+        }
+      },
+      "low": {
+        "solid": {
+          "$value": "{color.green.0e9384}",
+          "$description": "Solid for low risk, online, success."
+        },
+        "tint": {
+          "$value": "{color.green.e6f6f4}",
+          "$description": "Tint background for low risk."
+        },
+        "text": {
+          "$value": "{color.green.0b5f55}",
+          "$description": "Text on the low risk tint."
+        }
+      }
+    },
+    "danger": {
+      "solid": {
+        "$value": "{color.red.b42318}",
+        "$description": "Pause exam, destructive actions only."
+      },
+      "tint": {
+        "$value": "{color.red.fee4e2}",
+        "$description": "Danger action tint (same hex as High tint)."
+      },
+      "text": {
+        "$value": "{color.red.7a271a}",
+        "$description": "Danger action text. Its primitive is also retired as a Critical card stripe; review."
+      }
+    },
+    "retired": {
+      "critical-stripe": {
+        "$value": "{color.red.7a271a}",
+        "$description": "RETIRED: the Critical colour as a card stripe. High risk now always uses the High solid. Kept for traceability only; do not use.",
+        "$status": "retired"
+      }
+    },
+    "status": {
+      "online": {
+        "bg": {
+          "$value": "{color.green.e6f6f4}",
+          "$description": "Online chip background."
+        },
+        "text": {
+          "$value": "{color.green.0b5f55}",
+          "$description": "Online chip text."
+        }
+      },
+      "offline": {
+        "bg": {
+          "$value": "{color.grey.f2f4f7}",
+          "$description": "Offline chip background."
+        },
+        "text": {
+          "$value": "{color.grey.475467}",
+          "$description": "Offline chip text."
+        }
+      },
+      "reconnecting": {
+        "bg": {
+          "$value": "{color.orange.fef0c7}",
+          "$description": "Reconnecting chip background."
+        },
+        "text": {
+          "$value": "{color.orange.93370d}",
+          "$description": "Reconnecting chip text."
+        }
+      },
+      "watching": {
+        "bg": {
+          "$value": "{color.blue.e6f0fd}",
+          "$description": "Watching chip background. Separate from color.action.tint until the near-duplicate is reviewed."
+        },
+        "text": {
+          "$value": "{color.blue.0059b8}",
+          "$description": "Watching chip text."
+        }
+      }
+    },
+    "chip": {
+      "neutral": {
+        "bg": {
+          "$value": "{color.grey.f2f4f7}",
+          "$description": "Neutral chip background (Tabs)."
+        },
+        "text": {
+          "$value": "{color.grey.373d3f}",
+          "$description": "Neutral chip text."
+        }
+      }
+    },
+    "question": {
+      "answered": {
+        "$value": "{color.grey.e4e7ec}",
+        "$description": "Question strip: answered cell."
+      },
+      "high": {
+        "$value": "{color.red.d92d20}",
+        "$description": "Question strip: high alert cell."
+      },
+      "watch": {
+        "$value": "{color.orange.f79009}",
+        "$description": "Question strip: watch alert cell."
+      },
+      "current": {
+        "$value": "{color.blue.0071eb}",
+        "$description": "Question strip: current cell ring."
+      },
+      "not-reached-bg": {
+        "$value": "{color.grey.f8fafc}",
+        "$description": "Question strip: not reached cell fill."
+      },
+      "not-reached-border": {
+        "$value": "{color.grey.d0d5dd}",
+        "$description": "Question strip: not reached cell outline."
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "base": {
+        "$value": "{font-family.karla}",
+        "$description": "Base font family."
+      }
+    }
+  },
+  "type": {
+    "display": {
+      "size": {
+        "$value": "{font-size.32}",
+        "$description": "Style guide type scale role: Display (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Display (weight)."
+      }
+    },
+    "page-title": {
+      "size": {
+        "$value": "{font-size.24}",
+        "$description": "Style guide type scale role: Page title (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Page title (weight)."
+      }
+    },
+    "risk-score": {
+      "size": {
+        "$value": "{font-size.22}",
+        "$description": "Style guide type scale role: Risk score (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Risk score (weight)."
+      }
+    },
+    "panel-title": {
+      "size": {
+        "$value": "{font-size.20}",
+        "$description": "Style guide type scale role: Panel title (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Panel title (weight)."
+      }
+    },
+    "section": {
+      "size": {
+        "$value": "{font-size.18}",
+        "$description": "Style guide type scale role: Section (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Section (weight)."
+      }
+    },
+    "nav": {
+      "size": {
+        "$value": "{font-size.16}",
+        "$description": "Style guide type scale role: Nav (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Nav (weight)."
+      }
+    },
+    "body-large": {
+      "size": {
+        "$value": "{font-size.16}",
+        "$description": "Style guide type scale role: Body large (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.regular}",
+        "$description": "Style guide type scale role: Body large (weight)."
+      }
+    },
+    "name": {
+      "size": {
+        "$value": "{font-size.15}",
+        "$description": "Style guide type scale role: Name (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Name (weight)."
+      }
+    },
+    "body": {
+      "size": {
+        "$value": "{font-size.14}",
+        "$description": "Style guide type scale role: Body (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.regular}",
+        "$description": "Style guide type scale role: Body (weight)."
+      }
+    },
+    "chip-label": {
+      "size": {
+        "$value": "{font-size.13}",
+        "$description": "Style guide type scale role: Chip / Label (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type scale role: Chip / Label (weight)."
+      }
+    },
+    "caption": {
+      "size": {
+        "$value": "{font-size.12}",
+        "$description": "Style guide type scale role: Caption (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.regular}",
+        "$description": "Style guide type scale role: Caption (weight)."
+      }
+    },
+    "micro": {
+      "size": {
+        "$value": "{font-size.11}",
+        "$description": "Style guide type scale role: Micro (size)."
+      },
+      "weight": {
+        "$value": "{font-weight.regular}",
+        "$description": "Style guide type scale role: Micro (weight)."
+      }
+    },
+    "button": {
+      "size": {
+        "$value": "{font-size.14}",
+        "$description": "Style guide type scale role: Body / Button (size)."
+      },
+      "weight-notes": {
+        "$value": "{font-weight.medium}",
+        "$description": "UNRESOLVED button weight: the type notes name a lighter weight for button labels than the page renders; the Body / Button sample row follows the notes.",
+        "$status": "unresolved"
+      },
+      "weight-rendered": {
+        "$value": "{font-weight.bold}",
+        "$description": "UNRESOLVED button weight: every button on the style guide page renders heavier than the type notes say, and the type table lists Body / Button with both a regular and a bold weight.",
+        "$status": "unresolved"
+      }
+    }
+  },
+  "space": {
+    "page-gutter": {
+      "$value": "{space.64}",
+      "$description": "Page gutter."
+    },
+    "card-gap": {
+      "$value": "{space.14}",
+      "$description": "Gap between cards."
+    },
+    "control-padding-icon-side": {
+      "$value": "{space.12}",
+      "$description": "Padding on the icon side of a control (style guide icon button note)."
+    },
+    "control-padding-text-side": {
+      "$value": "{space.14}",
+      "$description": "Padding on the text side of a control (style guide icon button note)."
+    }
+  },
+  "radius": {
+    "chip": {
+      "$value": "{radius.4}",
+      "$description": "Style guide: chips, cells."
+    },
+    "control": {
+      "$value": "{radius.6}",
+      "$description": "Style guide: buttons, inputs."
+    },
+    "tile": {
+      "$value": "{radius.8}",
+      "$description": "Style guide: feed tiles."
+    },
+    "card": {
+      "$value": "{radius.12}",
+      "$description": "Style guide: cards, panels."
+    },
+    "pill": {
+      "$value": "{radius.100}",
+      "$description": "Style guide: pills, avatars."
+    }
+  }
+}

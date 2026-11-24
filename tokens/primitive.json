@@ -1,0 +1,307 @@
+{
+  "$description": "Primitive tokens: raw, context-free values from the Skillwiz style guide audit. No references. Entries marked $status provisional/unresolved/retired are awaiting review. Hex-named colours are grouped by hue; no scale numbers are invented.",
+  "color": {
+    "black": {
+      "000000": {
+        "$value": "#000000",
+        "$description": "Style guide: Heading."
+      }
+    },
+    "white": {
+      "ffffff": {
+        "$value": "#FFFFFF",
+        "$description": "Style guide: Surface."
+      }
+    },
+    "grey": {
+      "373d3f": {
+        "$value": "#373D3F",
+        "$description": "Style guide: Ink."
+      },
+      "505058": {
+        "$value": "#505058",
+        "$description": "Style guide: Slate."
+      },
+      "5f6770": {
+        "$value": "#5F6770",
+        "$description": "Style guide: Muted Grey."
+      },
+      "98a2b3": {
+        "$value": "#98A2B3",
+        "$description": "Style guide: Disabled."
+      },
+      "cbd5e1": {
+        "$value": "#CBD5E1",
+        "$description": "Style guide: Strong border."
+      },
+      "d9dce1": {
+        "$value": "#D9DCE1",
+        "$description": "Style guide: Control border."
+      },
+      "e2e8f0": {
+        "$value": "#E2E8F0",
+        "$description": "Style guide: Border."
+      },
+      "f5f6f8": {
+        "$value": "#F5F6F8",
+        "$description": "Style guide: Canvas."
+      },
+      "f9fafb": {
+        "$value": "#F9FAFB",
+        "$description": "Style guide: Footer strip."
+      },
+      "d0d5dd": {
+        "$value": "#D0D5DD",
+        "$description": "Not in the palette. Used for the disabled button dashed border, Canvas/Surface swatch outlines and the question-strip 'not reached' cell outline. Provisional until reviewed.",
+        "$status": "provisional"
+      },
+      "e4e7ec": {
+        "$value": "#E4E7EC",
+        "$description": "Not in the palette. Used as the question-strip 'answered' cell fill. Provisional until reviewed.",
+        "$status": "provisional"
+      },
+      "f2f4f7": {
+        "$value": "#F2F4F7",
+        "$description": "Not in the palette. Used as the neutral chip background (Tabs, Offline). Provisional until reviewed.",
+        "$status": "provisional"
+      },
+      "f8fafc": {
+        "$value": "#F8FAFC",
+        "$description": "Not in the palette. Used as the question-strip 'not reached' cell fill. Provisional until reviewed.",
+        "$status": "provisional"
+      },
+      "475467": {
+        "$value": "#475467",
+        "$description": "Not in the palette. Used as the Offline chip text. Provisional until reviewed.",
+        "$status": "provisional"
+      }
+    },
+    "blue": {
+      "0071eb": {
+        "$value": "#0071EB",
+        "$description": "Style guide: Action Blue."
+      },
+      "0059b8": {
+        "$value": "#0059B8",
+        "$description": "Style guide: Blue text."
+      },
+      "e4f0fe": {
+        "$value": "#E4F0FE",
+        "$description": "Style guide: Blue tint. Near-duplicate of provisional blue.e6f0fd; both kept until reviewed."
+      },
+      "0071eb-30": {
+        "$value": "rgba(0, 113, 235, 0.3)",
+        "$description": "Style guide focus ring: the Action Blue at reduced opacity."
+      },
+      "e6f0fd": {
+        "$value": "#E6F0FD",
+        "$description": "Not in the palette. Used as the 'Watching' chip background. Near-duplicate of the Blue tint (color.blue.e4f0fe); kept separate until reviewed.",
+        "$status": "provisional"
+      },
+      "9ec5f5": {
+        "$value": "#9EC5F5",
+        "$description": "Not in the palette. Used only as the spacing-scale swatch outline on the style guide page itself (documentation chrome, probably not a product colour). Provisional until reviewed.",
+        "$status": "provisional"
+      }
+    },
+    "teal": {
+      "41b8d1": {
+        "$value": "#41B8D1",
+        "$description": "Style guide: Skillwiz Teal."
+      }
+    },
+    "indigo": {
+      "44439d": {
+        "$value": "#44439D",
+        "$description": "Style guide: Skillwiz Indigo."
+      }
+    },
+    "red": {
+      "d92d20": {
+        "$value": "#D92D20",
+        "$description": "Style guide: High (red) solid."
+      },
+      "fee4e2": {
+        "$value": "#FEE4E2",
+        "$description": "Style guide: High (red) tint; also Danger action tint, same hex."
+      },
+      "912018": {
+        "$value": "#912018",
+        "$description": "Style guide: High (red) text."
+      },
+      "b42318": {
+        "$value": "#B42318",
+        "$description": "Style guide: Danger action solid."
+      },
+      "7a271a": {
+        "$value": "#7A271A",
+        "$description": "Style guide: Danger action text. The guide also retires this colour as a Critical card stripe, yet it is still the danger text colour. Needs review.",
+        "$status": "unresolved"
+      }
+    },
+    "orange": {
+      "f79009": {
+        "$value": "#F79009",
+        "$description": "Style guide: Watch (orange) solid."
+      },
+      "fef0c7": {
+        "$value": "#FEF0C7",
+        "$description": "Style guide: Watch (orange) tint."
+      },
+      "93370d": {
+        "$value": "#93370D",
+        "$description": "Style guide: Watch (orange) text."
+      }
+    },
+    "green": {
+      "0e9384": {
+        "$value": "#0E9384",
+        "$description": "Style guide: Low (green) solid."
+      },
+      "e6f6f4": {
+        "$value": "#E6F6F4",
+        "$description": "Style guide: Low (green) tint."
+      },
+      "0b5f55": {
+        "$value": "#0B5F55",
+        "$description": "Style guide: Low (green) text."
+      }
+    }
+  },
+  "font-family": {
+    "karla": {
+      "$value": "Karla, system-ui, sans-serif",
+      "$description": "Style guide: Karla, one family throughout. The system-ui fallback comes from the style guide page CSS."
+    }
+  },
+  "font-weight": {
+    "regular": {
+      "$value": 400,
+      "$description": "Style guide: regular weight, for reading."
+    },
+    "medium": {
+      "$value": 500,
+      "$description": "Style guide: medium weight, documented for button labels."
+    },
+    "bold": {
+      "$value": 700,
+      "$description": "Style guide: bold weight, for names, labels and numbers."
+    }
+  },
+  "font-size": {
+    "11": {
+      "$value": "11px",
+      "$description": "Style guide type scale."
+    },
+    "12": {
+      "$value": "12px",
+      "$description": "Style guide type scale."
+    },
+    "13": {
+      "$value": "13px",
+      "$description": "Style guide type scale."
+    },
+    "14": {
+      "$value": "14px",
+      "$description": "Style guide type scale."
+    },
+    "15": {
+      "$value": "15px",
+      "$description": "Style guide type scale."
+    },
+    "16": {
+      "$value": "16px",
+      "$description": "Style guide type scale."
+    },
+    "18": {
+      "$value": "18px",
+      "$description": "Style guide type scale."
+    },
+    "20": {
+      "$value": "20px",
+      "$description": "Style guide type scale."
+    },
+    "22": {
+      "$value": "22px",
+      "$description": "Style guide type scale."
+    },
+    "24": {
+      "$value": "24px",
+      "$description": "Style guide type scale."
+    },
+    "32": {
+      "$value": "32px",
+      "$description": "Style guide type scale."
+    }
+  },
+  "space": {
+    "4": {
+      "$value": "4px",
+      "$description": "Style guide spacing scale."
+    },
+    "8": {
+      "$value": "8px",
+      "$description": "Style guide spacing scale."
+    },
+    "12": {
+      "$value": "12px",
+      "$description": "Style guide spacing scale."
+    },
+    "16": {
+      "$value": "16px",
+      "$description": "Style guide spacing scale."
+    },
+    "20": {
+      "$value": "20px",
+      "$description": "Style guide spacing scale."
+    },
+    "24": {
+      "$value": "24px",
+      "$description": "Style guide spacing scale."
+    },
+    "32": {
+      "$value": "32px",
+      "$description": "Style guide spacing scale."
+    },
+    "48": {
+      "$value": "48px",
+      "$description": "Style guide spacing scale."
+    },
+    "64": {
+      "$value": "64px",
+      "$description": "Style guide spacing scale."
+    },
+    "14": {
+      "$value": "14px",
+      "$description": "Documented as card padding (axis order not stated) and as the gap between cards, but not on the spacing scale. Provisional until reviewed.",
+      "$status": "provisional"
+    },
+    "18": {
+      "$value": "18px",
+      "$description": "Documented as card padding (axis order not stated), but not on the spacing scale. Provisional until reviewed.",
+      "$status": "provisional"
+    }
+  },
+  "radius": {
+    "4": {
+      "$value": "4px",
+      "$description": "Style guide corner radius: chips, cells."
+    },
+    "6": {
+      "$value": "6px",
+      "$description": "Style guide corner radius: buttons, inputs."
+    },
+    "8": {
+      "$value": "8px",
+      "$description": "Style guide corner radius: feed tiles."
+    },
+    "12": {
+      "$value": "12px",
+      "$description": "Style guide corner radius: cards, panels."
+    },
+    "100": {
+      "$value": "100px",
+      "$description": "Style guide corner radius: pills, avatars."
+    }
+  }
+}
