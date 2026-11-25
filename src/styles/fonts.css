@@ -1,1 +1,5 @@
-/* Font loading is pending a decision (self-host vs hosted). The style guide specifies Karla. */
+/* Karla, self-hosted through @fontsource (latin subset, weights used by the type scale). */
+@import '@fontsource/karla/400.css';
+@import '@fontsource/karla/500.css';
+@import '@fontsource/karla/600.css';
+@import '@fontsource/karla/700.css';

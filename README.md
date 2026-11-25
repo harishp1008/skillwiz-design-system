@@ -18,11 +18,9 @@ Custom React + TypeScript component library. No third-party component libraries.
 Each token can carry `$description` and `$status` (`provisional`, `unresolved`, `retired`). Status propagates to any token that references a flagged one. Stories show the badge; `npm run tokens` prints the counts.
 
 ## Unresolved decisions (open for review)
-1. **Near-duplicate blues:** `color.blue.e4f0fe` (Blue tint, documented) and `color.blue.e6f0fd` ("Watching" chip, provisional) are separate until reviewed.
-2. **Undocumented colours (provisional):** `#D0D5DD`, `#E4E7EC`, `#F2F4F7`, `#F8FAFC`, `#475467`, `#9EC5F5` (the last is style-guide chrome only).
-3. **Retired `#7A271A`:** retired as a Critical card stripe (`color.retired.critical-stripe`, never referenced) but still documented as Danger text (`color.danger.text`, unresolved).
-4. **Off-scale spacing:** 14 and 18 (card padding 14x18, card gap 14) are provisional; the axis order of 14x18 is not stated.
-5. **Not defined in the style guide, so not tokenised:** line-heights, shadows, elevation, motion beyond the press animation, breakpoints, border widths.
+1. **Retired `#7A271A`:** retired as a Critical card stripe (`color.retired.critical-stripe`, never referenced) but still documented as Danger text (`color.danger.text`, unresolved).
+2. **Off-scale spacing:** 14 and 18 (card padding 14x18, card gap 14) are provisional; the axis order of 14x18 is not stated.
+3. **Not defined in the style guide, so not tokenised:** line-heights, shadows, elevation, motion beyond the press animation, breakpoints, border widths.
 
 ## Resolved decisions
 - **Button label weight:** bold (as rendered on the style guide page). `type.button.weight` → `font-weight.bold`; `button.font-weight` → `type.button.weight`.
@@ -35,7 +33,33 @@ Each token can carry `$description` and `$status` (`provisional`, `unresolved`, 
 - **Component**: references to semantic tokens only, or a raw component-specific value with `"$source"`:
   `"documented"` (the style guide specifies it) or `"observed"` (allowed only while the token is flagged `provisional` or `unresolved`).
   Component tokens may never reference primitives directly, and may not mix references with literals.
-- **Descriptions** (`$description`) state purpose and usage. They may not contain literal design values (hex, px, ms, %, ratios, weights, sizes); values live in `$value`. Token paths such as `color.blue.e4f0fe` are allowed.
+- **Descriptions** (`$description`) state purpose and usage. They may not contain literal design values (hex, px, ms, %, ratios, weights, sizes); values live in `$value`. Token paths such as `color.blue.75` are allowed.
 - Statuses (`provisional`, `unresolved`, `retired`) are written only on the directly flagged token; inherited flags are computed by the generator.
 
 Tests: `npm run test:tokens` (included in `npm run check`).
+
+## Components
+
+### Button
+
+`src/components/Button` — React + CSS Modules, styled only through `--sw-button-*` component tokens (which reference semantic tokens).
+
+- Variants: `primary`, `secondary` (default), `accent`, `ghost`, `link`, `danger`, `danger-secondary`
+- Sizes: `sm` (28), `md` (36), `lg` (44)
+- Props: `label`, `icon`, `iconPosition`, `iconOnly` + `ariaLabel`, `pressed` (aria-pressed), `loading` (aria-busy, spinner, clicks blocked), `disabledReason` (aria-disabled + tooltip + aria-describedby; never the `disabled` attribute), `fullWidth`, `live`, `href` (renders `<a>`)
+- Notes: line-heights are not tokenised; tooltips are native `title` until a Tooltip component exists; `icon` is a ReactNode until an Icon component exists.
+
+### Top navigation bar
+
+`src/components/TopNav` — React + CSS Modules, styled only through `--sw-top-nav-*` component tokens (which reference semantic tokens, or carry a documented/observed raw value).
+
+- Props: `items` + `currentId`, `contexts` / `contextId` / `contextKind` (fewer than two contexts hides the selector), `mail` / `messages` / `notifications` (`{ count }` or `false`), `initials`, `maxVisible`, callbacks. `mode`, `scrolled`, `forceState`, `defaultOpen` are for documentation.
+- Layouts by measured width: ≥1440 (up to `maxVisible` items, rest in More), 1024–1439 (Mail moves into the avatar menu), <1024 (menu button + drawer). Breakpoints are the `TOP_NAV_BREAKPOINTS` constant because media queries cannot read CSS variables.
+- Notes: badge is blue as drawn (the PDF token list says red); icon buttons are round and outlined as drawn; shadows, easing and menu width are provisional; tooltips are native `title`; the item-fit calculation is an estimate from label length.
+
+### Component story convention
+
+Every component has exactly two stories under `Components/<Name>`:
+
+- **Guidelines** — the full documentation page built from the component's PDF. Tagged `guidelines`, `layout: 'fullscreen'`; the addon panel is hidden (`.storybook/manager.ts`).
+- **Playground** — the component centred (`layout: 'centered'`) with the addon panel and Controls visible.

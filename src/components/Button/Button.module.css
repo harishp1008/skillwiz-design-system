@@ -1,0 +1,240 @@
+/* Every visual value comes from a --sw-button-* token. Structural keywords (0, none, inherit, 100%) are not design values. */
+.root {
+  --_h: var(--sw-button-height);
+  --_px: var(--sw-button-padding-text-side);
+  --_pi: var(--sw-button-padding-icon-side);
+  --_gap: var(--sw-button-icon-gap);
+  --_icon: var(--sw-button-icon-size);
+  --_fs: var(--sw-button-font-size);
+  --_bg: var(--sw-button-secondary-bg);
+  --_fg: var(--sw-button-secondary-text);
+  --_bd: var(--sw-button-secondary-border);
+  --_bg-hover: var(--sw-button-secondary-bg-hover);
+  --_bg-pressed: var(--_bg-hover);
+  --_focus: var(--sw-button-focus-outline-color);
+
+  position: relative;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--_gap);
+  height: var(--_h);
+  min-width: var(--sw-button-min-width);
+  padding-inline: var(--_px);
+  border: var(--sw-button-border-width) solid var(--_bd);
+  border-radius: var(--sw-button-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sw-button-font-family);
+  font-size: var(--_fs);
+  font-weight: var(--sw-button-font-weight);
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition-property: background-color, border-color, color, box-shadow, scale;
+  transition-duration: var(--sw-button-pressed-duration);
+  transition-timing-function: var(--sw-button-pressed-easing);
+}
+
+/* Sizes */
+.root[data-size='sm'] {
+  --_h: var(--sw-button-sm-height);
+  --_px: var(--sw-button-sm-padding-text-side);
+  --_pi: var(--sw-button-sm-padding-icon-side);
+  --_gap: var(--sw-button-sm-icon-gap);
+  --_icon: var(--sw-button-sm-icon-size);
+  --_fs: var(--sw-button-sm-font-size);
+}
+.root[data-size='lg'] {
+  --_h: var(--sw-button-lg-height);
+  --_px: var(--sw-button-lg-padding-text-side);
+  --_pi: var(--sw-button-lg-padding-icon-side);
+  --_gap: var(--sw-button-lg-icon-gap);
+  --_icon: var(--sw-button-lg-icon-size);
+  --_fs: var(--sw-button-lg-font-size);
+}
+
+/* The icon side gets less padding so the button looks optically centred */
+.root[data-icon='leading'] {
+  padding-inline-start: var(--_pi);
+}
+.root[data-icon='trailing'] {
+  padding-inline-end: var(--_pi);
+}
+.root[data-icon='only'] {
+  width: var(--_h);
+  min-width: 0;
+  padding: 0;
+}
+.root[data-full-width] {
+  width: 100%;
+}
+
+/* Variants */
+.root[data-variant='primary'] {
+  --_bg: var(--sw-button-primary-bg);
+  --_fg: var(--sw-button-primary-text);
+  --_bd: var(--sw-button-primary-border);
+  --_bg-hover: var(--sw-button-primary-bg-hover);
+}
+.root[data-variant='secondary'] {
+  --_bg: var(--sw-button-secondary-bg);
+  --_fg: var(--sw-button-secondary-text);
+  --_bd: var(--sw-button-secondary-border);
+  --_bg-hover: var(--sw-button-secondary-bg-hover);
+}
+.root[data-variant='accent'] {
+  --_bg: var(--sw-button-accent-bg);
+  --_fg: var(--sw-button-accent-text);
+  --_bd: var(--sw-button-accent-border);
+  --_bg-hover: var(--sw-button-accent-bg-hover);
+  --_bg-pressed: var(--sw-button-accent-bg-pressed);
+}
+.root[data-variant='ghost'] {
+  --_bg: var(--sw-button-ghost-bg);
+  --_fg: var(--sw-button-ghost-text);
+  --_bd: var(--sw-button-ghost-border);
+  --_bg-hover: var(--sw-button-ghost-bg-hover);
+}
+.root[data-variant='link'] {
+  --_fg: var(--sw-button-link-text);
+  height: auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+.root[data-variant='danger'] {
+  --_bg: var(--sw-button-danger-bg);
+  --_fg: var(--sw-button-danger-text);
+  --_bd: var(--sw-button-danger-border);
+  --_bg-hover: var(--sw-button-danger-bg-hover);
+  --_focus: var(--sw-button-focus-outline-color-danger);
+}
+.root[data-variant='danger-secondary'] {
+  --_bg: var(--sw-button-danger-secondary-bg);
+  --_fg: var(--sw-button-danger-secondary-text);
+  --_bd: var(--sw-button-danger-secondary-border);
+  --_bg-hover: var(--sw-button-danger-secondary-bg-hover);
+  --_focus: var(--sw-button-focus-outline-color-danger);
+}
+
+/* Toggle that is switched on, and the running (live) action */
+.root[aria-pressed='true'] {
+  --_bg: var(--sw-button-pressed-bg);
+  --_fg: var(--sw-button-pressed-text);
+  --_bd: var(--sw-button-pressed-border);
+  --_bg-hover: var(--sw-button-pressed-bg);
+}
+.root[data-live] {
+  --_bg: var(--sw-button-primary-bg);
+  --_fg: var(--sw-button-primary-text);
+  --_bd: var(--sw-button-primary-border);
+  --_bg-hover: var(--sw-button-primary-bg-hover);
+  box-shadow: 0 0 0 var(--sw-button-live-ring-width) var(--sw-button-live-ring-color);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Disabled: aria-disabled, never the disabled attribute, so the button stays focusable */
+.root[aria-disabled='true'] {
+  --_bg: var(--sw-button-disabled-bg);
+  --_fg: var(--sw-button-disabled-text);
+  --_bd: var(--sw-button-disabled-border);
+  cursor: not-allowed;
+}
+.root[data-variant='ghost'][aria-disabled='true'] {
+  --_bg: var(--sw-button-ghost-bg);
+  --_bd: var(--sw-button-ghost-border);
+}
+.root[data-variant='link'][aria-disabled='true'] {
+  background: none;
+}
+.root[aria-busy='true'] {
+  cursor: progress;
+}
+
+/* Hover only on devices that can hover */
+@media (hover: hover) {
+  .root:not([aria-disabled='true']):hover {
+    background: var(--_bg-hover);
+  }
+  .root[data-variant='link']:not([aria-disabled='true']):hover {
+    background: none;
+    text-decoration: underline;
+  }
+}
+.root:not([aria-disabled='true']):active {
+  background: var(--_bg-pressed);
+}
+.root[data-variant='link']:not([aria-disabled='true']):active {
+  background: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .root:not([aria-disabled='true']):active {
+    scale: var(--sw-button-pressed-scale);
+  }
+}
+
+/* Focus: keyboard only */
+.root:focus-visible {
+  outline: var(--sw-button-focus-outline-width) solid var(--_focus);
+  outline-offset: var(--sw-button-focus-outline-offset);
+}
+
+/* Parts */
+.label {
+  white-space: nowrap;
+}
+.icon {
+  display: inline-flex;
+  flex: none;
+  width: var(--_icon);
+  height: var(--_icon);
+}
+.icon > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.spinner {
+  box-sizing: border-box;
+  flex: none;
+  width: var(--_icon);
+  height: var(--_icon);
+  border: var(--sw-button-spinner-width) solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--sw-button-spinner-radius);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .spinner {
+    animation: spin var(--sw-button-spinner-duration) linear infinite;
+  }
+}
+@keyframes spin {
+  to {
+    rotate: 1turn;
+  }
+}
+
+/* Documentation only: data-force lets the States matrix show hover, focus and pressed without a pointer. */
+.root[data-force='hover']:not([aria-disabled='true']),
+.root[data-force='pressed']:not([aria-disabled='true']) {
+  background: var(--_bg-hover);
+}
+.root[data-force='pressed']:not([aria-disabled='true']) {
+  background: var(--_bg-pressed);
+  scale: var(--sw-button-pressed-scale);
+}
+.root[data-variant='link'][data-force='hover']:not([aria-disabled='true']),
+.root[data-variant='link'][data-force='pressed']:not([aria-disabled='true']) {
+  background: none;
+}
+.root[data-variant='link'][data-force='hover']:not([aria-disabled='true']) {
+  text-decoration: underline;
+}
+.root[data-force='focus'] {
+  outline: var(--sw-button-focus-outline-width) solid var(--_focus);
+  outline-offset: var(--sw-button-focus-outline-offset);
+}

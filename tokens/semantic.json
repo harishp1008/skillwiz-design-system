@@ -3,26 +3,34 @@
   "color": {
     "action": {
       "default": {
-        "$value": "{color.blue.0071eb}",
+        "$value": "{color.blue.600}",
         "$description": "Primary buttons, links, active nav, focus, talking."
       },
       "hover": {
-        "$value": "{color.blue.0059b8}",
+        "$value": "{color.blue.700}",
         "$description": "Hover fill for primary actions (style guide hover state)."
       },
       "text": {
-        "$value": "{color.blue.0059b8}",
+        "$value": "{color.blue.700}",
         "$description": "Text on blue tints, outline buttons."
       },
       "tint": {
-        "$value": "{color.blue.e4f0fe}",
+        "$value": "{color.blue.75}",
         "$description": "Active nav, panel headers."
+      },
+      "live-ring": {
+        "$value": "{color.blue.200}",
+        "$description": "Ring around a running, ongoing-state control such as an active Talk button."
       }
     },
     "focus": {
       "ring": {
         "$value": "{color.blue.0071eb-30}",
         "$description": "Focus ring colour."
+      },
+      "outline": {
+        "$value": "{color.blue.600}",
+        "$description": "Keyboard focus outline colour for controls."
       }
     },
     "text": {
@@ -31,15 +39,15 @@
         "$description": "Names, risk scores, headings."
       },
       "body": {
-        "$value": "{color.grey.373d3f}",
+        "$value": "{color.grey.800}",
         "$description": "Body text, nav items, ghost buttons."
       },
       "muted": {
-        "$value": "{color.grey.5f6770}",
+        "$value": "{color.grey.650}",
         "$description": "Secondary text, captions, IDs."
       },
       "disabled": {
-        "$value": "{color.grey.98a2b3}",
+        "$value": "{color.grey.400}",
         "$description": "Disabled text, empty values. Contrast on white is too low for readable text."
       },
       "on-action": {
@@ -66,7 +74,7 @@
     },
     "surface": {
       "page": {
-        "$value": "{color.grey.f5f6f8}",
+        "$value": "{color.grey.50}",
         "$description": "Page background (Canvas)."
       },
       "default": {
@@ -74,89 +82,113 @@
         "$description": "Nav, cards, panels."
       },
       "footer": {
-        "$value": "{color.grey.f9fafb}",
+        "$value": "{color.grey.50}",
         "$description": "Card bottom bar."
+      },
+      "muted": {
+        "$value": "{color.grey.75}",
+        "$description": "Muted surface: hover fill for neutral controls and the disabled control fill."
+      },
+      "selected": {
+        "$value": "{color.blue.50}",
+        "$description": "Selected or hovered tint behind accent-outlined controls."
       }
     },
     "border": {
       "default": {
-        "$value": "{color.grey.e2e8f0}",
+        "$value": "{color.grey.175}",
         "$description": "Nav divider, card and panel borders."
       },
       "control": {
-        "$value": "{color.grey.d9dce1}",
+        "$value": "{color.grey.200}",
         "$description": "Buttons, dropdowns, chips."
       },
       "strong": {
-        "$value": "{color.grey.cbd5e1}",
+        "$value": "{color.grey.300}",
         "$description": "Top panels, emphasis."
       },
       "disabled": {
-        "$value": "{color.grey.d0d5dd}",
+        "$value": "{color.grey.300}",
         "$description": "Disabled control border (dashed)."
       }
     },
     "risk": {
       "high": {
         "solid": {
-          "$value": "{color.red.d92d20}",
+          "$value": "{color.red.600}",
           "$description": "Solid for high risk, alerts, errors."
         },
         "tint": {
-          "$value": "{color.red.fee4e2}",
+          "$value": "{color.red.100}",
           "$description": "Tint background for high risk."
         },
         "text": {
-          "$value": "{color.red.912018}",
+          "$value": "{color.red.800}",
           "$description": "Text on the high risk tint."
         }
       },
       "watch": {
         "solid": {
-          "$value": "{color.orange.f79009}",
+          "$value": "{color.orange.500}",
           "$description": "Solid for medium risk, warnings."
         },
         "tint": {
-          "$value": "{color.orange.fef0c7}",
+          "$value": "{color.orange.100}",
           "$description": "Tint background for watch risk."
         },
         "text": {
-          "$value": "{color.orange.93370d}",
+          "$value": "{color.orange.800}",
           "$description": "Text on the watch risk tint."
         }
       },
       "low": {
         "solid": {
-          "$value": "{color.green.0e9384}",
+          "$value": "{color.green.600}",
           "$description": "Solid for low risk, online, success."
         },
         "tint": {
-          "$value": "{color.green.e6f6f4}",
+          "$value": "{color.green.100}",
           "$description": "Tint background for low risk."
         },
         "text": {
-          "$value": "{color.green.0b5f55}",
+          "$value": "{color.green.800}",
           "$description": "Text on the low risk tint."
         }
       }
     },
     "danger": {
       "solid": {
-        "$value": "{color.red.b42318}",
+        "$value": "{color.red.700}",
         "$description": "Pause exam, destructive actions only."
       },
       "tint": {
-        "$value": "{color.red.fee4e2}",
+        "$value": "{color.red.100}",
         "$description": "Danger action tint (same hex as High tint)."
       },
       "text": {
-        "$value": "{color.red.7a271a}",
+        "$value": "{color.red.900}",
         "$description": "Danger action text. Its primitive is also retired as a Critical card stripe; review."
+      },
+      "solid-hover": {
+        "$value": "{color.red.800}",
+        "$description": "Hover and pressed fill for the solid danger action."
+      },
+      "border": {
+        "$value": "{color.red.200}",
+        "$description": "Border of the quiet danger action on a light surface."
+      },
+      "wash": {
+        "$value": "{color.red.50}",
+        "$description": "Hover fill for the quiet danger action."
+      },
+      "label": {
+        "$value": "{color.red.800}",
+        "$description": "Danger-toned label on a light surface, used by the quiet danger action."
       }
     },
     "retired": {
       "critical-stripe": {
-        "$value": "{color.red.7a271a}",
+        "$value": "{color.red.900}",
         "$description": "RETIRED: the Critical colour as a card stripe. High risk now always uses the High solid. Kept for traceability only; do not use.",
         "$status": "retired"
       }
@@ -164,41 +196,41 @@
     "status": {
       "online": {
         "bg": {
-          "$value": "{color.green.e6f6f4}",
+          "$value": "{color.green.100}",
           "$description": "Online chip background."
         },
         "text": {
-          "$value": "{color.green.0b5f55}",
+          "$value": "{color.green.800}",
           "$description": "Online chip text."
         }
       },
       "offline": {
         "bg": {
-          "$value": "{color.grey.f2f4f7}",
+          "$value": "{color.grey.75}",
           "$description": "Offline chip background."
         },
         "text": {
-          "$value": "{color.grey.475467}",
+          "$value": "{color.grey.700}",
           "$description": "Offline chip text."
         }
       },
       "reconnecting": {
         "bg": {
-          "$value": "{color.orange.fef0c7}",
+          "$value": "{color.orange.100}",
           "$description": "Reconnecting chip background."
         },
         "text": {
-          "$value": "{color.orange.93370d}",
+          "$value": "{color.orange.800}",
           "$description": "Reconnecting chip text."
         }
       },
       "watching": {
         "bg": {
-          "$value": "{color.blue.e6f0fd}",
+          "$value": "{color.blue.100}",
           "$description": "Watching chip background. Separate from color.action.tint until the near-duplicate is reviewed."
         },
         "text": {
-          "$value": "{color.blue.0059b8}",
+          "$value": "{color.blue.700}",
           "$description": "Watching chip text."
         }
       }
@@ -206,38 +238,38 @@
     "chip": {
       "neutral": {
         "bg": {
-          "$value": "{color.grey.f2f4f7}",
+          "$value": "{color.grey.75}",
           "$description": "Neutral chip background (Tabs)."
         },
         "text": {
-          "$value": "{color.grey.373d3f}",
+          "$value": "{color.grey.800}",
           "$description": "Neutral chip text."
         }
       }
     },
     "question": {
       "answered": {
-        "$value": "{color.grey.e4e7ec}",
+        "$value": "{color.grey.125}",
         "$description": "Question strip: answered cell."
       },
       "high": {
-        "$value": "{color.red.d92d20}",
+        "$value": "{color.red.600}",
         "$description": "Question strip: high alert cell."
       },
       "watch": {
-        "$value": "{color.orange.f79009}",
+        "$value": "{color.orange.500}",
         "$description": "Question strip: watch alert cell."
       },
       "current": {
-        "$value": "{color.blue.0071eb}",
+        "$value": "{color.blue.600}",
         "$description": "Question strip: current cell ring."
       },
       "not-reached-bg": {
-        "$value": "{color.grey.f8fafc}",
+        "$value": "{color.grey.50}",
         "$description": "Question strip: not reached cell fill."
       },
       "not-reached-border": {
-        "$value": "{color.grey.d0d5dd}",
+        "$value": "{color.grey.300}",
         "$description": "Question strip: not reached cell outline."
       }
     }
@@ -252,123 +284,221 @@
   },
   "type": {
     "display": {
-      "size": {
-        "$value": "{font-size.32}",
-        "$description": "Style guide type scale role: Display (size)."
+      "lg": {
+        "size": {
+          "$value": "{font-size.48}",
+          "$description": "Style guide type style display/lg (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.58}",
+          "$description": "Style guide type style display/lg (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style display/lg (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Display (weight)."
+      "sm": {
+        "size": {
+          "$value": "{font-size.32}",
+          "$description": "Style guide type style display/sm (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.40}",
+          "$description": "Style guide type style display/sm (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style display/sm (weight)."
+        }
       }
     },
-    "page-title": {
-      "size": {
-        "$value": "{font-size.24}",
-        "$description": "Style guide type scale role: Page title (size)."
+    "heading": {
+      "h1": {
+        "size": {
+          "$value": "{font-size.28}",
+          "$description": "Style guide type style heading/h1 (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.34}",
+          "$description": "Style guide type style heading/h1 (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style heading/h1 (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Page title (weight)."
-      }
-    },
-    "risk-score": {
-      "size": {
-        "$value": "{font-size.22}",
-        "$description": "Style guide type scale role: Risk score (size)."
+      "h2": {
+        "size": {
+          "$value": "{font-size.22}",
+          "$description": "Style guide type style heading/h2 (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.28}",
+          "$description": "Style guide type style heading/h2 (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style heading/h2 (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Risk score (weight)."
-      }
-    },
-    "panel-title": {
-      "size": {
-        "$value": "{font-size.20}",
-        "$description": "Style guide type scale role: Panel title (size)."
+      "h3": {
+        "size": {
+          "$value": "{font-size.18}",
+          "$description": "Style guide type style heading/h3 (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.24}",
+          "$description": "Style guide type style heading/h3 (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style heading/h3 (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Panel title (weight)."
-      }
-    },
-    "section": {
-      "size": {
-        "$value": "{font-size.18}",
-        "$description": "Style guide type scale role: Section (size)."
+      "h4": {
+        "size": {
+          "$value": "{font-size.16}",
+          "$description": "Style guide type style heading/h4 (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.20}",
+          "$description": "Style guide type style heading/h4 (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style heading/h4 (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Section (weight)."
-      }
-    },
-    "nav": {
-      "size": {
-        "$value": "{font-size.16}",
-        "$description": "Style guide type scale role: Nav (size)."
-      },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Nav (weight)."
-      }
-    },
-    "body-large": {
-      "size": {
-        "$value": "{font-size.16}",
-        "$description": "Style guide type scale role: Body large (size)."
-      },
-      "weight": {
-        "$value": "{font-weight.regular}",
-        "$description": "Style guide type scale role: Body large (weight)."
-      }
-    },
-    "name": {
-      "size": {
-        "$value": "{font-size.15}",
-        "$description": "Style guide type scale role: Name (size)."
-      },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Name (weight)."
+      "h5": {
+        "size": {
+          "$value": "{font-size.14}",
+          "$description": "Style guide type style heading/h5 (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.18}",
+          "$description": "Style guide type style heading/h5 (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.bold}",
+          "$description": "Style guide type style heading/h5 (weight)."
+        }
       }
     },
     "body": {
-      "size": {
-        "$value": "{font-size.14}",
-        "$description": "Style guide type scale role: Body (size)."
+      "lg": {
+        "size": {
+          "$value": "{font-size.16}",
+          "$description": "Style guide type style body/lg (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.24}",
+          "$description": "Style guide type style body/lg (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.regular}",
+          "$description": "Style guide type style body/lg (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.regular}",
-        "$description": "Style guide type scale role: Body (weight)."
+      "md": {
+        "size": {
+          "$value": "{font-size.14}",
+          "$description": "Style guide type style body/md (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.21}",
+          "$description": "Style guide type style body/md (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.regular}",
+          "$description": "Style guide type style body/md (weight)."
+        }
+      },
+      "sm": {
+        "size": {
+          "$value": "{font-size.12}",
+          "$description": "Style guide type style body/sm (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.20}",
+          "$description": "Style guide type style body/sm (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.regular}",
+          "$description": "Style guide type style body/sm (weight)."
+        }
       }
     },
-    "chip-label": {
-      "size": {
-        "$value": "{font-size.13}",
-        "$description": "Style guide type scale role: Chip / Label (size)."
+    "label": {
+      "lg": {
+        "size": {
+          "$value": "{font-size.16}",
+          "$description": "Style guide type style label/lg (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.20}",
+          "$description": "Style guide type style label/lg (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.semibold}",
+          "$description": "Style guide type style label/lg (weight)."
+        }
       },
-      "weight": {
-        "$value": "{font-weight.bold}",
-        "$description": "Style guide type scale role: Chip / Label (weight)."
+      "md": {
+        "size": {
+          "$value": "{font-size.14}",
+          "$description": "Style guide type style label/md (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.17}",
+          "$description": "Style guide type style label/md (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.semibold}",
+          "$description": "Style guide type style label/md (weight)."
+        }
+      },
+      "sm": {
+        "size": {
+          "$value": "{font-size.12}",
+          "$description": "Style guide type style label/sm (size)."
+        },
+        "line-height": {
+          "$value": "{line-height.15}",
+          "$description": "Style guide type style label/sm (line height)."
+        },
+        "weight": {
+          "$value": "{font-weight.semibold}",
+          "$description": "Style guide type style label/sm (weight)."
+        }
       }
     },
     "caption": {
       "size": {
         "$value": "{font-size.12}",
-        "$description": "Style guide type scale role: Caption (size)."
+        "$description": "Style guide type style caption (size)."
+      },
+      "line-height": {
+        "$value": "{line-height.15}",
+        "$description": "Style guide type style caption (line height)."
       },
       "weight": {
         "$value": "{font-weight.regular}",
-        "$description": "Style guide type scale role: Caption (weight)."
+        "$description": "Style guide type style caption (weight)."
       }
     },
-    "micro": {
+    "overline": {
       "size": {
         "$value": "{font-size.11}",
-        "$description": "Style guide type scale role: Micro (size)."
+        "$description": "Style guide type style overline (size)."
+      },
+      "line-height": {
+        "$value": "{line-height.13}",
+        "$description": "Style guide type style overline (line height)."
       },
       "weight": {
-        "$value": "{font-weight.regular}",
-        "$description": "Style guide type scale role: Micro (weight)."
+        "$value": "{font-weight.bold}",
+        "$description": "Style guide type style overline (weight)."
       }
     },
     "button": {
@@ -379,6 +509,14 @@
       "weight": {
         "$value": "{font-weight.bold}",
         "$description": "Style guide type scale role: Body / Button (weight). Decided: button labels use the bold weight, as rendered on the style guide page."
+      },
+      "size-sm": {
+        "$value": "{font-size.12}",
+        "$description": "Button label size for the small size."
+      },
+      "size-lg": {
+        "$value": "{font-size.16}",
+        "$description": "Button label size for the large size."
       }
     }
   },
@@ -398,6 +536,26 @@
     "control-padding-text-side": {
       "$value": "{space.14}",
       "$description": "Padding on the text side of a control (style guide icon button note)."
+    },
+    "control-padding-sm": {
+      "$value": "{space.12}",
+      "$description": "Side padding of a small control."
+    },
+    "control-padding-md": {
+      "$value": "{space.16}",
+      "$description": "Side padding of a medium control, the default size."
+    },
+    "control-padding-lg": {
+      "$value": "{space.20}",
+      "$description": "Side padding of a large control."
+    },
+    "control-padding-icon-side-sm": {
+      "$value": "{space.8}",
+      "$description": "Padding on the icon side of a small control."
+    },
+    "control-padding-icon-side-lg": {
+      "$value": "{space.16}",
+      "$description": "Padding on the icon side of a large control."
     }
   },
   "radius": {

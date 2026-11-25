@@ -32,7 +32,7 @@ type Source = (typeof SOURCES)[number];
 const PATH_REF = /\b[a-z][a-z0-9-]*(?:\.[a-z0-9-]+)+\b/g;
 const LITERAL = /#[0-9a-f]{3,8}\b|\brgba?\(|\b\d+(?:\.\d+)?(?:px|rem|em|ms|s|pt)\b|\d%|\d:\d|\b\d+\s*[x×]\s*\d+\b|\b\d*\.\d+\b|\b\d+\b/i;
 
-type Token = { layer: Layer; path: string; name: string; raw: string; description?: string; status?: Status; source?: Source };
+type Token = { layer: Layer; path: string; name: string; raw: string; description?: string; status?: Status; source?: Source; ramp?: string; scale?: string };
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const { values: args } = parseArgs({
@@ -84,6 +84,16 @@ function walk(node: unknown, path: string[], layer: Layer, file: string): void {
     if (source !== undefined && !SOURCES.includes(source as Source)) {
       fail(`${where} $source must be one of ${SOURCES.join(', ')}`);
     }
+    const ramp = obj['$ramp'];
+    const scale = obj['$scale'];
+    if (ramp !== undefined && (typeof ramp !== 'string' || !/^[a-z]+(-[a-z]+)*$/.test(ramp))) {
+      fail(`${where} $ramp must be a lowercase kebab-case ramp name`);
+    }
+    if (scale !== undefined && (typeof scale !== 'string' || !/^\d+$/.test(scale))) {
+      fail(`${where} $scale must be a numeric step as a string`);
+    }
+    if ((ramp !== undefined) !== (scale !== undefined)) fail(`${where} $ramp and $scale must be given together`);
+    if (ramp !== undefined && layer !== 'primitive') fail(`${where} $ramp/$scale are only valid on primitive tokens`);
     tokens.set(dotted, {
       layer,
       path: dotted,
@@ -92,6 +102,8 @@ function walk(node: unknown, path: string[], layer: Layer, file: string): void {
       description: desc as string | undefined,
       status: status as Status | undefined,
       source: source as Source | undefined,
+      ramp: ramp as string | undefined,
+      scale: scale as string | undefined,
     });
     names.set(name, dotted);
     return;
@@ -213,6 +225,9 @@ const metaBody = sorted
     if (t.description) parts.push(`description: ${q(t.description)}`);
     if (t.status) parts.push(`status: ${q(t.status)}`);
     if (t.source) parts.push(`source: ${q(t.source)}`);
+    if (t.ramp && t.scale) parts.push(`ramp: ${q(t.ramp)}, scale: ${q(t.scale)}`);
+    const refs = refsOf(t);
+    if (refs.length > 0) parts.push(`references: ${JSON.stringify(refs)}`);
     const inherited = origins.get(t.path);
     if (inherited) parts.push(`inheritedFrom: ${JSON.stringify(inherited)}`);
     return `  ${q(t.path)}: { ${parts.join(', ')} },\n`;
@@ -229,7 +244,7 @@ const tsOut =
   `export type TokenStatus = 'provisional' | 'unresolved' | 'retired';\n` +
   `export interface TokenOrigin {\n  readonly status: 'provisional' | 'unresolved';\n  readonly path: string;\n}\n` +
   `/** status is the token's own (direct) flag; inheritedFrom lists the directly flagged tokens it references, directly or not. */\n` +
-  `export interface TokenMeta {\n  readonly layer: TokenLayer;\n  readonly cssVar: string;\n  readonly description?: string;\n  readonly status?: TokenStatus;\n  readonly inheritedFrom?: readonly TokenOrigin[];\n  readonly source?: 'documented' | 'observed';\n}\n\n` +
+  `export interface TokenMeta {\n  readonly layer: TokenLayer;\n  readonly cssVar: string;\n  readonly description?: string;\n  readonly status?: TokenStatus;\n  readonly inheritedFrom?: readonly TokenOrigin[];\n  readonly source?: 'documented' | 'observed';\n  readonly ramp?: string;\n  readonly scale?: string;\n  readonly references?: readonly TokenPath[];\n}\n\n` +
   `/** Layer, CSS variable name, notes and review status for each token. */\n` +
   `export const tokenMeta: Record<TokenPath, TokenMeta> = {\n${metaBody}};\n`;
 

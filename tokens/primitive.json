@@ -14,94 +14,159 @@
       }
     },
     "grey": {
-      "373d3f": {
+      "800": {
         "$value": "#373D3F",
+        "$ramp": "grey",
+        "$scale": "800",
         "$description": "Style guide: Ink."
       },
       "505058": {
         "$value": "#505058",
         "$description": "Style guide: Slate."
       },
-      "5f6770": {
+      "650": {
         "$value": "#5F6770",
+        "$ramp": "grey",
+        "$scale": "650",
         "$description": "Style guide: Muted Grey."
       },
-      "98a2b3": {
+      "400": {
         "$value": "#98A2B3",
+        "$ramp": "grey",
+        "$scale": "400",
         "$description": "Style guide: Disabled."
       },
-      "cbd5e1": {
+      "300": {
         "$value": "#CBD5E1",
+        "$ramp": "grey",
+        "$scale": "300",
         "$description": "Style guide: Strong border."
       },
-      "d9dce1": {
+      "200": {
         "$value": "#D9DCE1",
+        "$ramp": "grey",
+        "$scale": "200",
         "$description": "Style guide: Control border."
       },
-      "e2e8f0": {
+      "175": {
         "$value": "#E2E8F0",
+        "$ramp": "grey",
+        "$scale": "175",
         "$description": "Style guide: Border."
       },
-      "f5f6f8": {
+      "50": {
         "$value": "#F5F6F8",
+        "$ramp": "grey",
+        "$scale": "50",
         "$description": "Style guide: Canvas."
       },
-      "f9fafb": {
-        "$value": "#F9FAFB",
-        "$description": "Style guide: Footer strip."
-      },
-      "d0d5dd": {
-        "$value": "#D0D5DD",
-        "$description": "Not in the palette. Used for the disabled button dashed border, Canvas/Surface swatch outlines and the question-strip 'not reached' cell outline. Provisional until reviewed.",
-        "$status": "provisional"
-      },
-      "e4e7ec": {
-        "$value": "#E4E7EC",
-        "$description": "Not in the palette. Used as the question-strip 'answered' cell fill. Provisional until reviewed.",
-        "$status": "provisional"
-      },
-      "f2f4f7": {
+      "75": {
         "$value": "#F2F4F7",
-        "$description": "Not in the palette. Used as the neutral chip background (Tabs, Offline). Provisional until reviewed.",
-        "$status": "provisional"
+        "$ramp": "grey",
+        "$scale": "75",
+        "$description": "Documented on the style guide colour scale. Used as the neutral chip background (Tabs, Offline)."
       },
-      "f8fafc": {
-        "$value": "#F8FAFC",
-        "$description": "Not in the palette. Used as the question-strip 'not reached' cell fill. Provisional until reviewed.",
-        "$status": "provisional"
-      },
-      "475467": {
+      "700": {
         "$value": "#475467",
-        "$description": "Not in the palette. Used as the Offline chip text. Provisional until reviewed.",
-        "$status": "provisional"
+        "$ramp": "grey",
+        "$scale": "700",
+        "$description": "Documented on the style guide colour scale. Used as the Offline chip text."
+      },
+      "100": {
+        "$value": "#EEF0F3",
+        "$ramp": "grey",
+        "$scale": "100",
+        "$description": "Style guide colour scale."
+      },
+      "125": {
+        "$value": "#E6E8EC",
+        "$ramp": "grey",
+        "$scale": "125",
+        "$description": "Style guide colour scale."
+      },
+      "950": {
+        "$value": "#1D2939",
+        "$ramp": "grey",
+        "$scale": "950",
+        "$description": "Style guide colour scale."
       }
     },
     "blue": {
-      "0071eb": {
+      "600": {
         "$value": "#0071EB",
+        "$ramp": "blue",
+        "$scale": "600",
         "$description": "Style guide: Action Blue."
       },
-      "0059b8": {
+      "700": {
         "$value": "#0059B8",
+        "$ramp": "blue",
+        "$scale": "700",
         "$description": "Style guide: Blue text."
       },
-      "e4f0fe": {
+      "75": {
         "$value": "#E4F0FE",
+        "$ramp": "blue",
+        "$scale": "75",
         "$description": "Style guide: Blue tint. Near-duplicate of provisional blue.e6f0fd; both kept until reviewed."
       },
       "0071eb-30": {
         "$value": "rgba(0, 113, 235, 0.3)",
         "$description": "Style guide focus ring: the Action Blue at reduced opacity."
       },
-      "e6f0fd": {
+      "100": {
         "$value": "#E6F0FD",
-        "$description": "Not in the palette. Used as the 'Watching' chip background. Near-duplicate of the Blue tint (color.blue.e4f0fe); kept separate until reviewed.",
-        "$status": "provisional"
+        "$ramp": "blue",
+        "$scale": "100",
+        "$description": "Documented on the style guide colour scale. Used as the 'Watching' chip background. Sits next to the Blue tint (color.blue.75) on the scale."
       },
-      "9ec5f5": {
-        "$value": "#9EC5F5",
-        "$description": "Not in the palette. Used only as the spacing-scale swatch outline on the style guide page itself (documentation chrome, probably not a product colour). Provisional until reviewed.",
-        "$status": "provisional"
+      "50": {
+        "$value": "#F3F8FF",
+        "$ramp": "blue",
+        "$scale": "50",
+        "$description": "Style guide colour scale."
+      },
+      "200": {
+        "$value": "#B2D4FA",
+        "$ramp": "blue",
+        "$scale": "200",
+        "$description": "Style guide colour scale."
+      },
+      "300": {
+        "$value": "#9FCBFF",
+        "$ramp": "blue",
+        "$scale": "300",
+        "$description": "Style guide colour scale."
+      },
+      "400": {
+        "$value": "#60A9F9",
+        "$ramp": "blue",
+        "$scale": "400",
+        "$description": "Style guide colour scale."
+      },
+      "500": {
+        "$value": "#2E8DF2",
+        "$ramp": "blue",
+        "$scale": "500",
+        "$description": "Style guide colour scale."
+      },
+      "800": {
+        "$value": "#004DA1",
+        "$ramp": "blue",
+        "$scale": "800",
+        "$description": "Style guide colour scale."
+      },
+      "900": {
+        "$value": "#00418A",
+        "$ramp": "blue",
+        "$scale": "900",
+        "$description": "Style guide colour scale."
+      },
+      "950": {
+        "$value": "#002A5C",
+        "$ramp": "blue",
+        "$scale": "950",
+        "$description": "Style guide colour scale."
       }
     },
     "teal": {
@@ -117,54 +182,208 @@
       }
     },
     "red": {
-      "d92d20": {
+      "600": {
         "$value": "#D92D20",
+        "$ramp": "red",
+        "$scale": "600",
         "$description": "Style guide: High (red) solid."
       },
-      "fee4e2": {
+      "100": {
         "$value": "#FEE4E2",
+        "$ramp": "red",
+        "$scale": "100",
         "$description": "Style guide: High (red) tint; also Danger action tint, same hex."
       },
-      "912018": {
+      "800": {
         "$value": "#912018",
+        "$ramp": "red",
+        "$scale": "800",
         "$description": "Style guide: High (red) text."
       },
-      "b42318": {
+      "700": {
         "$value": "#B42318",
+        "$ramp": "red",
+        "$scale": "700",
         "$description": "Style guide: Danger action solid."
       },
-      "7a271a": {
+      "900": {
         "$value": "#7A271A",
+        "$ramp": "red",
+        "$scale": "900",
         "$description": "Style guide: Danger action text. The guide also retires this colour as a Critical card stripe, yet it is still the danger text colour. Needs review.",
         "$status": "unresolved"
+      },
+      "50": {
+        "$value": "#FEF3F2",
+        "$ramp": "red",
+        "$scale": "50",
+        "$description": "Style guide colour scale."
+      },
+      "200": {
+        "$value": "#FECDCA",
+        "$ramp": "red",
+        "$scale": "200",
+        "$description": "Style guide colour scale."
+      },
+      "300": {
+        "$value": "#FDA29B",
+        "$ramp": "red",
+        "$scale": "300",
+        "$description": "Style guide colour scale."
+      },
+      "400": {
+        "$value": "#F97066",
+        "$ramp": "red",
+        "$scale": "400",
+        "$description": "Style guide colour scale."
+      },
+      "500": {
+        "$value": "#F04438",
+        "$ramp": "red",
+        "$scale": "500",
+        "$description": "Style guide colour scale."
+      },
+      "950": {
+        "$value": "#55160C",
+        "$ramp": "red",
+        "$scale": "950",
+        "$description": "Style guide colour scale."
       }
     },
     "orange": {
-      "f79009": {
+      "500": {
         "$value": "#F79009",
+        "$ramp": "amber",
+        "$scale": "500",
         "$description": "Style guide: Watch (orange) solid."
       },
-      "fef0c7": {
+      "100": {
         "$value": "#FEF0C7",
+        "$ramp": "amber",
+        "$scale": "100",
         "$description": "Style guide: Watch (orange) tint."
       },
-      "93370d": {
+      "800": {
         "$value": "#93370D",
+        "$ramp": "amber",
+        "$scale": "800",
         "$description": "Style guide: Watch (orange) text."
+      },
+      "50": {
+        "$value": "#FFFAEB",
+        "$ramp": "amber",
+        "$scale": "50",
+        "$description": "Style guide colour scale."
+      },
+      "200": {
+        "$value": "#FEDF89",
+        "$ramp": "amber",
+        "$scale": "200",
+        "$description": "Style guide colour scale."
+      },
+      "300": {
+        "$value": "#FEC84B",
+        "$ramp": "amber",
+        "$scale": "300",
+        "$description": "Style guide colour scale."
+      },
+      "400": {
+        "$value": "#FDB022",
+        "$ramp": "amber",
+        "$scale": "400",
+        "$description": "Style guide colour scale."
+      },
+      "600": {
+        "$value": "#DC6803",
+        "$ramp": "amber",
+        "$scale": "600",
+        "$description": "Style guide colour scale."
+      },
+      "700": {
+        "$value": "#B54708",
+        "$ramp": "amber",
+        "$scale": "700",
+        "$description": "Style guide colour scale."
+      },
+      "900": {
+        "$value": "#7A2E0E",
+        "$ramp": "amber",
+        "$scale": "900",
+        "$description": "Style guide colour scale."
+      },
+      "950": {
+        "$value": "#4E1D09",
+        "$ramp": "amber",
+        "$scale": "950",
+        "$description": "Style guide colour scale."
       }
     },
     "green": {
-      "0e9384": {
+      "600": {
         "$value": "#0E9384",
+        "$ramp": "teal",
+        "$scale": "600",
         "$description": "Style guide: Low (green) solid."
       },
-      "e6f6f4": {
+      "100": {
         "$value": "#E6F6F4",
+        "$ramp": "teal",
+        "$scale": "100",
         "$description": "Style guide: Low (green) tint."
       },
-      "0b5f55": {
+      "800": {
         "$value": "#0B5F55",
+        "$ramp": "teal",
+        "$scale": "800",
         "$description": "Style guide: Low (green) text."
+      },
+      "50": {
+        "$value": "#F3FBFA",
+        "$ramp": "teal",
+        "$scale": "50",
+        "$description": "Style guide colour scale."
+      },
+      "200": {
+        "$value": "#B8E6E0",
+        "$ramp": "teal",
+        "$scale": "200",
+        "$description": "Style guide colour scale."
+      },
+      "300": {
+        "$value": "#7FD3C8",
+        "$ramp": "teal",
+        "$scale": "300",
+        "$description": "Style guide colour scale."
+      },
+      "400": {
+        "$value": "#3FB8A9",
+        "$ramp": "teal",
+        "$scale": "400",
+        "$description": "Style guide colour scale."
+      },
+      "500": {
+        "$value": "#15A394",
+        "$ramp": "teal",
+        "$scale": "500",
+        "$description": "Style guide colour scale."
+      },
+      "700": {
+        "$value": "#0C7A6D",
+        "$ramp": "teal",
+        "$scale": "700",
+        "$description": "Style guide colour scale."
+      },
+      "900": {
+        "$value": "#0A4A43",
+        "$ramp": "teal",
+        "$scale": "900",
+        "$description": "Style guide colour scale."
+      },
+      "950": {
+        "$value": "#06302B",
+        "$ramp": "teal",
+        "$scale": "950",
+        "$description": "Style guide colour scale."
       }
     }
   },
@@ -182,6 +401,10 @@
     "medium": {
       "$value": 500,
       "$description": "Style guide: medium weight. The type notes named it for button labels; button labels use bold instead (decided)."
+    },
+    "semibold": {
+      "$value": 600,
+      "$description": "Style guide: semibold weight, for labels."
     },
     "bold": {
       "$value": 700,
@@ -229,9 +452,63 @@
       "$value": "24px",
       "$description": "Style guide type scale."
     },
+    "28": {
+      "$value": "28px",
+      "$description": "Style guide type scale."
+    },
     "32": {
       "$value": "32px",
       "$description": "Style guide type scale."
+    },
+    "48": {
+      "$value": "48px",
+      "$description": "Style guide type scale."
+    }
+  },
+  "line-height": {
+    "13": {
+      "$value": "13px",
+      "$description": "Style guide type scale line height."
+    },
+    "15": {
+      "$value": "15px",
+      "$description": "Style guide type scale line height."
+    },
+    "17": {
+      "$value": "17px",
+      "$description": "Style guide type scale line height."
+    },
+    "18": {
+      "$value": "18px",
+      "$description": "Style guide type scale line height."
+    },
+    "20": {
+      "$value": "20px",
+      "$description": "Style guide type scale line height."
+    },
+    "21": {
+      "$value": "21px",
+      "$description": "Style guide type scale line height."
+    },
+    "24": {
+      "$value": "24px",
+      "$description": "Style guide type scale line height."
+    },
+    "28": {
+      "$value": "28px",
+      "$description": "Style guide type scale line height."
+    },
+    "34": {
+      "$value": "34px",
+      "$description": "Style guide type scale line height."
+    },
+    "40": {
+      "$value": "40px",
+      "$description": "Style guide type scale line height."
+    },
+    "58": {
+      "$value": "58px",
+      "$description": "Style guide type scale line height."
     }
   },
   "space": {

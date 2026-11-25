@@ -31,8 +31,8 @@ export const byNumericValue = (a: TokenPath, b: TokenPath): number => parseFloat
 
 export const pageStyle: CSSProperties = {
   fontFamily: cssVars['font.family.base'],
-  fontSize: cssVars['type.body.size'],
-  fontWeight: cssVars['type.body.weight'],
+  fontSize: cssVars['type.body.md.size'],
+  fontWeight: cssVars['type.body.md.weight'],
   color: cssVars['color.text.body'],
   display: 'flex',
   flexDirection: 'column',
@@ -64,8 +64,8 @@ function Badge(props: { tone: Tone; inherited: boolean; title: string; flag: str
         border: `${hairlineWidth} ${props.inherited ? 'dashed' : 'solid'} ${cssVars[c.fg]}`,
         borderRadius: cssVars['radius.chip'],
         padding: `${cssVars['space.4']} ${cssVars['space.8']}`,
-        fontSize: cssVars['type.chip-label.size'],
-        fontWeight: cssVars['type.chip-label.weight'],
+        fontSize: cssVars['type.label.sm.size'],
+        fontWeight: cssVars['type.label.sm.weight'],
       }}
     >
       {props.inherited ? `inherited ${props.tone}` : props.tone}
@@ -126,7 +126,7 @@ export function TokenLabel({ path }: { path: TokenPath }) {
   const meta = tokenMeta[path];
   return (
     <div data-token={path} style={{ display: 'flex', flexDirection: 'column', gap: cssVars['space.4'], minWidth: 0 }}>
-      <span style={{ fontWeight: cssVars['type.name.weight'], color: cssVars['color.text.heading'], overflowWrap: 'anywhere' }}>
+      <span style={{ fontWeight: cssVars['type.heading.h4.weight'], color: cssVars['color.text.heading'], overflowWrap: 'anywhere' }}>
         {path}
       </span>
       <span style={{ color: cssVars['color.text.muted'], fontSize: cssVars['type.caption.size'], overflowWrap: 'anywhere' }}>
@@ -146,8 +146,8 @@ export function Section({ title, note, children }: { title: string; note?: strin
       <h2
         style={{
           margin: 0,
-          fontSize: cssVars['type.panel-title.size'],
-          fontWeight: cssVars['type.panel-title.weight'],
+          fontSize: cssVars['type.heading.h3.size'],
+          fontWeight: cssVars['type.heading.h3.weight'],
           color: cssVars['color.text.heading'],
         }}
       >

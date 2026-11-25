@@ -17,6 +17,10 @@
       "$value": "{type.button.weight}",
       "$description": "Button label weight."
     },
+    "font-family": {
+      "$value": "{font.family.base}",
+      "$description": "Button label font family. Buttons do not inherit it, so it is set explicitly."
+    },
     "icon-size": {
       "$value": "16px",
       "$source": "documented",
@@ -32,16 +36,8 @@
       "$description": "Style guide icon button note: padding on the icon side."
     },
     "padding-text-side": {
-      "$value": "{space.control-padding-text-side}",
-      "$description": "Style guide icon button note: padding on the text side."
-    },
-    "focus-ring-width": {
-      "$value": "3px",
-      "$source": "documented",
-      "$description": "Style guide: focus ring width."
-    },
-    "focus-ring-color": {
-      "$value": "{color.focus.ring}"
+      "$value": "{space.control-padding-md}",
+      "$description": "Style guide Button page: padding on the text side of a medium button."
     },
     "pressed-scale": {
       "$value": "0.96",
@@ -49,14 +45,14 @@
       "$description": "Style guide: scale applied while pressed."
     },
     "pressed-duration": {
-      "$value": "150ms",
+      "$value": "120ms",
       "$source": "documented",
-      "$description": "Style guide: press animation duration."
+      "$description": "Style guide Button page: duration of colour and press transitions."
     },
     "pressed-easing": {
-      "$value": "ease-out",
+      "$value": "cubic-bezier(0.2, 0, 0, 1)",
       "$source": "documented",
-      "$description": "Style guide: ease-out."
+      "$description": "Style guide Button page: easing of colour and press transitions."
     },
     "primary": {
       "bg": {
@@ -66,14 +62,13 @@
         "$value": "{color.text.on-action}"
       },
       "border": {
-        "$value": "{color.action.default}"
+        "$value": "transparent",
+        "$source": "documented",
+        "$description": "Filled variants keep a transparent border so every variant has the same edge."
       },
       "bg-hover": {
         "$value": "{color.action.hover}",
         "$description": "Style guide hover state fill for the primary button."
-      },
-      "border-hover": {
-        "$value": "{color.action.hover}"
       }
     },
     "secondary": {
@@ -87,19 +82,8 @@
         "$value": "{color.border.control}"
       },
       "bg-hover": {
-        "$value": "{color.surface.page}",
-        "$description": "Style guide hover state fill for the secondary button."
-      }
-    },
-    "outline": {
-      "bg": {
-        "$value": "{color.surface.default}"
-      },
-      "text": {
-        "$value": "{color.action.text}"
-      },
-      "border": {
-        "$value": "{color.action.default}"
+        "$value": "{color.surface.muted}",
+        "$description": "Style guide Button page: hover and pressed fill of the secondary button."
       }
     },
     "danger": {
@@ -110,32 +94,225 @@
         "$value": "{color.text.on-action}"
       },
       "border": {
-        "$value": "{color.danger.solid}"
+        "$value": "transparent",
+        "$source": "documented",
+        "$description": "Filled variants keep a transparent border so every variant has the same edge."
+      },
+      "bg-hover": {
+        "$value": "{color.danger.solid-hover}",
+        "$description": "Solid danger button hover and pressed fill."
+      }
+    },
+    "min-width": {
+      "$value": "64px",
+      "$source": "documented",
+      "$description": "Style guide Button page: minimum width of a text button."
+    },
+    "border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Style guide Button page: border width. Filled variants keep a transparent border so every variant has the same edge."
+    },
+    "focus-outline-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Style guide Button page: keyboard focus outline width."
+    },
+    "focus-outline-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Style guide Button page: gap between the control and its focus outline."
+    },
+    "focus-outline-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Keyboard focus outline colour."
+    },
+    "focus-outline-color-danger": {
+      "$value": "{color.danger.solid}",
+      "$description": "Keyboard focus outline colour on danger variants."
+    },
+    "live-ring-width": {
+      "$value": "3px",
+      "$source": "documented",
+      "$description": "Style guide Button page: width of the ring on a running, ongoing-state button."
+    },
+    "live-ring-color": {
+      "$value": "{color.action.live-ring}",
+      "$description": "Ring colour on a running, ongoing-state button."
+    },
+    "spinner-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Style guide Button page: stroke width of the loading spinner."
+    },
+    "spinner-duration": {
+      "$value": "800ms",
+      "$source": "documented",
+      "$description": "Style guide Button page: time for one spinner turn."
+    },
+    "spinner-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Spinner shape."
+    },
+    "sm": {
+      "height": {
+        "$value": "28px",
+        "$source": "documented",
+        "$description": "Style guide Button page: height of the small button."
+      },
+      "icon-size": {
+        "$value": "14px",
+        "$source": "documented",
+        "$description": "Style guide Button page: icon size in the small button."
+      },
+      "icon-gap": {
+        "$value": "4px",
+        "$source": "documented",
+        "$description": "Style guide Button page: gap between icon and label in the small button."
+      },
+      "padding-text-side": {
+        "$value": "{space.control-padding-sm}",
+        "$description": "Padding on the text side of the small button."
+      },
+      "padding-icon-side": {
+        "$value": "{space.control-padding-icon-side-sm}",
+        "$description": "Padding on the icon side of the small button."
+      },
+      "font-size": {
+        "$value": "{type.button.size-sm}",
+        "$description": "Label size of the small button."
+      }
+    },
+    "lg": {
+      "height": {
+        "$value": "44px",
+        "$source": "documented",
+        "$description": "Style guide Button page: height of the large button."
+      },
+      "icon-size": {
+        "$value": "20px",
+        "$source": "documented",
+        "$description": "Style guide Button page: icon size in the large button."
+      },
+      "icon-gap": {
+        "$value": "8px",
+        "$source": "documented",
+        "$description": "Style guide Button page: gap between icon and label in the large button."
+      },
+      "padding-text-side": {
+        "$value": "{space.control-padding-lg}",
+        "$description": "Padding on the text side of the large button."
+      },
+      "padding-icon-side": {
+        "$value": "{space.control-padding-icon-side-lg}",
+        "$description": "Padding on the icon side of the large button."
+      },
+      "font-size": {
+        "$value": "{type.button.size-lg}",
+        "$description": "Label size of the large button."
+      }
+    },
+    "accent": {
+      "bg": {
+        "$value": "{color.surface.default}",
+        "$description": "Accent outline button fill."
+      },
+      "text": {
+        "$value": "{color.action.text}",
+        "$description": "Accent outline button label."
+      },
+      "border": {
+        "$value": "{color.action.default}",
+        "$description": "Accent outline button border."
+      },
+      "bg-hover": {
+        "$value": "{color.surface.selected}",
+        "$description": "Accent outline button hover fill."
+      },
+      "bg-pressed": {
+        "$value": "{color.action.tint}",
+        "$description": "Accent outline button pressed fill."
+      }
+    },
+    "ghost": {
+      "bg": {
+        "$value": "transparent",
+        "$source": "documented",
+        "$description": "Ghost button has no fill."
+      },
+      "text": {
+        "$value": "{color.text.body}",
+        "$description": "Ghost button label."
+      },
+      "border": {
+        "$value": "transparent",
+        "$source": "documented",
+        "$description": "Ghost button has no border."
+      },
+      "bg-hover": {
+        "$value": "{color.surface.muted}",
+        "$description": "Ghost button hover and pressed fill."
+      }
+    },
+    "link": {
+      "text": {
+        "$value": "{color.action.text}",
+        "$description": "Link button label. Hover adds an underline."
+      }
+    },
+    "danger-secondary": {
+      "bg": {
+        "$value": "{color.surface.default}",
+        "$description": "Quiet danger button fill."
+      },
+      "text": {
+        "$value": "{color.danger.label}",
+        "$description": "Quiet danger button label."
+      },
+      "border": {
+        "$value": "{color.danger.border}",
+        "$description": "Quiet danger button border."
+      },
+      "bg-hover": {
+        "$value": "{color.danger.wash}",
+        "$description": "Quiet danger button hover and pressed fill."
+      }
+    },
+    "pressed": {
+      "bg": {
+        "$value": "{color.action.tint}",
+        "$description": "Fill of a toggle button that is switched on."
+      },
+      "text": {
+        "$value": "{color.action.text}",
+        "$description": "Label of a toggle button that is switched on."
+      },
+      "border": {
+        "$value": "{color.action.default}",
+        "$description": "Border of a toggle button that is switched on."
       }
     },
     "disabled": {
       "bg": {
-        "$value": "{color.surface.default}"
+        "$value": "{color.surface.muted}",
+        "$description": "Style guide Button page: fill of an unavailable button."
       },
       "text": {
-        "$value": "{color.text.disabled}"
+        "$value": "{color.text.disabled}",
+        "$description": "Label of an unavailable button."
       },
       "border": {
-        "$value": "{color.border.disabled}"
-      },
-      "border-style": {
-        "$value": "dashed",
-        "$source": "documented",
-        "$description": "Style guide: disabled buttons use a dashed border."
+        "$value": "{color.border.default}",
+        "$description": "Border of an unavailable button."
       }
     }
   },
   "chip": {
     "font-size": {
-      "$value": "{type.chip-label.size}"
+      "$value": "{type.label.sm.size}"
     },
     "font-weight": {
-      "$value": "{type.chip-label.weight}"
+      "$value": "{type.label.sm.weight}"
     },
     "radius": {
       "$value": "{radius.chip}"
@@ -273,6 +450,450 @@
         "$value": "{radius.chip}",
         "$description": "Question strip cell corner radius. Decided: follows the documented chip and cell radius."
       }
+    }
+  },
+  "top-nav": {
+    "height": {
+      "$value": "72px",
+      "$source": "documented",
+      "$description": "Top navigation bar height (PDF spec)."
+    },
+    "padding-x": {
+      "$value": "32px",
+      "$source": "documented",
+      "$description": "Side padding at the widest layout."
+    },
+    "padding-x-md": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Side padding at the middle layout."
+    },
+    "padding-x-sm": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Side padding at the narrow layout."
+    },
+    "bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Bar background."
+    },
+    "border-color": {
+      "$value": "{color.border.default}",
+      "$description": "Bar bottom border."
+    },
+    "border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Bar bottom border width."
+    },
+    "shadow-scrolled": {
+      "$value": "0 1px 2px rgb(15 23 42 / 0.06)",
+      "$source": "observed",
+      "$description": "Shadow once the page scrolls under the bar. The PDF names a small shadow without a value; this is the style guide resting-surface shadow.",
+      "$status": "provisional"
+    },
+    "z-index": {
+      "$value": "200",
+      "$source": "documented",
+      "$description": "Stacking order from the PDF. The style guide layers table uses different numbers; unresolved.",
+      "$status": "unresolved"
+    },
+    "logo-font-size": {
+      "$value": "19px",
+      "$source": "documented",
+      "$description": "Wordmark size (PDF spec)."
+    },
+    "logo-line-height": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Wordmark line height (PDF spec)."
+    },
+    "logo-font-weight": {
+      "$value": "{type.heading.h4.weight}",
+      "$description": "Wordmark weight, bold."
+    },
+    "logo-gap": {
+      "$value": "48px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Space after the wordmark, from the Paper design. The PDF text says less."
+    },
+    "logo-color-skill": {
+      "$value": "{color.brand.teal}",
+      "$description": "First half of the wordmark."
+    },
+    "logo-color-wiz": {
+      "$value": "{color.brand.indigo}",
+      "$description": "Second half of the wordmark."
+    },
+    "item-gap": {
+      "$value": "12px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Gap between nav items, from the Paper design. The PDF text says less."
+    },
+    "item-height": {
+      "$value": "36px",
+      "$source": "documented",
+      "$description": "Nav item height (PDF spec)."
+    },
+    "item-padding-x": {
+      "$value": "8px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Nav item padding on every side, from the Paper design. The PDF text says a wider side padding."
+    },
+    "item-radius": {
+      "$value": "{radius.control}",
+      "$description": "Nav item corner radius. The PDF says medium radius, which the style guide sizes differently from this repo; mapped to the control radius."
+    },
+    "item-font-size": {
+      "$value": "{type.label.lg.size}",
+      "$description": "Nav item label size, semibold as in the Paper design."
+    },
+    "item-line-height": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Nav item label line height."
+    },
+    "item-font-weight": {
+      "$value": "{type.label.lg.weight}",
+      "$description": "Nav item label weight, semibold as in the Paper design. The PDF text says bold."
+    },
+    "font-family": {
+      "$value": "{font.family.base}",
+      "$description": "Set explicitly because buttons and links do not always inherit it."
+    },
+    "item-text": {
+      "$value": "{color.text.body}",
+      "$description": "Nav item label colour."
+    },
+    "item-bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "Nav item hover and pressed background."
+    },
+    "item-current-bg": {
+      "$value": "{color.action.tint}",
+      "$description": "Current page pill background."
+    },
+    "item-current-text": {
+      "$value": "{color.action.default}",
+      "$description": "Current page label colour, the action colour as in the Paper design."
+    },
+    "hover-duration": {
+      "$value": "120ms",
+      "$source": "documented",
+      "$description": "Hover transition duration (PDF spec)."
+    },
+    "pressed-duration": {
+      "$value": "150ms",
+      "$source": "documented",
+      "$description": "Pressed transition duration (PDF spec)."
+    },
+    "pressed-scale": {
+      "$value": "0.96",
+      "$source": "documented",
+      "$description": "Scale while pressed (PDF spec)."
+    },
+    "easing": {
+      "$value": "cubic-bezier(0.2, 0, 0, 1)",
+      "$source": "observed",
+      "$description": "Not given in the PDF; the same easing as the Button component.",
+      "$status": "provisional"
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Keyboard focus ring width (PDF spec)."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Keyboard focus ring offset (PDF spec)."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Keyboard focus ring colour."
+    },
+    "menu-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Menu and drawer background."
+    },
+    "menu-border": {
+      "$value": "{color.border.default}",
+      "$description": "Menu border."
+    },
+    "menu-radius": {
+      "$value": "{radius.tile}",
+      "$description": "Menu corner radius. The style guide large radius does not exist in this repo; mapped to the tile radius."
+    },
+    "menu-offset": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Gap between the trigger and its menu (PDF spec)."
+    },
+    "menu-shadow": {
+      "$value": "0 8px 24px rgb(16 24 40 / 0.12)",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Menu shadow, from the Paper design export. Replaces the style guide value."
+    },
+    "menu-min-width": {
+      "$value": "200px",
+      "$source": "observed",
+      "$description": "Narrowest menu width, observed from the drawing.",
+      "$status": "provisional"
+    },
+    "selector-height": {
+      "$value": "40px",
+      "$source": "observed",
+      "$description": "Context selector height, same as the icon buttons.",
+      "$status": "provisional"
+    },
+    "selector-max-width": {
+      "$value": "200px",
+      "$source": "documented",
+      "$description": "Selector width where long values truncate (PDF spec)."
+    },
+    "selector-padding-x": {
+      "$value": "16px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Selector horizontal padding, from the Paper design."
+    },
+    "selector-gap": {
+      "$value": "8px",
+      "$source": "observed",
+      "$description": "Gap between pin, value and chevron, observed from the drawing.",
+      "$status": "provisional"
+    },
+    "selector-radius": {
+      "$value": "{radius.control}",
+      "$description": "Selector corner radius."
+    },
+    "selector-border": {
+      "$value": "{color.border.control}",
+      "$description": "Selector outline."
+    },
+    "selector-border-open": {
+      "$value": "{color.focus.outline}",
+      "$description": "Selector outline while open."
+    },
+    "selector-icon-size": {
+      "$value": "16px",
+      "$source": "observed",
+      "$description": "Pin and chevron size, observed from the drawing.",
+      "$status": "provisional"
+    },
+    "selector-font-size": {
+      "$value": "{type.label.sm.size}",
+      "$description": "Selector value size, small as in the Paper design. The PDF token table says larger."
+    },
+    "selector-line-height": {
+      "$value": "{type.label.sm.line-height}",
+      "$description": "Selector value line height."
+    },
+    "selector-font-weight": {
+      "$value": "{type.label.sm.weight}",
+      "$description": "Selector value weight, semibold."
+    },
+    "utilities-gap": {
+      "$value": "20px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Gap between the selector, the icon button group and the avatar, from the Paper design."
+    },
+    "icon-button-size": {
+      "$value": "40px",
+      "$source": "documented",
+      "$description": "Icon button size (PDF spec)."
+    },
+    "icon-button-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Round icon button, as drawn."
+    },
+    "icon-button-border": {
+      "$value": "{color.border.control}",
+      "$description": "Icon button outline."
+    },
+    "icon-button-bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "Icon button hover background."
+    },
+    "icon-button-text": {
+      "$value": "{color.text.body}",
+      "$description": "Icon colour."
+    },
+    "icon-size": {
+      "$value": "18px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Icon size in the top bar, from the Paper design."
+    },
+    "badge-size": {
+      "$value": "16px",
+      "$source": "observed",
+      "$description": "Count badge minimum size, measured from the drawing.",
+      "$status": "provisional"
+    },
+    "badge-bg": {
+      "$value": "{color.action.default}",
+      "$description": "Count badge fill, blue as drawn. The PDF token list says error red; the drawings win."
+    },
+    "badge-text": {
+      "$value": "{color.text.on-action}",
+      "$description": "Count badge number colour."
+    },
+    "badge-font-size": {
+      "$value": "9px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Count badge number size, from the Paper design."
+    },
+    "badge-font-weight": {
+      "$value": "{type.overline.weight}",
+      "$description": "Count badge number weight."
+    },
+    "avatar-size": {
+      "$value": "40px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Avatar outer circle, from the Paper design. The PDF text says smaller."
+    },
+    "avatar-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Avatar is a circle."
+    },
+    "avatar-bg": {
+      "$value": "{color.action.tint}",
+      "$description": "Initials avatar background (PDF token table: accent subtle)."
+    },
+    "avatar-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Initials colour, from the Paper design."
+    },
+    "avatar-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Initials size (PDF token table)."
+    },
+    "avatar-font-weight": {
+      "$value": "{type.heading.h4.weight}",
+      "$description": "Initials weight, bold, from the Paper design."
+    },
+    "avatar-ring-open": {
+      "$value": "{color.focus.outline}",
+      "$description": "Avatar ring while the account menu is open."
+    },
+    "selector-border-hover": {
+      "$value": "{color.border.strong}",
+      "$description": "Selector outline on hover (PDF token table)."
+    },
+    "selector-text": {
+      "$value": "{color.text.body}",
+      "$description": "Selector value colour."
+    },
+    "selector-icon-color": {
+      "$value": "{color.text.muted}",
+      "$description": "Selector pin and chevron colour (PDF token table: secondary text)."
+    },
+    "item-inner-gap": {
+      "$value": "8px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Gap between the More label and its chevron, from the Paper design."
+    },
+    "menu-padding": {
+      "$value": "4px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Padding inside menus. Not specified anywhere; a menu detail."
+    },
+    "selector-pin-size": {
+      "$value": "18px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Pin icon size, from the Paper design."
+    },
+    "icon-gap": {
+      "$value": "12px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Gap between the icon buttons, from the Paper design."
+    },
+    "badge-offset": {
+      "$value": "-2px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Badge offset from the icon button corner, from the Paper design."
+    },
+    "avatar-border": {
+      "$value": "{color.border.default}",
+      "$description": "Thin ring around the avatar, from the Paper design."
+    },
+    "avatar-inner-size": {
+      "$value": "36px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Photo or initials circle inside the ring, from the Paper design."
+    },
+    "menu-item-padding-x": {
+      "$value": "12px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Menu item horizontal padding, from the Paper design."
+    },
+    "menu-item-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Menu item text size, from the Paper design."
+    },
+    "menu-item-line-height": {
+      "$value": "{type.label.md.line-height}",
+      "$description": "Menu item line height."
+    },
+    "menu-item-font-weight": {
+      "$value": "{type.body.md.weight}",
+      "$description": "Menu item weight, regular."
+    },
+    "menu-item-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Menu item text colour."
+    },
+    "menu-item-selected-bg": {
+      "$value": "{color.surface.selected}",
+      "$description": "Background of the ticked menu item."
+    },
+    "menu-item-selected-weight": {
+      "$value": "{type.heading.h4.weight}",
+      "$description": "Weight of the ticked menu item, bold."
+    },
+    "menu-caption-padding": {
+      "$value": "8px 12px 4px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Padding of the small caption above a menu list, from the Paper design."
+    },
+    "menu-caption-letter-spacing": {
+      "$value": "0.06em",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Letter spacing of the menu caption, from the Paper design."
+    },
+    "avatar-ring-gap": {
+      "$value": "{color.surface.default}",
+      "$description": "Inner ring of the open avatar, white."
+    },
+    "icon-button-focus-offset": {
+      "$value": "-1px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Icon button focus ring sits on the border, from the Paper design."
+    },
+    "menu-caption-font-size": {
+      "$value": "{type.overline.size}",
+      "$description": "Menu caption size."
+    },
+    "menu-caption-font-weight": {
+      "$value": "{type.overline.weight}",
+      "$description": "Menu caption weight, bold."
     }
   }
 }

@@ -208,6 +208,28 @@ test('generated output is reproducible and --check passes, then catches tamperin
   }
 });
 
+test('colour scale: $ramp and $scale are validated and emitted', () => {
+  const fx = base();
+  Object.assign(fx.primitive.color.blue['0071eb'], { $ramp: 'blue', $scale: '600' });
+  const r = run(fx);
+  try {
+    assert.equal(r.status, 0, r.text);
+    const ts = readFileSync(join(r.out, 'src/tokens/tokens.generated.ts'), 'utf8');
+    assert.match(ts, /"color\.blue\.0071eb": \{[^}]*ramp: "blue", scale: "600"/);
+  } finally {
+    rmSync(r.dir, { recursive: true, force: true });
+  }
+  const bad = base();
+  Object.assign(bad.primitive.color.blue['0071eb'], { $ramp: 'blue' });
+  rejects(bad, /given together/);
+  const bad2 = base();
+  Object.assign(bad2.primitive.color.blue['0071eb'], { $ramp: 'blue', $scale: 'x' });
+  rejects(bad2, /numeric step/);
+  const bad3 = base();
+  Object.assign(bad3.semantic.space.gap, { $ramp: 'blue', $scale: '1' });
+  rejects(bad3, /only valid on primitive/);
+});
+
 test('real tokens: pass validation and generated files are current', () => {
   const r = spawnSync(process.execPath, ['--disable-warning=ExperimentalWarning', script, '--check'], { encoding: 'utf8', cwd: root });
   assert.equal(r.status, 0, `${r.stdout}${r.stderr}`);
