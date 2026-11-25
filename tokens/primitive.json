@@ -181,7 +181,7 @@
     },
     "medium": {
       "$value": 500,
-      "$description": "Style guide: medium weight, documented for button labels."
+      "$description": "Style guide: medium weight. The type notes named it for button labels; button labels use bold instead (decided)."
     },
     "bold": {
       "$value": 700,

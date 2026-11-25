@@ -30,7 +30,7 @@ function RadiusFoundations() {
           ))}
         </div>
       </Section>
-      <Section title="Semantic radius" note="The question strip cell radius is documented and rendered at different values; see the unresolved question-strip tokens below in the Tokens story.">
+      <Section title="Semantic radius">
         <div style={grid}>
           {pathsWhere('radius.', 'semantic').map((p) => (
             <Box key={p} path={p} />

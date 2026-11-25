@@ -133,8 +133,7 @@
   --sw-type-body-size: var(--sw-font-size-14);
   --sw-type-body-weight: var(--sw-font-weight-regular);
   --sw-type-button-size: var(--sw-font-size-14);
-  --sw-type-button-weight-notes: var(--sw-font-weight-medium);
-  --sw-type-button-weight-rendered: var(--sw-font-weight-bold);
+  --sw-type-button-weight: var(--sw-font-weight-bold);
   --sw-type-caption-size: var(--sw-font-size-12);
   --sw-type-caption-weight: var(--sw-font-weight-regular);
   --sw-type-chip-label-size: var(--sw-font-size-13);
@@ -167,8 +166,7 @@
   --sw-button-focus-ring-color: var(--sw-color-focus-ring);
   --sw-button-focus-ring-width: 3px;
   --sw-button-font-size: var(--sw-type-button-size);
-  --sw-button-font-weight-notes: var(--sw-type-button-weight-notes);
-  --sw-button-font-weight-rendered: var(--sw-type-button-weight-rendered);
+  --sw-button-font-weight: var(--sw-type-button-weight);
   --sw-button-height: 36px;
   --sw-button-icon-gap: 6px;
   --sw-button-icon-size: 16px;
@@ -215,8 +213,7 @@
   --sw-question-strip-cell-high: var(--sw-color-question-high);
   --sw-question-strip-cell-not-reached-bg: var(--sw-color-question-not-reached-bg);
   --sw-question-strip-cell-not-reached-border: var(--sw-color-question-not-reached-border);
-  --sw-question-strip-cell-radius-documented: var(--sw-radius-chip);
-  --sw-question-strip-cell-radius-rendered: 2px;
+  --sw-question-strip-cell-radius: var(--sw-radius-chip);
   --sw-question-strip-cell-watch: var(--sw-color-question-watch);
   --sw-risk-card-gap: var(--sw-space-card-gap);
   --sw-risk-card-high-border: var(--sw-color-risk-high-solid);

@@ -18,13 +18,15 @@ Custom React + TypeScript component library. No third-party component libraries.
 Each token can carry `$description` and `$status` (`provisional`, `unresolved`, `retired`). Status propagates to any token that references a flagged one. Stories show the badge; `npm run tokens` prints the counts.
 
 ## Unresolved decisions (open for review)
-1. **Button label weight:** type notes say 500, the page renders 700. Both kept as `type.button.weight-notes` and `type.button.weight-rendered` (and `button.font-weight-notes` / `-rendered`). No `button.font-weight` exists until decided.
-2. **Near-duplicate blues:** `color.blue.e4f0fe` (Blue tint, documented) and `color.blue.e6f0fd` ("Watching" chip, provisional) are separate until reviewed.
-3. **Undocumented colours (provisional):** `#D0D5DD`, `#E4E7EC`, `#F2F4F7`, `#F8FAFC`, `#475467`, `#9EC5F5` (the last is style-guide chrome only).
-4. **Retired `#7A271A`:** retired as a Critical card stripe (`color.retired.critical-stripe`, never referenced) but still documented as Danger text (`color.danger.text`, unresolved).
-5. **Off-scale spacing:** 14 and 18 (card padding 14x18, card gap 14) are provisional; the axis order of 14x18 is not stated.
-6. **Question strip cell radius:** documented 4px, rendered 2px.
-7. **Not defined in the style guide, so not tokenised:** line-heights, shadows, elevation, motion beyond the press animation, breakpoints, border widths.
+1. **Near-duplicate blues:** `color.blue.e4f0fe` (Blue tint, documented) and `color.blue.e6f0fd` ("Watching" chip, provisional) are separate until reviewed.
+2. **Undocumented colours (provisional):** `#D0D5DD`, `#E4E7EC`, `#F2F4F7`, `#F8FAFC`, `#475467`, `#9EC5F5` (the last is style-guide chrome only).
+3. **Retired `#7A271A`:** retired as a Critical card stripe (`color.retired.critical-stripe`, never referenced) but still documented as Danger text (`color.danger.text`, unresolved).
+4. **Off-scale spacing:** 14 and 18 (card padding 14x18, card gap 14) are provisional; the axis order of 14x18 is not stated.
+5. **Not defined in the style guide, so not tokenised:** line-heights, shadows, elevation, motion beyond the press animation, breakpoints, border widths.
+
+## Resolved decisions
+- **Button label weight:** bold (as rendered on the style guide page). `type.button.weight` → `font-weight.bold`; `button.font-weight` → `type.button.weight`.
+- **Question strip cell radius:** the documented chip/cell radius. `question-strip.cell.radius` → `radius.chip`.
 
 ## Token hierarchy (enforced by `npm run tokens`)
 

@@ -36,7 +36,7 @@ function ColourFoundations({ layer }: { layer: 'primitive' | 'semantic' }) {
   );
 }
 
-const meta = { title: 'Foundations/Colour', component: ColourFoundations, parameters: { layout: 'fullscreen' } } satisfies Meta<typeof ColourFoundations>;
+const meta = { title: 'Foundations/Colour', component: ColourFoundations, parameters: { layout: 'fullscreen' }, argTypes: { layer: { table: { disable: true } } } } satisfies Meta<typeof ColourFoundations>;
 export default meta;
 type Story = StoryObj<typeof meta>;
 

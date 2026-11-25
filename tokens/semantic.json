@@ -376,15 +376,9 @@
         "$value": "{font-size.14}",
         "$description": "Style guide type scale role: Body / Button (size)."
       },
-      "weight-notes": {
-        "$value": "{font-weight.medium}",
-        "$description": "UNRESOLVED button weight: the type notes name a lighter weight for button labels than the page renders; the Body / Button sample row follows the notes.",
-        "$status": "unresolved"
-      },
-      "weight-rendered": {
+      "weight": {
         "$value": "{font-weight.bold}",
-        "$description": "UNRESOLVED button weight: every button on the style guide page renders heavier than the type notes say, and the type table lists Body / Button with both a regular and a bold weight.",
-        "$status": "unresolved"
+        "$description": "Style guide type scale role: Body / Button (weight). Decided: button labels use the bold weight, as rendered on the style guide page."
       }
     }
   },

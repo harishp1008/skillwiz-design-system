@@ -45,7 +45,7 @@ function TypographyFoundations() {
           ))}
       </Section>
 
-      <Section title="Type roles" note="Semantic roles combine a size and a weight. Roles with two weight tokens are unresolved decisions.">
+      <Section title="Type roles" note="Semantic roles combine a size and a weight.">
         {roles.flatMap((role) => {
           const sizePath = `type.${role}.size` as TokenPath;
           if (!allPaths.includes(sizePath)) return [];

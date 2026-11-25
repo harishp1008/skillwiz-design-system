@@ -13,13 +13,9 @@
     "font-size": {
       "$value": "{type.button.size}"
     },
-    "font-weight-notes": {
-      "$value": "{type.button.weight-notes}",
-      "$description": "Button label weight per the type notes. No single button.font-weight exists until the button weight is decided."
-    },
-    "font-weight-rendered": {
-      "$value": "{type.button.weight-rendered}",
-      "$description": "Button label weight as rendered on the style guide page."
+    "font-weight": {
+      "$value": "{type.button.weight}",
+      "$description": "Button label weight."
     },
     "icon-size": {
       "$value": "16px",
@@ -273,16 +269,9 @@
       "not-reached-border": {
         "$value": "{color.question.not-reached-border}"
       },
-      "radius-documented": {
+      "radius": {
         "$value": "{radius.chip}",
-        "$description": "UNRESOLVED: the radius table documents a chip and cell radius that differs from what the question strip cells render.",
-        "$status": "unresolved"
-      },
-      "radius-rendered": {
-        "$value": "2px",
-        "$source": "observed",
-        "$description": "UNRESOLVED: the radius the question strip cells actually render on the style guide page, which differs from the documented chip and cell radius.",
-        "$status": "unresolved"
+        "$description": "Question strip cell corner radius. Decided: follows the documented chip and cell radius."
       }
     }
   }
