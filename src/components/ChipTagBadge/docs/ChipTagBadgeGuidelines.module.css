@@ -1,0 +1,150 @@
+/* Layout extras for the Chip, tag & badge page. Page chrome comes from the Button guidelines module. */
+.meta { margin: var(--sw-space-8) 0 0; color: var(--sw-color-text-muted); font-size: var(--sw-type-body-sm-size); }
+.three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sw-space-24); align-items: stretch; }
+.toks { display: flex; flex-direction: column; gap: var(--sw-space-4); }
+.toks > div { display: flex; flex-wrap: wrap; gap: var(--sw-space-8); align-items: baseline; }
+.rule {
+  margin: 0;
+  padding: var(--sw-space-16) var(--sw-space-20);
+  border-radius: var(--sw-radius-tile);
+  background: var(--sw-color-surface-selected);
+  color: var(--sw-color-text-body);
+}
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sw-space-8); }
+
+/* Which one? */
+.pick {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sw-space-8);
+  overflow: hidden;
+  border: 1px solid var(--sw-color-border-default);
+  border-radius: var(--sw-radius-card);
+  padding-bottom: var(--sw-space-20);
+}
+.pick > p, .pickTitle { margin: 0; padding-inline: var(--sw-space-20); }
+.pickStage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sw-space-8);
+  min-height: calc(var(--sw-space-64) + var(--sw-space-16));
+  box-sizing: border-box;
+  padding: var(--sw-space-20);
+  margin-bottom: var(--sw-space-8);
+  background: var(--sw-color-surface-page);
+}
+.pickTitle { color: var(--sw-color-text-heading); font-size: var(--sw-type-heading-h3-size); font-weight: var(--sw-type-heading-h3-weight); }
+.pickQ { color: var(--sw-color-text-heading); font-weight: var(--sw-type-heading-h4-weight); }
+
+/* Figures */
+.fig { display: flex; flex-direction: column; gap: var(--sw-space-12); margin: 0; }
+.figTitle { margin: 0; color: var(--sw-color-text-heading); font-size: var(--sw-type-heading-h3-size); font-weight: var(--sw-type-heading-h3-weight); }
+.stage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sw-space-8);
+  min-height: var(--sw-space-64);
+  padding: var(--sw-space-24) var(--sw-space-16);
+  border: 1px solid var(--sw-color-border-default);
+  border-radius: var(--sw-radius-card);
+  background: var(--sw-color-surface-default);
+}
+.stageTall { min-height: calc(var(--sw-space-64) * 2 + var(--sw-space-24)); }
+.figcaption { color: var(--sw-color-text-body); font-size: var(--sw-type-body-md-size); line-height: var(--sw-type-body-md-line-height); }
+.zoom { zoom: 2; display: inline-flex; padding: var(--sw-space-8); }
+.num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sw-space-20);
+  height: var(--sw-space-20);
+  border-radius: var(--sw-radius-pill);
+  background: var(--sw-color-action-default);
+  color: var(--sw-color-text-on-action);
+  font-weight: var(--sw-type-label-sm-weight);
+  font-size: var(--sw-type-overline-size);
+}
+
+/* Field that holds input chips */
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sw-space-8);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--sw-space-48);
+  padding: var(--sw-space-4) var(--sw-space-8);
+  border: 1px solid var(--sw-color-border-control);
+  border-radius: var(--sw-radius-control);
+  background: var(--sw-color-surface-default);
+}
+.fieldHint { color: var(--sw-color-text-muted); font-size: var(--sw-type-body-md-size); }
+
+/* In context scenes */
+.scene {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sw-space-12);
+  padding: var(--sw-space-16);
+  border: 1px solid var(--sw-color-border-default);
+  border-radius: var(--sw-radius-card);
+  background: var(--sw-color-surface-default);
+}
+.sceneRow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sw-space-8); }
+.sceneSplit { display: flex; align-items: center; justify-content: space-between; gap: var(--sw-space-12); color: var(--sw-color-text-heading); }
+.sceneCap { margin: auto 0 0; padding-top: var(--sw-space-12); border-top: 1px solid var(--sw-color-border-default); color: var(--sw-color-text-body); font-size: var(--sw-type-body-sm-size); line-height: var(--sw-type-body-sm-line-height); }
+.iconBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sw-top-nav-icon-button-size);
+  height: var(--sw-top-nav-icon-button-size);
+  border: 1px solid var(--sw-color-border-control);
+  border-radius: var(--sw-radius-pill);
+  color: var(--sw-color-text-body);
+}
+.iconBtn > svg { width: var(--sw-top-nav-icon-size); height: var(--sw-top-nav-icon-size); }
+.pos { position: absolute; top: calc(var(--sw-count-badge-size-icon) / -4); right: calc(var(--sw-count-badge-size-icon) / -4); }
+
+/* Usage guidelines (section 07) */
+.usage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sw-space-24); align-items: stretch; }
+.ddStage { align-items: flex-start; padding: var(--sw-space-24); }
+
+/* Wrong examples: hand-built on purpose */
+.badRedTag {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--sw-tag-height);
+  padding-inline: var(--sw-tag-padding-x);
+  border: 1px solid var(--sw-color-danger-border);
+  border-radius: var(--sw-tag-radius);
+  background: var(--sw-color-danger-tint);
+  color: var(--sw-color-danger-text);
+  font-size: var(--sw-tag-font-size);
+  font-weight: var(--sw-tag-font-weight);
+}
+.badCaps {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: var(--sw-badge-height);
+  padding-inline: var(--sw-badge-padding-x);
+  border-radius: var(--sw-badge-radius);
+  background: var(--sw-badge-warning-subtle-bg);
+  color: var(--sw-badge-warning-subtle-text);
+  font-size: var(--sw-badge-font-size);
+  font-weight: var(--sw-badge-font-weight);
+}
+
+@media (max-width: 1100px) {
+  .three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .three, .usage { grid-template-columns: minmax(0, 1fr); }
+}

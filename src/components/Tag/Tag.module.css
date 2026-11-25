@@ -1,0 +1,40 @@
+/* Every visual value comes from a --sw-tag-* token. */
+.root {
+  --_h: var(--sw-tag-height);
+  --_px: var(--sw-tag-padding-x);
+  --_fs: var(--sw-tag-font-size);
+  --_icon: var(--sw-tag-icon-size);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sw-tag-gap);
+  height: var(--_h);
+  padding-inline: var(--_px);
+  border: 1px solid var(--sw-tag-border);
+  border-radius: var(--sw-tag-radius);
+  background: var(--sw-tag-bg);
+  color: var(--sw-tag-text);
+  font-family: var(--sw-font-family-base);
+  font-size: var(--_fs);
+  font-weight: var(--sw-tag-font-weight);
+  line-height: var(--sw-tag-line-height);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.root[data-size='sm'] {
+  --_h: var(--sw-tag-height-sm);
+  --_px: var(--sw-tag-padding-x-sm);
+  --_fs: var(--sw-tag-font-size-sm);
+  --_icon: var(--sw-tag-icon-size-sm);
+}
+.icon { display: inline-flex; flex-shrink: 0; width: var(--_icon); height: var(--_icon); color: var(--sw-tag-icon); }
+.icon > svg { width: 100%; height: 100%; }
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

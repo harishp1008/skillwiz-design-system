@@ -895,5 +895,427 @@
       "$value": "{type.overline.weight}",
       "$description": "Menu caption weight, bold."
     }
+  },
+  "badge": {
+    "height": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Medium badge height (PDF spec)."
+    },
+    "height-sm": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Small badge height, for dense rows and cards (PDF spec)."
+    },
+    "padding-x": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Medium badge side padding (PDF spec)."
+    },
+    "padding-x-sm": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Small badge side padding (PDF spec)."
+    },
+    "gap": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between icon and label (PDF spec)."
+    },
+    "radius": {
+      "$value": "{radius.chip}",
+      "$description": "Square corners mark a read-only label."
+    },
+    "font-size": {
+      "$value": "{type.label.sm.size}"
+    },
+    "font-size-sm": {
+      "$value": "{type.overline.size}"
+    },
+    "font-weight": {
+      "$value": "{type.overline.weight}",
+      "$description": "Badges are bold."
+    },
+    "line-height": {
+      "$value": "18px",
+      "$source": "documented",
+      "$description": "Badge line height at both sizes (PDF spec)."
+    },
+    "icon-size": {
+      "$value": "14px",
+      "$source": "documented",
+      "$description": "Leading icon, medium (PDF spec)."
+    },
+    "icon-size-sm": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Leading icon, small (PDF spec)."
+    },
+    "neutral-subtle-bg": {
+      "$value": "{color.surface.muted}"
+    },
+    "neutral-subtle-text": {
+      "$value": "{color.text.body}"
+    },
+    "neutral-solid-bg": {
+      "$value": "{color.text.body}"
+    },
+    "neutral-solid-text": {
+      "$value": "{color.text.on-action}"
+    },
+    "info-subtle-bg": {
+      "$value": "{color.feedback.info.subtle}"
+    },
+    "info-subtle-text": {
+      "$value": "{color.feedback.info.text}"
+    },
+    "info-solid-bg": {
+      "$value": "{color.feedback.info.solid}"
+    },
+    "info-solid-text": {
+      "$value": "{color.text.on-action}"
+    },
+    "success-subtle-bg": {
+      "$value": "{color.feedback.success.subtle}"
+    },
+    "success-subtle-text": {
+      "$value": "{color.feedback.success.text}"
+    },
+    "success-solid-bg": {
+      "$value": "{color.feedback.success.solid}"
+    },
+    "success-solid-text": {
+      "$value": "{color.text.on-action}"
+    },
+    "warning-subtle-bg": {
+      "$value": "{color.feedback.warning.subtle}"
+    },
+    "warning-subtle-text": {
+      "$value": "{color.feedback.warning.text}"
+    },
+    "warning-solid-bg": {
+      "$value": "{color.feedback.warning.solid}"
+    },
+    "warning-solid-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Solid warning uses dark text, not white."
+    },
+    "danger-subtle-bg": {
+      "$value": "{color.feedback.danger.subtle}"
+    },
+    "danger-subtle-text": {
+      "$value": "{color.feedback.danger.text}"
+    },
+    "danger-solid-bg": {
+      "$value": "{color.feedback.danger.solid}"
+    },
+    "danger-solid-text": {
+      "$value": "{color.text.on-action}"
+    }
+  },
+  "tag": {
+    "height": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Medium tag height (PDF spec)."
+    },
+    "height-sm": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Small tag height (PDF spec)."
+    },
+    "padding-x": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Medium tag side padding (PDF spec)."
+    },
+    "padding-x-sm": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Small tag side padding (PDF spec)."
+    },
+    "gap": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between icon and label (PDF spec)."
+    },
+    "radius": {
+      "$value": "{radius.chip}",
+      "$description": "Square corners mark a read-only label."
+    },
+    "bg": {
+      "$value": "{color.surface.default}"
+    },
+    "border": {
+      "$value": "{color.border.default}"
+    },
+    "text": {
+      "$value": "{color.text.body}"
+    },
+    "icon": {
+      "$value": "{color.text.muted}",
+      "$description": "Icon colour is secondary text."
+    },
+    "font-size": {
+      "$value": "{type.label.sm.size}"
+    },
+    "font-size-sm": {
+      "$value": "{type.overline.size}"
+    },
+    "font-weight": {
+      "$value": "{type.label.sm.weight}",
+      "$description": "Tags are semibold."
+    },
+    "line-height": {
+      "$value": "18px",
+      "$source": "documented",
+      "$description": "Tag line height at both sizes (PDF spec)."
+    },
+    "icon-size": {
+      "$value": "14px",
+      "$source": "documented",
+      "$description": "Leading icon, medium (PDF spec)."
+    },
+    "icon-size-sm": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Leading icon, small (PDF spec)."
+    }
+  },
+  "filter-chip": {
+    "height": {
+      "$value": "36px",
+      "$source": "documented",
+      "$description": "Medium chip height (PDF spec)."
+    },
+    "height-sm": {
+      "$value": "28px",
+      "$source": "documented",
+      "$description": "Small chip height (PDF spec)."
+    },
+    "padding-x": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Medium chip side padding (PDF spec)."
+    },
+    "padding-x-sm": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Small chip side padding (PDF spec)."
+    },
+    "padding-x-affix": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Medium side padding next to a check or count (PDF spec)."
+    },
+    "padding-x-affix-sm": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Small side padding next to a check or count (PDF spec)."
+    },
+    "gap": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Space between check, label and count, medium (PDF spec)."
+    },
+    "gap-sm": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between check, label and count, small (PDF spec)."
+    },
+    "group-gap": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Space between chips in a set (PDF spec)."
+    },
+    "radius": {
+      "$value": "{radius.pill}",
+      "$description": "Fully round: the shape says this can be pressed."
+    },
+    "bg": {
+      "$value": "{color.surface.default}"
+    },
+    "border": {
+      "$value": "{color.border.default}"
+    },
+    "text": {
+      "$value": "{color.text.heading}"
+    },
+    "font-size": {
+      "$value": "{type.label.md.size}"
+    },
+    "font-size-sm": {
+      "$value": "{type.label.sm.size}"
+    },
+    "font-weight": {
+      "$value": "{type.label.md.weight}"
+    },
+    "line-height": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Medium chip line height (PDF spec)."
+    },
+    "line-height-sm": {
+      "$value": "18px",
+      "$source": "documented",
+      "$description": "Small chip line height (PDF spec)."
+    },
+    "hover-bg": {
+      "$value": "{color.surface.muted}"
+    },
+    "hover-border": {
+      "$value": "{color.border.strong}"
+    },
+    "selected-bg": {
+      "$value": "{color.surface.selected}"
+    },
+    "selected-border": {
+      "$value": "{color.focus.outline}"
+    },
+    "selected-text": {
+      "$value": "{color.action.text}"
+    },
+    "disabled-text": {
+      "$value": "{color.text.disabled}"
+    },
+    "disabled-border": {
+      "$value": "{color.border.default}",
+      "$description": "The PDF names a subtle border; the default border is the lightest one defined."
+    },
+    "check-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Check shown when a chip is on (PDF spec)."
+    },
+    "remove-size": {
+      "$value": "14px",
+      "$source": "documented",
+      "$description": "Remove icon on an input chip (PDF spec)."
+    },
+    "remove-hit": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Hit area of the remove button inside the chip (PDF spec)."
+    },
+    "hover-duration": {
+      "$value": "120ms",
+      "$source": "documented",
+      "$description": "Hover transition duration (PDF spec)."
+    },
+    "pressed-duration": {
+      "$value": "150ms",
+      "$source": "documented",
+      "$description": "Pressed scale duration (PDF spec)."
+    },
+    "pressed-scale": {
+      "$value": "0.96",
+      "$source": "documented",
+      "$description": "Scale while pressed (PDF spec)."
+    },
+    "easing": {
+      "$value": "cubic-bezier(0.2, 0, 0, 1)",
+      "$source": "observed",
+      "$description": "Not given in the PDF; the same easing as the Button component.",
+      "$status": "provisional"
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring width (PDF spec)."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring offset (PDF spec)."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}"
+    },
+    "input-padding-x": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Side padding of an input chip, small, with an initials circle (PDF spec)."
+    },
+    "input-avatar-size": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Initials circle inside an input chip (PDF spec)."
+    },
+    "input-avatar-bg": {
+      "$value": "{color.action.tint}"
+    },
+    "input-avatar-text": {
+      "$value": "{color.text.heading}"
+    },
+    "input-avatar-font-size": {
+      "$value": "{type.overline.size}"
+    },
+    "input-avatar-font-weight": {
+      "$value": "{type.overline.weight}"
+    },
+    "remove-icon": {
+      "$value": "{color.text.muted}",
+      "$description": "Remove icon colour."
+    }
+  },
+  "count-badge": {
+    "size": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Count badge next to a label or tab (PDF spec)."
+    },
+    "size-icon": {
+      "$value": "18px",
+      "$source": "documented",
+      "$description": "Count badge on an icon (PDF spec)."
+    },
+    "padding-x": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Side padding, so two or three digits stay inside the pill."
+    },
+    "ring-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Ring that separates a count on an icon from the icon (PDF spec)."
+    },
+    "ring-color": {
+      "$value": "{color.surface.default}"
+    },
+    "radius": {
+      "$value": "{radius.pill}"
+    },
+    "font-size": {
+      "$value": "{type.label.sm.size}"
+    },
+    "font-size-icon": {
+      "$value": "{type.overline.size}"
+    },
+    "font-weight": {
+      "$value": "{type.overline.weight}"
+    },
+    "neutral-bg": {
+      "$value": "{color.surface.muted}"
+    },
+    "neutral-text": {
+      "$value": "{color.text.body}"
+    },
+    "danger-bg": {
+      "$value": "{color.feedback.danger.solid}"
+    },
+    "danger-text": {
+      "$value": "{color.text.on-action}"
+    },
+    "info-bg": {
+      "$value": "{color.action.default}",
+      "$description": "Blue, as drawn on the top navigation bar."
+    },
+    "info-text": {
+      "$value": "{color.text.on-action}"
+    },
+    "selected-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Count fill inside a chip that is on."
+    }
   }
 }

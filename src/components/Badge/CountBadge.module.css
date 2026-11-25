@@ -1,0 +1,30 @@
+/* Every visual value comes from a --sw-count-badge-* token. */
+.root {
+  --_size: var(--sw-count-badge-size);
+  --_fs: var(--sw-count-badge-font-size);
+  --_bg: var(--sw-count-badge-danger-bg);
+  --_fg: var(--sw-count-badge-danger-text);
+
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--_size);
+  height: var(--_size);
+  padding-inline: var(--sw-count-badge-padding-x);
+  border-radius: var(--sw-count-badge-radius);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--sw-font-family-base);
+  font-size: var(--_fs);
+  font-weight: var(--sw-count-badge-font-weight);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.root[data-placement='icon'] {
+  --_size: var(--sw-count-badge-size-icon);
+  --_fs: var(--sw-count-badge-font-size-icon);
+  box-shadow: 0 0 0 var(--sw-count-badge-ring-width) var(--sw-count-badge-ring-color);
+}
+.root[data-tone='neutral'] { --_bg: var(--sw-count-badge-neutral-bg); --_fg: var(--sw-count-badge-neutral-text); }
+.root[data-tone='info'] { --_bg: var(--sw-count-badge-info-bg); --_fg: var(--sw-count-badge-info-text); }

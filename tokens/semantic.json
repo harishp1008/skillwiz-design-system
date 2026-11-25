@@ -272,6 +272,64 @@
         "$value": "{color.grey.300}",
         "$description": "Question strip: not reached cell outline."
       }
+    },
+    "feedback": {
+      "info": {
+        "subtle": {
+          "$value": "{color.blue.75}",
+          "$description": "Quiet fill for a info badge. Information with nothing to fix: extra time, live, new."
+        },
+        "solid": {
+          "$value": "{color.blue.600}",
+          "$description": "Solid fill for the one info badge that must be seen first."
+        },
+        "text": {
+          "$value": "{color.blue.700}",
+          "$description": "Text and icon on the info subtle fill."
+        }
+      },
+      "success": {
+        "subtle": {
+          "$value": "{color.green.100}",
+          "$description": "Quiet fill for a success badge. Good outcomes: valid, passed, submitted, online."
+        },
+        "solid": {
+          "$value": "{color.green.600}",
+          "$description": "Solid fill for the one success badge that must be seen first."
+        },
+        "text": {
+          "$value": "{color.green.800}",
+          "$description": "Text and icon on the success subtle fill."
+        }
+      },
+      "warning": {
+        "subtle": {
+          "$value": "{color.orange.100}",
+          "$description": "Quiet fill for a warning badge. Needs a look: medium alerts, reply pending."
+        },
+        "solid": {
+          "$value": "{color.orange.500}",
+          "$description": "Solid fill for the one warning badge that must be seen first."
+        },
+        "text": {
+          "$value": "{color.orange.800}",
+          "$description": "Text and icon on the warning subtle fill."
+        }
+      },
+      "danger": {
+        "subtle": {
+          "$value": "{color.red.100}",
+          "$description": "Quiet fill for a danger badge. Needs action: high alerts, failed, flagged, offline."
+        },
+        "solid": {
+          "$value": "{color.red.600}",
+          "$description": "Solid fill for the one danger badge that must be seen first."
+        },
+        "text": {
+          "$value": "{color.red.800}",
+          "$description": "Text and icon on the danger subtle fill."
+        }
+      }
     }
   },
   "font": {

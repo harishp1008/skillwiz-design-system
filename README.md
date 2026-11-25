@@ -57,6 +57,16 @@ Tests: `npm run test:tokens` (included in `npm run check`).
 - Layouts by measured width: ≥1440 (up to `maxVisible` items, rest in More), 1024–1439 (Mail moves into the avatar menu), <1024 (menu button + drawer). Breakpoints are the `TOP_NAV_BREAKPOINTS` constant because media queries cannot read CSS variables.
 - Notes: badge is blue as drawn (the PDF token list says red); icon buttons are round and outlined as drawn; shadows, easing and menu width are provisional; tooltips are native `title`; the item-fit calculation is an estimate from label length.
 
+### Chip, tag & badge
+
+Three small labels with one rule: square corners are labels you read, round corners are controls you press.
+
+- `Badge` (tones: neutral, info, success, warning, danger; subtle or solid) and `CountBadge` are read-only.
+- `Tag` is read-only, neutral and outlined.
+- `Chip`, `ChipGroup` (single or multi select) and `InputChip` are the interactive ones.
+
+Docs: **Components / Chip, tag & badge** in Storybook (Guidelines page plus one playground per part). New tokens: `badge.*`, `tag.*`, `filter-chip.*`, `count-badge.*`, and a semantic `color.feedback.*` family. The older `chip.*` tokens stay until the Live wall screens move to badges.
+
 ### Component story convention
 
 Every component has exactly two stories under `Components/<Name>`:
