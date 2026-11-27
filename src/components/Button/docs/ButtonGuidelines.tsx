@@ -3,6 +3,7 @@ import { tokenMeta, tokenValues, type TokenPath } from '../../../tokens/tokens.g
 import { Button, type ButtonVariant } from '../Button';
 import { icons } from './icons';
 import s from './ButtonGuidelines.module.css';
+import { SourceLinks } from '../../shared/docs/SourceLinks';
 
 /* ---------- helpers ---------- */
 
@@ -690,6 +691,12 @@ export function ButtonGuidelines() {
         <TokenTable />
       </Section>
       <Section n="11" title="Spec for code" intro="Machine-readable version of this page. AI tools (MCP, code assistants) and engineers should read this section first: it lists every allowed value, the rules that decide which button to use, and copy-paste code. Anything not listed here is not part of the system.">
+        <SourceLinks
+          items={[
+            { label: 'Button source', path: 'src/components/Button' },
+            { label: 'Component tokens', path: 'tokens/component.json' },
+          ]}
+        />
         <Spec />
       </Section>
     </main>

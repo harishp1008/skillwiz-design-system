@@ -1314,8 +1314,899 @@
       "$value": "{color.text.on-action}"
     },
     "selected-bg": {
+      "$value": "{color.action.default}",
+      "$description": "Count fill inside a chip that is on: solid blue."
+    },
+    "selected-text": {
+      "$value": "{color.text.on-action}"
+    }
+  },
+  "dropdown": {
+    "$description": "Shared floating panel for Select and Menu: panel, options, group headers, dividers, states.",
+    "panel-bg": {
       "$value": "{color.surface.default}",
-      "$description": "Count fill inside a chip that is on."
+      "$description": "Panel fill."
+    },
+    "panel-border": {
+      "$value": "{color.border.default}",
+      "$description": "Panel outline."
+    },
+    "panel-border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Panel outline width."
+    },
+    "panel-radius": {
+      "$value": "{radius.tile}",
+      "$description": "Panel corners."
+    },
+    "panel-shadow": {
+      "$value": "{shadow.overlay}",
+      "$description": "Panel elevation."
+    },
+    "panel-padding": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between the panel edge and its options."
+    },
+    "panel-offset": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Gap between the trigger and the panel."
+    },
+    "panel-max-height": {
+      "$value": "320px",
+      "$source": "documented",
+      "$description": "Tallest a panel gets before it scrolls inside."
+    },
+    "panel-max-width": {
+      "$value": "360px",
+      "$source": "documented",
+      "$description": "Widest a select panel gets."
+    },
+    "panel-min-width-menu": {
+      "$value": "200px",
+      "$source": "documented",
+      "$description": "Narrowest an action menu gets."
+    },
+    "panel-max-width-menu": {
+      "$value": "280px",
+      "$source": "documented",
+      "$description": "Widest an action menu gets."
+    },
+    "panel-z-index": {
+      "$value": "{layer.dropdown}",
+      "$description": "Stacking layer."
+    },
+    "fade-duration": {
+      "$value": "120ms",
+      "$source": "documented",
+      "$description": "Panel fade in. Dropped under reduced motion."
+    },
+    "fade-easing": {
+      "$value": "cubic-bezier(0.2, 0, 0, 1)",
+      "$source": "observed",
+      "$description": "Not given in the PDF; the same easing as the Button component.",
+      "$status": "provisional"
+    },
+    "option-min-height": {
+      "$value": "36px",
+      "$source": "documented",
+      "$description": "Option height."
+    },
+    "option-min-height-sm": {
+      "$value": "32px",
+      "$source": "documented",
+      "$description": "Option height in small selects."
+    },
+    "option-padding-x": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Option side padding."
+    },
+    "option-gap": {
+      "$value": "8px",
+      "$source": "observed",
+      "$description": "Space between an option's icon, text and trailing parts.",
+      "$status": "provisional"
+    },
+    "option-radius": {
+      "$value": "{radius.control}",
+      "$description": "Option corners."
+    },
+    "option-font-size": {
+      "$value": "{type.body.md.size}",
+      "$description": "Option text size."
+    },
+    "option-line-height": {
+      "$value": "{type.body.md.line-height}",
+      "$description": "Option line height. One pixel taller than the PDF line height."
+    },
+    "option-font-size-sm": {
+      "$value": "{type.body.sm.size}",
+      "$description": "Option text size in small selects."
+    },
+    "option-line-height-sm": {
+      "$value": "{type.body.sm.line-height}",
+      "$description": "Option line height in small selects."
+    },
+    "option-text": {
+      "$value": "{color.text.body}",
+      "$description": "Option text."
+    },
+    "option-active-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "The one active option, by mouse or arrow keys."
+    },
+    "option-selected-text": {
+      "$value": "{color.action.text}",
+      "$description": "Chosen option text."
+    },
+    "option-selected-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Chosen option weight, so it reads without colour."
+    },
+    "option-selected-bg": {
+      "$value": "{color.surface.selected}",
+      "$description": "Option that is both chosen and active."
+    },
+    "option-disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Unavailable option text."
+    },
+    "option-icon-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Leading icon in menu items and the check at the end."
+    },
+    "option-icon-color": {
+      "$value": "{color.text.muted}",
+      "$description": "Leading icon in menu items."
+    },
+    "check-color": {
+      "$value": "{color.action.text}",
+      "$description": "Check mark on the chosen option."
+    },
+    "description-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Option description size."
+    },
+    "description-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Option description line height."
+    },
+    "description-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Option description colour."
+    },
+    "group-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Group header size."
+    },
+    "group-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Group header line height."
+    },
+    "group-font-weight": {
+      "$value": "{type.overline.weight}",
+      "$description": "Group header weight, bold."
+    },
+    "group-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Group header colour."
+    },
+    "group-padding": {
+      "$value": "8px 12px 4px",
+      "$source": "documented",
+      "$description": "Group header padding."
+    },
+    "group-letter-spacing": {
+      "$value": "0.06em",
+      "$source": "observed",
+      "$description": "Uppercase spacing, same as the Top navigation caption.",
+      "$status": "provisional"
+    },
+    "divider-color": {
+      "$value": "{color.border.default}",
+      "$description": "Divider line."
+    },
+    "divider-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Divider thickness."
+    },
+    "divider-margin": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space above and below a divider."
+    },
+    "destructive-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Destructive item text."
+    },
+    "destructive-icon": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Destructive item icon."
+    },
+    "destructive-hover-bg": {
+      "$value": "{color.feedback.danger.subtle}",
+      "$description": "Destructive item hover."
+    },
+    "match-bg": {
+      "$value": "{color.feedback.warning.subtle}",
+      "$description": "Highlight behind the typed text inside a matching option."
+    },
+    "shortcut-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Keyboard shortcut at the end of a menu item."
+    },
+    "shortcut-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Shortcut size."
+    },
+    "checkbox-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Checkbox in multi-select options."
+    },
+    "checkbox-radius": {
+      "$value": "{radius.chip}",
+      "$description": "Checkbox corners."
+    },
+    "checkbox-border": {
+      "$value": "{color.border.strong}",
+      "$description": "Unchecked checkbox outline."
+    },
+    "checkbox-checked-bg": {
+      "$value": "{color.action.default}",
+      "$description": "Checked checkbox fill."
+    },
+    "checkbox-check-color": {
+      "$value": "{color.text.on-action}",
+      "$description": "Check mark inside a checked checkbox."
+    },
+    "message-padding": {
+      "$value": "{space.control-padding-md}",
+      "$description": "Padding of the no-results and loading messages."
+    },
+    "message-title-text": {
+      "$value": "{color.text.heading}",
+      "$description": "No-results title."
+    },
+    "message-text": {
+      "$value": "{color.text.muted}",
+      "$description": "No-results and loading text."
+    },
+    "spinner-size": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Loading spinner in the panel."
+    },
+    "spinner-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Spinner stroke."
+    },
+    "spinner-track": {
+      "$value": "{color.border.default}",
+      "$description": "Spinner track."
+    },
+    "spinner-arc": {
+      "$value": "{color.action.default}",
+      "$description": "Spinner moving arc."
+    },
+    "spinner-duration": {
+      "$value": "800ms",
+      "$source": "documented",
+      "$description": "One spinner turn, same as Button."
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring on triggers and the panel search field."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Gap between the focus ring and the control."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Focus ring colour."
+    },
+    "description-font-weight": {
+      "$value": "{type.helper.weight}",
+      "$description": "Option description weight."
+    },
+    "spinner-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Spinner shape."
+    },
+    "option-padding-y": {
+      "$value": "4px",
+      "$source": "observed",
+      "$description": "Space above and below the text of a two line option, so it stays at the option height.",
+      "$status": "provisional"
+    }
+  },
+  "select": {
+    "$description": "Select trigger: the same box as the Text input, with a chevron.",
+    "height-sm": {
+      "$value": "{size.control.sm}",
+      "$description": "Trigger height, small."
+    },
+    "height-md": {
+      "$value": "{size.control.md}",
+      "$description": "Trigger height, default."
+    },
+    "height-lg": {
+      "$value": "{size.control.lg}",
+      "$description": "Trigger height, large."
+    },
+    "padding-x": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Trigger side padding."
+    },
+    "gap": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Space between the icon, value and chevron."
+    },
+    "radius": {
+      "$value": "{radius.control}",
+      "$description": "Trigger corners."
+    },
+    "border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Trigger outline width."
+    },
+    "border": {
+      "$value": "{color.border.control}",
+      "$description": "Trigger outline. The PDF flags the contrast of this outline as open, as for the Text input."
+    },
+    "border-hover": {
+      "$value": "{color.border.strong}",
+      "$description": "Outline on hover."
+    },
+    "border-open": {
+      "$value": "{color.focus.outline}",
+      "$description": "Outline while open or focused."
+    },
+    "ring-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Extra ring while open or focused."
+    },
+    "ring-color": {
+      "$value": "{color.focus.ring}",
+      "$description": "Ring colour."
+    },
+    "border-error": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Outline when the value is wrong."
+    },
+    "bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Trigger fill."
+    },
+    "bg-disabled": {
+      "$value": "{color.surface.muted}",
+      "$description": "Disabled trigger fill."
+    },
+    "text": {
+      "$value": "{color.text.body}",
+      "$description": "Chosen value."
+    },
+    "text-placeholder": {
+      "$value": "{color.text.disabled}",
+      "$description": "Placeholder."
+    },
+    "text-disabled": {
+      "$value": "{color.text.disabled}",
+      "$description": "Disabled value."
+    },
+    "font-size": {
+      "$value": "{type.body.md.size}",
+      "$description": "Value size, medium."
+    },
+    "font-size-sm": {
+      "$value": "{type.body.sm.size}",
+      "$description": "Value size, small."
+    },
+    "font-size-lg": {
+      "$value": "{type.body.lg.size}",
+      "$description": "Value size, large."
+    },
+    "chevron-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Chevron."
+    },
+    "chevron-color": {
+      "$value": "{color.text.muted}",
+      "$description": "Chevron and leading icon colour."
+    },
+    "label-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Label size."
+    },
+    "label-font-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Label weight."
+    },
+    "label-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Label colour."
+    },
+    "label-gap": {
+      "$value": "6px",
+      "$source": "observed",
+      "$description": "Space between the label and the trigger.",
+      "$status": "provisional"
+    },
+    "helper-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Helper and error text size."
+    },
+    "helper-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Helper and error text line height."
+    },
+    "helper-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Helper text."
+    },
+    "error-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Error message."
+    },
+    "error-icon": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Error icon."
+    },
+    "chip-height": {
+      "$value": "24px",
+      "$source": "observed",
+      "$description": "Chosen value chip inside a multi-select trigger.",
+      "$status": "provisional"
+    },
+    "chip-padding-x": {
+      "$value": "8px",
+      "$source": "observed",
+      "$description": "Chip side padding.",
+      "$status": "provisional"
+    },
+    "chip-gap": {
+      "$value": "4px",
+      "$source": "observed",
+      "$description": "Space between chip text and its remove button.",
+      "$status": "provisional"
+    },
+    "chip-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Chip corners."
+    },
+    "chip-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Chip fill."
+    },
+    "chip-border": {
+      "$value": "{color.border.default}",
+      "$description": "Chip outline."
+    },
+    "chip-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Chip text."
+    },
+    "chip-font-size": {
+      "$value": "{type.label.sm.size}",
+      "$description": "Chip text size."
+    },
+    "chip-font-weight": {
+      "$value": "{type.label.sm.weight}",
+      "$description": "Chip text weight."
+    },
+    "chip-remove-size": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Remove icon inside a chip."
+    },
+    "action-bar-padding-x": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Select all and Clear row padding."
+    },
+    "action-text": {
+      "$value": "{color.action.text}",
+      "$description": "Clear and the action at the end."
+    },
+    "action-font-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Clear weight."
+    }
+  },
+  "menu": {
+    "$description": "Action menu: a list of commands opened from a button.",
+    "trigger-size": {
+      "$value": "{size.control.md}",
+      "$description": "The more-actions button, square."
+    },
+    "trigger-radius": {
+      "$value": "{radius.control}",
+      "$description": "More-actions button corners."
+    },
+    "trigger-border": {
+      "$value": "{color.border.control}",
+      "$description": "More-actions button outline."
+    },
+    "trigger-bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "More-actions button on hover."
+    },
+    "trigger-icon": {
+      "$value": "{color.text.muted}",
+      "$description": "More-actions icon."
+    },
+    "trigger-icon-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "More-actions icon."
+    },
+    "submenu-offset": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Gap between a menu and its submenu."
+    },
+    "arrow-size": {
+      "$value": "16px",
+      "$source": "documented",
+      "$description": "Arrow that opens a submenu."
+    }
+  },
+  "tabs": {
+    "$description": "Tabs: underline (large and small), card tabs, vertical list tabs and pill tabs.",
+    "height-lg": {
+      "$value": "{size.control.lg}",
+      "$description": "Underline tab height, large."
+    },
+    "height-sm": {
+      "$value": "{size.control.md}",
+      "$description": "Underline tab height, small."
+    },
+    "padding-x-lg": {
+      "$value": "{space.control-padding-text-side}",
+      "$description": "Underline tab side padding, large."
+    },
+    "padding-x-sm": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Underline tab side padding, small."
+    },
+    "gap": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between tabs."
+    },
+    "font-size-lg": {
+      "$value": "{type.body.lg.size}",
+      "$description": "Tab label size, large."
+    },
+    "font-size-sm": {
+      "$value": "{type.body.md.size}",
+      "$description": "Tab label size, small."
+    },
+    "line-height": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Tab label line height."
+    },
+    "font-weight": {
+      "$value": "{type.body.lg.weight}",
+      "$description": "Tab label weight when not selected."
+    },
+    "font-weight-selected": {
+      "$value": "{type.heading.h4.weight}",
+      "$description": "Tab label weight when selected, bold."
+    },
+    "text": {
+      "$value": "{color.text.body}",
+      "$description": "Tab label."
+    },
+    "text-hover": {
+      "$value": "{color.text.heading}",
+      "$description": "Tab label on hover."
+    },
+    "text-selected": {
+      "$value": "{color.action.text}",
+      "$description": "Selected tab label."
+    },
+    "text-disabled": {
+      "$value": "{color.text.disabled}",
+      "$description": "Unavailable tab label."
+    },
+    "baseline-color": {
+      "$value": "{color.border.default}",
+      "$description": "Line under the whole tab list."
+    },
+    "baseline-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Thickness of the baseline."
+    },
+    "indicator-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Line under the selected tab."
+    },
+    "indicator-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Thickness of the selected indicator."
+    },
+    "panel-gap": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Space from the baseline to the panel content."
+    },
+    "fade-width": {
+      "$value": "{space.control-padding-lg}",
+      "$description": "Width of the edge fade when the list scrolls sideways."
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring thickness."
+    },
+    "focus-offset-inset": {
+      "$value": "-2px",
+      "$source": "documented",
+      "$description": "Focus ring on underline tabs sits inside the tab."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring on pill tabs sits outside the pill."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Focus ring colour."
+    },
+    "duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Colour change on hover and selection."
+    },
+    "easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Colour change easing."
+    },
+    "count-min-size": {
+      "$value": "20px",
+      "$source": "documented",
+      "$description": "Count pill: smallest width and height."
+    },
+    "count-padding-x": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Count pill side padding."
+    },
+    "count-gap": {
+      "$value": "6px",
+      "$source": "documented",
+      "$description": "Space between the label and its count."
+    },
+    "count-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Count pill corners."
+    },
+    "count-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Count size."
+    },
+    "count-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Count line height."
+    },
+    "count-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Count pill fill."
+    },
+    "count-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Count text."
+    },
+    "count-bg-selected": {
+      "$value": "{color.action.tint}",
+      "$description": "Count pill fill on the selected tab."
+    },
+    "count-text-selected": {
+      "$value": "{color.action.text}",
+      "$description": "Count text on the selected tab."
+    },
+    "count-bg-alert": {
+      "$value": "{color.feedback.danger.subtle}",
+      "$description": "Count pill fill while alerts are unhandled."
+    },
+    "count-text-alert": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Count text while alerts are unhandled."
+    },
+    "pill-height": {
+      "$value": "{size.control.sm}",
+      "$description": "Pill tab height."
+    },
+    "pill-hit-height": {
+      "$value": "{size.control.md}",
+      "$description": "Pill tab tap target. An invisible extension adds the rest."
+    },
+    "pill-padding-x": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Pill tab side padding."
+    },
+    "pill-gap": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Space between pill tabs."
+    },
+    "pill-inner-gap": {
+      "$value": "6px",
+      "$source": "observed",
+      "$description": "Space between a pill's label and anything beside it.",
+      "$status": "provisional"
+    },
+    "pill-radius": {
+      "$value": "{radius.pill}",
+      "$description": "Pill tab corners."
+    },
+    "pill-font-size": {
+      "$value": "{type.button.size}",
+      "$description": "Pill tab label size."
+    },
+    "pill-font-weight": {
+      "$value": "{type.button.weight}",
+      "$description": "Pill tab label weight, bold."
+    },
+    "pill-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Pill tab fill."
+    },
+    "pill-border": {
+      "$value": "{color.border.default}",
+      "$description": "Pill tab outline."
+    },
+    "pill-border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Pill tab outline width."
+    },
+    "pill-text": {
+      "$value": "{color.text.body}",
+      "$description": "Pill tab label."
+    },
+    "pill-bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "Pill tab fill on hover."
+    },
+    "pill-text-hover": {
+      "$value": "{color.text.heading}",
+      "$description": "Pill tab label on hover."
+    },
+    "pill-bg-selected": {
+      "$value": "{color.action.default}",
+      "$description": "Selected pill tab fill."
+    },
+    "pill-text-selected": {
+      "$value": "{color.text.on-action}",
+      "$description": "Selected pill tab label."
+    },
+    "pill-border-selected": {
+      "$value": "{color.action.default}",
+      "$description": "Selected pill tab outline."
+    },
+    "pill-text-disabled": {
+      "$value": "{color.text.disabled}",
+      "$description": "Unavailable pill tab label."
+    },
+    "pill-border-disabled": {
+      "$value": "{color.border.default}",
+      "$description": "Unavailable pill tab outline."
+    },
+    "card-height": {
+      "$value": "{size.control.md}",
+      "$description": "Card tab height."
+    },
+    "card-padding-x": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Card tab side padding."
+    },
+    "card-gap": {
+      "$value": "8px",
+      "$source": "observed",
+      "$description": "Space between card tabs. Not given in the spec.",
+      "$status": "provisional"
+    },
+    "card-radius": {
+      "$value": "{radius.control}",
+      "$description": "Card tab corners."
+    },
+    "card-bg-selected": {
+      "$value": "{color.surface.default}",
+      "$description": "Selected card tab fill."
+    },
+    "card-border-selected": {
+      "$value": "{color.focus.outline}",
+      "$description": "Selected card tab outline."
+    },
+    "card-count-bg-selected": {
+      "$value": "{color.action.default}",
+      "$description": "Count fill on the selected card tab."
+    },
+    "card-count-text-selected": {
+      "$value": "{color.text.on-action}",
+      "$description": "Count text on the selected card tab."
+    },
+    "vertical-width": {
+      "$value": "240px",
+      "$source": "observed",
+      "$description": "Width of the list beside the detail. Not given in the spec.",
+      "$status": "provisional"
+    },
+    "vertical-gap": {
+      "$value": "8px",
+      "$source": "observed",
+      "$description": "Space between list items, and between the list and the detail.",
+      "$status": "provisional"
+    },
+    "vertical-padding": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Padding inside a list item."
+    },
+    "vertical-radius": {
+      "$value": "{radius.control}",
+      "$description": "List item corners."
+    },
+    "vertical-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "List item fill."
+    },
+    "vertical-border": {
+      "$value": "{color.border.default}",
+      "$description": "List item outline."
+    },
+    "vertical-border-hover": {
+      "$value": "{color.border.strong}",
+      "$description": "List item outline on hover."
+    },
+    "vertical-bg-selected": {
+      "$value": "{color.surface.selected}",
+      "$description": "Selected list item fill."
+    },
+    "vertical-border-selected": {
+      "$value": "{color.focus.outline}",
+      "$description": "Selected list item outline."
+    },
+    "vertical-title-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "List item title weight."
+    },
+    "vertical-description-text": {
+      "$value": "{color.text.muted}",
+      "$description": "List item caption."
+    },
+    "vertical-description-size": {
+      "$value": "{type.helper.size}",
+      "$description": "List item caption size."
+    },
+    "vertical-description-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "List item caption line height."
+    },
+    "status-success-text": {
+      "$value": "{color.feedback.success.text}",
+      "$description": "Passed status."
+    },
+    "status-danger-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Failed status."
+    },
+    "status-neutral-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Status with no tone."
     }
   }
 }

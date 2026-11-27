@@ -576,6 +576,18 @@
         "$value": "{font-size.16}",
         "$description": "Button label size for the large size."
       }
+    },
+    "helper": {
+      "size": {
+        "$value": "{font-size.12}"
+      },
+      "line-height": {
+        "$value": "{line-height.18}"
+      },
+      "weight": {
+        "$value": "{font-weight.regular}"
+      },
+      "$description": "Helper text, option descriptions and group headers."
     }
   },
   "space": {
@@ -636,6 +648,48 @@
     "pill": {
       "$value": "{radius.100}",
       "$description": "Style guide: pills, avatars."
+    }
+  },
+  "size": {
+    "control": {
+      "sm": {
+        "$value": "{size.28}",
+        "$description": "Control height, compact: toolbars and table filters."
+      },
+      "md": {
+        "$value": "{size.36}",
+        "$description": "Control height, default."
+      },
+      "lg": {
+        "$value": "{size.44}",
+        "$description": "Control height, roomy: sign-up and the student exam."
+      }
+    }
+  },
+  "shadow": {
+    "overlay": {
+      "$value": "{shadow.md}",
+      "$description": "Elevation of panels that float over the page: menus, dropdown panels."
+    }
+  },
+  "layer": {
+    "dropdown": {
+      "$value": "{z-index.200}",
+      "$description": "Stacking layer of dropdown and menu panels."
+    }
+  },
+  "motion": {
+    "duration": {
+      "fast": {
+        "$value": "{duration.150}",
+        "$description": "Short transition for colour changes."
+      }
+    },
+    "easing": {
+      "standard": {
+        "$value": "{easing.standard}",
+        "$description": "Standard easing."
+      }
     }
   }
 }

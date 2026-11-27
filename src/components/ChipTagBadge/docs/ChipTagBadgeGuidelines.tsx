@@ -4,6 +4,7 @@ import { Badge, CountBadge, type BadgeTone } from '../../Badge';
 import { Tag } from '../../Tag';
 import { Chip, ChipGroup, InputChip } from '../../Chip';
 import { labelIcons } from '../../shared/labelIcons';
+import { SourceLinks } from '../../shared/docs/SourceLinks';
 import base from '../../Button/docs/ButtonGuidelines.module.css';
 import s from './ChipTagBadgeGuidelines.module.css';
 
@@ -76,17 +77,47 @@ function DoDont({ ok, text, children }: { ok: boolean; text: ReactNode; children
 }
 
 /** A figure with a stage and a caption underneath. */
-function Fig({ caption, children, title, tall }: { caption: ReactNode; children: ReactNode; title?: string; tall?: boolean }) {
+function Fig({ caption, children, title, card }: { caption: ReactNode; children: ReactNode; title?: string; card?: boolean }) {
+  if (card) {
+    return (
+      <figure className={`${s.fig} ${s.figCard}`}>
+        <div className={s.stageBare}>{children}</div>
+        <figcaption className={s.figcaption}>{caption}</figcaption>
+      </figure>
+    );
+  }
   return (
     <figure className={s.fig}>
       {title ? <h3 className={s.figTitle}>{title}</h3> : null}
-      <div className={`${s.stage} ${tall ? s.stageTall : ''}`}>{children}</div>
+      <div className={s.stage}>{children}</div>
       <figcaption className={s.figcaption}>{caption}</figcaption>
     </figure>
   );
 }
 
-const Label = ({ n }: { n: number }) => <span className={s.num}>{n}</span>;
+/** A numbered callout with a leader line, placed at `x` along the top or bottom edge of the component it points at. */
+function Callout({ n, label, at, x }: { n: number; label: string; at: 'top' | 'bottom'; x: string }) {
+  return (
+    <span className={`${s.call} ${at === 'top' ? s.callTop : s.callBottom}`} style={{ left: x }}>
+      <span className={s.callLabel}>
+        <span className={s.numDark}>{n}</span>
+        {label}
+      </span>
+      <span className={s.callLine} />
+    </span>
+  );
+}
+
+function AnatomyCard({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className={s.anaCard}>
+      <p className={s.anaTitle}>{title}</p>
+      <div className={s.anaStage}>
+        <div className={s.anaWrap}>{children}</div>
+      </div>
+    </div>
+  );
+}
 
 /* Hand-built wrong examples for section 07. These are deliberately not the components. */
 const BadRedTag = ({ children }: { children: ReactNode }) => <span className={s.badRedTag}>{children}</span>;
@@ -147,7 +178,7 @@ export function ChipTagBadgeGuidelines() {
         <p className={base.eyebrow}>SkillWiz design system · Components</p>
         <h1 className={base.title}>Chip, tag &amp; badge</h1>
         <p className={base.lead}>
-          Three small labels that look alike and do different jobs. A badge shows a state or a number, a tag says what something is, a chip is a control you press. This page sets one size, shape and colour rule for each. AI tools: start with section 09, which holds the token map.
+          Three small labels that look alike and do different jobs. A badge shows a state or a number, a tag says what something is, a chip is a control you press. This page sets one size, shape and colour rule for each. AI tools: start with section 10, which holds the spec for code.
         </p>
         <p className={s.meta}>Added 19 Nov 2026. Based on the live wall, admin dashboard, review report and coding exam screens. Section 06 lists what differs today.</p>
       </header>
@@ -196,34 +227,49 @@ export function ChipTagBadgeGuidelines() {
 
       <Section n="02" title="Anatomy" intro="Each component at 2× with its parts, and one spec sheet for all three.">
         <div className={s.three}>
-          <Fig tall title="Badge" caption={<><Label n={1} /> Container · <Label n={2} /> Icon · <Label n={3} /> Label</>}>
+          <AnatomyCard title="Badge">
             <div className={s.zoom}><Badge tone="warning" icon={labelIcons.alert}>Looking away ×9</Badge></div>
-          </Fig>
-          <Fig tall title="Tag" caption={<><Label n={1} /> Container + border · <Label n={2} /> Icon · <Label n={3} /> Label</>}>
+            <Callout n={1} label="Container" at="top" x="50%" />
+            <Callout n={2} label="Icon" at="bottom" x="12%" />
+            <Callout n={3} label="Label" at="bottom" x="68%" />
+          </AnatomyCard>
+          <AnatomyCard title="Tag">
             <div className={s.zoom}><Tag icon={labelIcons.video}>Webcam</Tag></div>
-          </Fig>
-          <Fig tall title="Chip" caption={<><Label n={1} /> Container · <Label n={2} /> Check · <Label n={3} /> Label · <Label n={4} /> Count</>}>
+            <Callout n={1} label="Container + border" at="top" x="50%" />
+            <Callout n={2} label="Icon" at="bottom" x="18%" />
+            <Callout n={3} label="Label" at="bottom" x="68%" />
+          </AnatomyCard>
+          <AnatomyCard title="Chip">
             <div className={s.zoom}><Chip label="Flagged" count={3} selected /></div>
-          </Fig>
+            <Callout n={1} label="Container" at="top" x="48%" />
+            <Callout n={4} label="Count" at="top" x="88%" />
+            <Callout n={2} label="Check" at="bottom" x="16%" />
+            <Callout n={3} label="Label" at="bottom" x="54%" />
+          </AnatomyCard>
         </div>
-        <p className={base.muted}>Medium is the default; Small sits inside dense rows and cards.</p>
-        <Table
-          head={['Property', 'Badge', 'Tag', 'Chip']}
-          rows={[
-            ['Use', 'State, score, count', 'What something is', 'Filter or chosen item'],
-            ['Interactive', 'No', 'No', 'Yes: toggle or remove'],
-            ['Height', 'M 24 · S 20', 'M 24 · S 20', 'M 36 · S 28'],
-            ['Padding', 'M 8 · S 6', 'M 8 · S 6', 'M 0 16 · S 0 12 (12 / 8 beside a check or count)'],
-            ['Type', 'M 12/18 · S 11/18 bold', 'M 12/18 · S 11/18 semibold', 'M 14/20 · S 12/18 semibold'],
-            ['Radius', '4px', '4px', 'Fully round'],
-            ['Border', 'None', '1px default border', '1px default border'],
-            ['Fill', 'Tone subtle (solid for high)', 'Surface', 'Surface · selected tint when on'],
-            ['Icon', 'M 14 · S 12, leading', 'M 14 · S 12, secondary text', '16 check when on · 14 × to remove'],
-            ['Gap', '4px', '4px', 'M 6 · S 4'],
-            ['Max label', '24 characters', '20 characters', '28 characters, then ellipsis'],
-            ['Between items', '4px · wrap', '4px · wrap', '8px · wrap or scroll'],
-          ]}
-        />
+        <div className={s.spec}>
+          <div className={s.specHead}>
+            <b className={base.strong}>Component spec · Badge, Tag, Chip</b>
+            <span>Medium is the default; Small sits inside dense rows and cards</span>
+          </div>
+          <Table
+            head={['Property', 'Badge', 'Tag', 'Chip']}
+            rows={[
+              ['Use', 'State, score, count', 'What something is', 'Filter or chosen item'],
+              ['Interactive', 'No', 'No', 'Yes: toggle or remove'],
+              ['Height', 'M 24 · S 20', 'M 24 · S 20', 'M 36 · S 28'],
+              ['Padding', 'M 0 8 · S 0 6', 'M 0 8 · S 0 6', 'M 0 16 · S 0 12 (12 / 8 beside a check or count)'],
+              ['Type', 'M 12/18 · S 11/18 bold', 'M 12/18 · S 11/18 semibold', 'M 14/20 · S 12/18 semibold'],
+              ['Radius', <><code>radius-sm</code> 4px</>, <><code>radius-sm</code> 4px</>, <code>radius-full</code>],
+              ['Border', 'None', <>1px <code>border-default</code></>, <>1px <code>border-default</code></>],
+              ['Fill', 'Tone subtle (solid for high)', <code>bg-surface</code>, <><code>bg-surface</code> · on <code>bg-selected</code></>],
+              ['Icon', 'M 14 · S 12, leading', <>M 14 · S 12, <code>text-secondary</code></>, '16 check when on · 14 × to remove'],
+              ['Gap', '4px', '4px', 'M 6 · S 4'],
+              ['Max label', '24 characters', '20 characters', '28 characters, then ellipsis'],
+              ['Between items', '4px · wrap', '4px · wrap', '8px · wrap or scroll'],
+            ]}
+          />
+        </div>
       </Section>
 
       <Section n="03" title="Badge" intro="Five tones, two sizes, subtle by default. Solid only for the one thing that must be seen first.">
@@ -273,12 +319,12 @@ export function ChipTagBadgeGuidelines() {
 
       <Section n="05" title="Chip" intro="Filter chips toggle a view; input chips hold chosen items and can be removed.">
         <div className={s.three}>
-          <Fig caption={<><b className={base.strong}>Default</b>: surface fill, default border, semibold 14px.</>}><Chip label="Flagged" count={3} /></Fig>
-          <Fig caption={<><b className={base.strong}>Hover</b>: muted fill, strong border, 120ms. Hover pointers only.</>}><Chip label="Flagged" count={3} forceState="hover" /></Fig>
-          <Fig caption={<><b className={base.strong}>Selected</b>: selected tint, focus-blue border, link text, a check before the label. Not colour alone.</>}><Chip label="Flagged" count={3} selected /></Fig>
-          <Fig caption={<><b className={base.strong}>Focus</b>: 2px ring, 2px offset.</>}><Chip label="Flagged" count={3} forceState="focus" /></Fig>
-          <Fig caption={<><b className={base.strong}>Pressed</b>: 0.96 scale for 150ms, then toggles.</>}><Chip label="Flagged" count={3} forceState="pressed" /></Fig>
-          <Fig caption={<><b className={base.strong}>Disabled</b>: only when the filter can’t apply yet (while loading). A filter with 0 results stays enabled and shows 0.</>}><Chip label="Flagged" count={0} disabled /></Fig>
+          <Fig card caption={<><b className={base.strong}>Default</b>: surface fill, default border, semibold 14px.</>}><Chip label="Flagged" count={3} /></Fig>
+          <Fig card caption={<><b className={base.strong}>Hover</b>: muted fill, strong border, 120ms. Hover pointers only.</>}><Chip label="Flagged" count={3} forceState="hover" /></Fig>
+          <Fig card caption={<><b className={base.strong}>Selected</b>: selected tint, focus-blue border, link text, a check before the label. Not colour alone.</>}><Chip label="Flagged" count={9} selected /></Fig>
+          <Fig card caption={<><b className={base.strong}>Focus</b>: 2px ring, 2px offset.</>}><Chip label="Flagged" count={9} selected forceState="focus" /></Fig>
+          <Fig card caption={<><b className={base.strong}>Pressed</b>: 0.96 scale for 150ms, then toggles.</>}><Chip label="Flagged" count={3} forceState="pressed" /></Fig>
+          <Fig card caption={<><b className={base.strong}>Disabled</b>: only when the filter can’t apply yet (while loading). A filter with 0 results stays enabled and shows 0.</>}><Chip label="Flagged" count={0} disabled /></Fig>
         </div>
         <h3 className={base.h3}>Filter chips · single and multi select</h3>
         <div className={s.three}>
@@ -406,6 +452,109 @@ export function ChipTagBadgeGuidelines() {
             ['Focus ring', toks('filter-chip.focus-color', 'filter-chip.focus-width', 'filter-chip.focus-offset')],
           ]}
         />
+      </Section>
+
+      <Section n="10" title="Spec for code" intro="Machine-readable version of this page. AI tools (MCP, code assistants) and engineers should read this section first: it lists every allowed value, the rule that decides which component to use, and copy-paste code. Anything not listed here is not part of the system.">
+        <SourceLinks
+          items={[
+            { label: 'Badge source', path: 'src/components/Badge' },
+            { label: 'Tag source', path: 'src/components/Tag' },
+            { label: 'Chip source', path: 'src/components/Chip' },
+            { label: 'Component tokens', path: 'tokens/component.json' },
+          ]}
+        />
+
+        <h3 className={base.h3}>A · Decision order (pick the first that matches)</h3>
+        <ol className={base.decision}>
+          <li><span className={base.num}>1</span><span>Can people click it, toggle it or remove it? → <b>Chip</b> (or <b>InputChip</b> to remove)</span></li>
+          <li><span className={base.num}>2</span><span>Does it show a state, a score or a number that changes? → <b>Badge</b> (<b>CountBadge</b> for a bare number)</span></li>
+          <li><span className={base.num}>3</span><span>Does it say what something is? → <b>Tag</b></span></li>
+        </ol>
+
+        <h3 className={base.h3}>B · Usage (copy-paste)</h3>
+        <pre className={s.pre}>{`import { Badge, CountBadge, Tag, Chip, ChipGroup, InputChip } from '@skillwiz/design-system';
+
+// Badge: read-only state. One solid badge per card, the rest subtle.
+<Badge tone="danger" emphasis="solid" icon={<AlertIcon />}>Risk 96</Badge>
+<Badge tone="warning" icon={<AlertIcon />}>Looking away ×9</Badge>
+<Badge tone="success" size="sm">Valid</Badge>
+
+// Count badge: number only. Hidden at 0, “99+” above 99. Put the count in the button’s name.
+<CountBadge count={3} />                              // red, on an icon
+<CountBadge count={12} tone="neutral" placement="label" />
+
+// Tag: neutral and outlined. Never colour by value.
+<Tag>Coding</Tag>
+<Tag size="sm" icon={<VideoIcon />}>Webcam</Tag>`}</pre>
+        <pre className={s.pre}>{`// Filter chips, single select: one is always on.
+const [view, setView] = useState('all');
+<ChipGroup mode="single" label="Filter conversations" value={view} onValueChange={setView}>
+  <Chip value="all" label="All" count={9} />
+  <Chip value="flagged" label="Flagged" count={3} />
+</ChipGroup>
+
+// Filter chips, multi select: none on means no filter.
+const [levels, setLevels] = useState<string[]>([]);
+<ChipGroup mode="multi" size="sm" label="Alert level" value={levels} onValueChange={setLevels}>
+  <Chip value="high" label="High" />
+  <Chip value="medium" label="Medium" />
+</ChipGroup>
+
+// Input chip: the chip is text, the × is its own button.
+<InputChip label="Aarav Nair" initials="AN" onRemove={() => remove('aarav')} />`}</pre>
+
+        <h3 className={base.h3}>C · Component props</h3>
+        <Table
+          head={['Component', 'Prop', 'Values', 'Default', 'Rule']}
+          rows={[
+            ['Badge', <code key="a">tone</code>, <code key="b">neutral | info | success | warning | danger</code>, <code key="c">neutral</code>, 'Meaning, always with words'],
+            ['', <code key="a">emphasis</code>, <code key="b">subtle | solid</code>, <code key="c">subtle</code>, 'Solid: one per card'],
+            ['', <code key="a">size</code>, <code key="b">md | sm</code>, <code key="c">md</code>, 'Small inside dense rows and cards'],
+            ['', <code key="a">icon</code>, <code key="b">ReactNode</code>, '—', 'Decorative, aria-hidden. Warning and danger alerts add the triangle'],
+            ['', <code key="a">children</code>, <code key="b">string</code>, '—', 'Sentence case, max 24 characters, number inside the words'],
+            ['CountBadge', <code key="a">count</code>, <code key="b">number</code>, '—', 'Hidden at 0, “99+” above 99'],
+            ['', <code key="a">tone</code>, <code key="b">danger | neutral | info</code>, <code key="c">danger</code>, 'Red on an icon, grey next to a label, blue on the top bar as drawn'],
+            ['', <code key="a">placement</code>, <code key="b">icon | label</code>, <code key="c">icon</code>, 'Icon: 18px with a ring. Label: 20px'],
+            ['Tag', <code key="a">size</code>, <code key="b">md | sm</code>, <code key="c">md</code>, ''],
+            ['', <code key="a">icon</code>, <code key="b">ReactNode</code>, '—', 'Only for categories with a well-known icon'],
+            ['', <code key="a">children</code>, <code key="b">string</code>, '—', 'Max 20 characters. Never coloured by value'],
+            ['Chip', <code key="a">label</code>, <code key="b">string</code>, '—', 'Max 28 characters, then an ellipsis; full text in the name'],
+            ['', <code key="a">count</code>, <code key="b">number</code>, '—', 'Part of the accessible name. 0 stays visible'],
+            ['', <code key="a">value</code>, <code key="b">string</code>, '—', 'Identifies the chip inside a ChipGroup'],
+            ['', <code key="a">selected / onToggle</code>, <code key="b">boolean / (next) =&gt; void</code>, '—', 'Standalone use only; a group owns the state'],
+            ['', <code key="a">size</code>, <code key="b">md | sm</code>, 'group, else md', ''],
+            ['', <code key="a">disabled</code>, <code key="b">boolean</code>, <code key="c">false</code>, 'Only while the filter cannot apply yet'],
+            ['ChipGroup', <code key="a">mode</code>, <code key="b">single | multi</code>, '—', 'single = radiogroup, multi = toggle buttons'],
+            ['', <code key="a">value / onValueChange</code>, <code key="b">string | string[]</code>, '—', 'Matches mode'],
+            ['', <code key="a">label</code>, <code key="b">string</code>, '—', 'Required accessible name for the set'],
+            ['InputChip', <code key="a">label / initials</code>, <code key="b">string</code>, '—', 'Initials show in a small circle, for people'],
+            ['', <code key="a">onRemove</code>, <code key="b">() =&gt; void</code>, '—', 'Wired to the × button, named “Remove {label}”'],
+          ]}
+        />
+
+        <h3 className={base.h3}>D · Rules</h3>
+        <div className={`${base.cards} ${base.cols2} ${base.rules}`}>
+          <div className={base.panel}>
+            <h4>MUST</h4>
+            <ul>
+              <li>Use only the tokens listed in section 09; no raw hex, px colours or new radii.</li>
+              <li>Square corners for things you read, round corners for things you press.</li>
+              <li>Write counts inside the badge label, in sentence case.</li>
+              <li>Give every ChipGroup a label, and let the count be part of each chip’s name.</li>
+              <li>Pair every tone with words; warning and danger alerts add the triangle icon.</li>
+            </ul>
+          </div>
+          <div className={base.panel}>
+            <h4>MUST NOT</h4>
+            <ul>
+              <li>Make every badge solid, or give a tag a tone.</li>
+              <li>Use a badge or tag as a filter, or make a chip read-only.</li>
+              <li>Show a count badge at 0, or a dot with no number.</li>
+              <li>Use text glyphs (▲) or all caps in place of an icon and sentence case.</li>
+              <li>Disable a filter chip because it has 0 results.</li>
+            </ul>
+          </div>
+        </div>
       </Section>
     </main>
   );

@@ -24,6 +24,18 @@ export interface TopNavAccountItem {
   label: string;
 }
 
+/** The SkillWiz mark: an inline SVG so a college can swap it for its own. Colours come from the logo tokens. */
+export function SkillWizLogo() {
+  return (
+    <svg viewBox="0 0 75 24" role="img" aria-hidden="true" focusable="false" className={s.logoSvg}>
+      <text x="0" y="18" textLength="75" lengthAdjust="spacingAndGlyphs">
+        <tspan className={s.logoSkill}>Skill</tspan>
+        <tspan className={s.logoWiz}>Wiz</tspan>
+      </text>
+    </svg>
+  );
+}
+
 export interface TopNavProps {
   /** Top-level sections for the signed-in role, in order. */
   items: TopNavItem[];
@@ -31,6 +43,14 @@ export interface TopNavProps {
   currentId: string;
   /** Where the wordmark links to. Defaults to the first item's href. */
   logoHref?: string;
+  /**
+   * The logo, as an inline `<svg>` (or `<img>`). Omit for the SkillWiz mark. A college passes its own
+   * to replace it; it is drawn at the wordmark's line height with automatic width, so use a horizontal
+   * logo with a viewBox and no fixed size.
+   */
+  logo?: ReactNode;
+  /** Name of the organisation the logo shows. Used in the link's accessible name. Default "SkillWiz". */
+  logoLabel?: string;
   /** Location or class options. Omit (or pass one or none) for a single scope: the selector is hidden. */
   contexts?: TopNavContext[];
   /** The selected option. */
@@ -116,6 +136,8 @@ export function TopNav({
   items,
   currentId,
   logoHref,
+  logo,
+  logoLabel = 'SkillWiz',
   contexts,
   contextId,
   contextKind = 'Class',
@@ -166,8 +188,8 @@ export function TopNav({
 
   const utilityList = [
     messages !== false && messages !== undefined ? ({ key: 'messages', name: 'Messages', icon: navIcons.message, u: messages } as const) : null,
-    mode === 'wide' && mail !== false && mail !== undefined ? ({ key: 'mail', name: 'Mail', icon: navIcons.mail, u: mail } as const) : null,
     notifications !== false && notifications !== undefined ? ({ key: 'notifications', name: 'Notifications', icon: navIcons.bell, u: notifications } as const) : null,
+    mode === 'wide' && mail !== false && mail !== undefined ? ({ key: 'mail', name: 'Mail', icon: navIcons.mail, u: mail } as const) : null,
   ].filter(Boolean) as { key: string; name: string; icon: ReactNode; u: TopNavUtility }[];
   const mailInMenu = mode !== 'wide' && mail !== false && mail !== undefined ? mail : null;
 
@@ -257,9 +279,8 @@ export function TopNav({
           </div>
         ) : null}
 
-        <a className={s.logo} href={home} aria-label="SkillWiz, go to Dashboard">
-          <span className={s.logoSkill}>Skill</span>
-          <span className={s.logoWiz}>Wiz</span>
+        <a className={s.logo} href={home} aria-label={`${logoLabel}, go to Dashboard`}>
+          {logo ?? <SkillWizLogo />}
         </a>
 
         {mode !== 'narrow' ? (

@@ -52,7 +52,6 @@
   border-radius: var(--sw-radius-card);
   background: var(--sw-color-surface-default);
 }
-.stageTall { min-height: calc(var(--sw-space-64) * 2 + var(--sw-space-24)); }
 .figcaption { color: var(--sw-color-text-body); font-size: var(--sw-type-body-md-size); line-height: var(--sw-type-body-md-line-height); }
 .zoom { zoom: 2; display: inline-flex; padding: var(--sw-space-8); }
 .num {
@@ -147,4 +146,94 @@
 }
 @media (max-width: 720px) {
   .three, .usage { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Anatomy cards (section 02): 2x component with numbered callouts */
+.anaCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sw-space-8);
+  padding: var(--sw-space-24) var(--sw-space-32);
+  border-radius: var(--sw-radius-card);
+  background: var(--sw-color-surface-page);
+}
+.anaTitle {
+  margin: 0;
+  color: var(--sw-color-text-heading);
+  font-size: var(--sw-type-caption-size);
+  font-weight: var(--sw-type-label-sm-weight);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.anaStage { display: flex; justify-content: center; padding-block: var(--sw-space-64); }
+.anaWrap { position: relative; display: inline-block; }
+.anaWrap .zoom { padding: 0; display: flex; }
+.call { position: absolute; display: flex; flex-direction: column; align-items: center; transform: translateX(-50%); }
+.callTop { bottom: 100%; }
+.callBottom { top: 100%; flex-direction: column-reverse; }
+.callLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sw-space-8);
+  white-space: nowrap;
+  color: var(--sw-color-text-heading);
+  font-size: var(--sw-type-body-md-size);
+  font-weight: var(--sw-type-label-md-weight);
+}
+.callLine { width: 1px; height: var(--sw-space-32); background: var(--sw-color-text-heading); }
+.numDark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sw-space-24);
+  height: var(--sw-space-24);
+  border-radius: var(--sw-radius-pill);
+  background: var(--sw-color-text-heading);
+  color: var(--sw-color-text-on-action);
+  font-size: var(--sw-type-label-sm-size);
+  font-weight: var(--sw-type-label-sm-weight);
+}
+
+/* Spec sheet card */
+.spec { overflow: hidden; border: 1px solid var(--sw-color-border-default); border-radius: var(--sw-radius-card); }
+.specHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sw-space-8);
+  padding: var(--sw-space-16) var(--sw-space-24);
+  background: var(--sw-color-surface-page);
+  border-bottom: 1px solid var(--sw-color-border-default);
+}
+
+/* Copy-paste code blocks (section 10) */
+.pre {
+  margin: 0;
+  padding: var(--sw-space-16) var(--sw-space-20);
+  overflow-x: auto;
+  border-radius: var(--sw-radius-tile);
+  background: var(--sw-color-surface-muted);
+  color: var(--sw-color-text-body);
+  font-family: monospace;
+  font-size: var(--sw-type-body-sm-size);
+  line-height: var(--sw-type-body-md-line-height);
+  white-space: pre;
+}
+
+/* State card: the chip and its description share one bordered card, as in the PDF */
+.figCard {
+  gap: 0;
+  border: 1px solid var(--sw-color-border-default);
+  border-radius: var(--sw-radius-card);
+  background: var(--sw-color-surface-default);
+  overflow: hidden;
+}
+.figCard .figcaption { padding: var(--sw-space-16); border-top: 1px solid var(--sw-color-border-default); }
+.stageBare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--sw-space-64);
+  padding: var(--sw-space-24) var(--sw-space-16);
 }

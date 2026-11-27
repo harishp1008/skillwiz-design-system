@@ -580,5 +580,43 @@
       "$value": "100px",
       "$description": "Style guide corner radius: pills, avatars."
     }
+  },
+  "size": {
+    "28": {
+      "$value": "28px",
+      "$description": "Control height, compact."
+    },
+    "36": {
+      "$value": "36px",
+      "$description": "Control height, default."
+    },
+    "44": {
+      "$value": "44px",
+      "$description": "Control height, roomy."
+    }
+  },
+  "shadow": {
+    "md": {
+      "$value": "0 8px 24px rgb(16 24 40 / 0.12)",
+      "$description": "Floating panel elevation. Same value the Top navigation menu used."
+    }
+  },
+  "z-index": {
+    "200": {
+      "$value": "200",
+      "$description": "Layer for dropdown panels."
+    }
+  },
+  "duration": {
+    "150": {
+      "$value": "150ms",
+      "$description": "Short transition: colour changes on hover and selection."
+    }
+  },
+  "easing": {
+    "standard": {
+      "$value": "cubic-bezier(0.2, 0, 0, 1)",
+      "$description": "Standard easing for interface transitions."
+    }
   }
 }

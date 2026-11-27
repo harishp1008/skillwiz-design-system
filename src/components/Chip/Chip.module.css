@@ -11,6 +11,7 @@
   --_bd: var(--sw-filter-chip-border);
   --_fg: var(--sw-filter-chip-text);
   --_count-bg: var(--sw-count-badge-neutral-bg);
+  --_count-fg: var(--sw-filter-chip-text);
 
   box-sizing: border-box;
   display: inline-flex;
@@ -50,6 +51,7 @@
   --_bd: var(--sw-filter-chip-selected-border);
   --_fg: var(--sw-filter-chip-selected-text);
   --_count-bg: var(--sw-count-badge-selected-bg);
+  --_count-fg: var(--sw-count-badge-selected-text);
 }
 
 @media (hover: hover) {
@@ -97,7 +99,7 @@
   padding-inline: var(--sw-count-badge-padding-x);
   border-radius: var(--sw-count-badge-radius);
   background: var(--_count-bg);
-  color: var(--sw-filter-chip-text);
+  color: var(--_count-fg);
   font-size: var(--sw-count-badge-font-size);
   font-weight: var(--sw-count-badge-font-weight);
   font-variant-numeric: tabular-nums;

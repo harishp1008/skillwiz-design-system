@@ -1,0 +1,129 @@
+/* Select trigger. Every visual value comes from a --sw-select-* or --sw-dropdown-* token. */
+.root { position: relative; display: flex; flex-direction: column; gap: var(--sw-select-label-gap); font-family: var(--sw-font-family-base); }
+.label {
+  color: var(--sw-select-label-text);
+  font-size: var(--sw-select-label-font-size);
+  font-weight: var(--sw-select-label-font-weight);
+}
+.field { position: relative; }
+
+.trigger {
+  --_h: var(--sw-select-height-md);
+  --_fs: var(--sw-select-font-size);
+  display: flex;
+  align-items: center;
+  gap: var(--sw-select-gap);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: var(--_h);
+  padding: 0 var(--sw-select-padding-x);
+  border: var(--sw-select-border-width) solid var(--sw-select-border);
+  border-radius: var(--sw-select-radius);
+  background: var(--sw-select-bg);
+  color: var(--sw-select-text);
+  font: inherit;
+  font-size: var(--_fs);
+  text-align: left;
+  cursor: pointer;
+}
+.root[data-size='sm'] .trigger { --_h: var(--sw-select-height-sm); --_fs: var(--sw-select-font-size-sm); }
+.root[data-size='lg'] .trigger { --_h: var(--sw-select-height-lg); --_fs: var(--sw-select-font-size-lg); }
+.trigger:hover, .trigger[data-force='hover'] { border-color: var(--sw-select-border-hover); }
+.trigger[data-open], .trigger:focus-within, .trigger[data-force='focus'] {
+  border-color: var(--sw-select-border-open);
+  box-shadow: 0 0 0 var(--sw-select-ring-width) var(--sw-select-ring-color);
+}
+.trigger[data-error] { border-color: var(--sw-select-border-error); }
+.trigger[data-error][data-open], .trigger[data-error]:focus-within { box-shadow: 0 0 0 var(--sw-select-ring-width) var(--sw-select-border-error); }
+.trigger[data-disabled] {
+  background: var(--sw-select-bg-disabled);
+  color: var(--sw-select-text-disabled);
+  border-color: var(--sw-select-border);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+/* The real button stays the keyboard target even when the visible box holds chips. */
+.main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: var(--sw-select-gap);
+  min-width: 0;
+  min-height: var(--_h);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: inherit;
+  outline: none;
+}
+.value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.placeholder { color: var(--sw-select-text-placeholder); }
+.icon { display: inline-flex; flex: none; width: var(--sw-select-chevron-size); height: var(--sw-select-chevron-size); color: var(--sw-select-chevron-color); }
+.icon svg { width: 100%; height: 100%; }
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+.input::placeholder { color: var(--sw-select-text-placeholder); }
+
+.chips { display: flex; flex: 1; flex-wrap: nowrap; align-items: center; gap: var(--sw-select-chip-gap); min-width: 0; overflow: hidden; }
+.chip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--sw-select-chip-gap);
+  box-sizing: border-box;
+  height: var(--sw-select-chip-height);
+  padding: 0 var(--sw-select-chip-padding-x);
+  border: var(--sw-select-border-width) solid var(--sw-select-chip-border);
+  border-radius: var(--sw-select-chip-radius);
+  background: var(--sw-select-chip-bg);
+  color: var(--sw-select-chip-text);
+  font-size: var(--sw-select-chip-font-size);
+  font-weight: var(--sw-select-chip-font-weight);
+}
+.chipRemove {
+  display: inline-flex;
+  width: var(--sw-select-chip-remove-size);
+  height: var(--sw-select-chip-remove-size);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.chipRemove svg { width: 100%; height: 100%; }
+.more { flex: none; color: var(--sw-select-chip-text); font-size: var(--sw-select-chip-font-size); font-weight: var(--sw-select-chip-font-weight); }
+
+.helper { display: flex; align-items: center; gap: var(--sw-select-gap); margin: 0; color: var(--sw-select-helper-text); font-size: var(--sw-select-helper-font-size); line-height: var(--sw-select-helper-line-height); }
+.helper[data-error] { color: var(--sw-select-error-text); }
+.helper[data-error] .icon { width: var(--sw-select-chip-remove-size); height: var(--sw-select-chip-remove-size); color: var(--sw-select-error-icon); }
+
+/* The row under a multi-select list: Select all on the left, Clear on the right */
+.actionRow { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--sw-select-action-bar-padding-x); }
+.rowOption { width: auto; flex: 1; padding-inline: 0; }
+.clear {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sw-select-action-text);
+  font: inherit;
+  font-size: var(--sw-dropdown-option-font-size);
+  font-weight: var(--sw-select-action-font-weight);
+  cursor: pointer;
+}
+.clear:disabled { color: var(--sw-dropdown-option-disabled-text); cursor: not-allowed; }
+.clear:focus-visible { outline: var(--sw-dropdown-focus-width) solid var(--sw-dropdown-focus-color); outline-offset: var(--sw-dropdown-focus-offset); }
+.footer { color: var(--sw-select-action-text); }
+.footerIcon { display: inline-flex; flex: none; width: var(--sw-dropdown-option-icon-size); height: var(--sw-dropdown-option-icon-size); }
+.footerIcon svg { width: 100%; height: 100%; }
+.count { padding: var(--sw-dropdown-option-padding-y) var(--sw-dropdown-option-padding-x); color: var(--sw-dropdown-description-text); font-size: var(--sw-dropdown-description-font-size); line-height: var(--sw-dropdown-description-line-height); }

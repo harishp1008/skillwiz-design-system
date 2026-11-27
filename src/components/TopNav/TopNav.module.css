@@ -27,7 +27,7 @@
 /* The narrow layout's menu button sits before the wordmark */
 .bar > .menuWrap { flex: none; margin-inline-end: var(--sw-top-nav-utilities-gap); }
 
-/* Wordmark: live text, never an image */
+/* Logo: an inline SVG (or img) the college can replace; height follows the wordmark line height */
 .logo {
   flex: none;
   margin-inline-end: var(--sw-top-nav-logo-gap);
@@ -37,8 +37,11 @@
   text-decoration: none;
   white-space: nowrap;
 }
-.logoSkill { color: var(--sw-top-nav-logo-color-skill); }
-.logoWiz { color: var(--sw-top-nav-logo-color-wiz); }
+.logo { display: inline-flex; align-items: center; }
+.logo svg, .logo img { display: block; height: var(--sw-top-nav-logo-line-height); width: auto; }
+.logoSvg text { font-family: inherit; font-size: var(--sw-top-nav-logo-font-size); font-weight: var(--sw-top-nav-logo-font-weight); }
+.logoSkill { fill: var(--sw-top-nav-logo-color-skill); }
+.logoWiz { fill: var(--sw-top-nav-logo-color-wiz); }
 .logo:focus-visible { outline: var(--sw-top-nav-focus-width) solid var(--sw-top-nav-focus-color); outline-offset: var(--sw-top-nav-focus-offset); }
 
 .items {

@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { tokenMeta, tokenValues, type TokenPath } from '../../../tokens/tokens.generated';
 import { TopNav, type TopNavContext, type TopNavItem, type TopNavProps } from '../TopNav';
 import { navIcons } from '../icons';
+import { SourceLinks } from '../../shared/docs/SourceLinks';
 import base from '../../Button/docs/ButtonGuidelines.module.css';
 import s from './TopNavGuidelines.module.css';
 
@@ -143,12 +144,12 @@ export function TopNavGuidelines() {
           head={['#', 'Part', 'Rule']}
           rows={[
             [<Label n={1} key="1" />, 'Bar', <>A <code>&lt;header&gt;</code>, full width, sticky. White with a 1px bottom border; no shadow until the page scrolls under it.</>],
-            [<Label n={2} key="2" />, 'Logo', 'The SkillWiz wordmark, as live text, linking to the role’s home (Dashboard). Never an image with alt text only.'],
+            [<Label n={2} key="2" />, 'Logo', 'The logo as an inline SVG, linking to the role’s home (Dashboard). SkillWiz by default; a college replaces it with its own SVG through the `logo` prop. The link’s name is the organisation’s name.'],
             [<Label n={3} key="3" />, 'Nav item', 'Top-level sections for the signed-in role. Semibold 16px label, sentence case, one or two words. No icons.'],
             [<Label n={4} key="4" />, 'Current page', <>Exactly one item. Tinted pill and link colour, <code>aria-current="page"</code>.</>],
             [<Label n={5} key="5" />, 'More menu', 'Holds the items that do not fit. If the current page is inside More, it swaps into the visible row.'],
             [<Label n={6} key="6" />, 'Context selector', 'The location or class the whole page is scoped to. Outlined, pin icon, chevron. A selector, never a filled chip.'],
-            [<Label n={7} key="7" />, 'Icon button', 'Messages, Mail, Notifications, in that order (as drawn; the PDF text lists Mail first). Round, outlined, 40px, with a tooltip of the same name as the label.'],
+            [<Label n={7} key="7" />, 'Icon button', 'Messages, Notifications, Mail, in that order: Mail sits furthest right, next to the avatar. Round, outlined, 40px, with a tooltip of the same name as the label.'],
             [<Label n={8} key="8" />, 'Count badge', 'Unread count on Messages and Notifications only (and Mail where shown). 1–99, then “99+”. No badge when the count is 0.'],
             [<Label n={9} key="9" />, 'Avatar', 'Initials of the signed-in user. Opens the account menu: profile, switch role, help, sign out.'],
           ]}
@@ -159,7 +160,7 @@ export function TopNavGuidelines() {
             ['Height', '72px', toks('top-nav.height' as TokenPath)],
             ['Side padding', '32px · 24px · 16px by width', toks('top-nav.padding-x' as TokenPath)],
             ['Background and border', 'White, 1px bottom border', toks('top-nav.bg' as TokenPath, 'top-nav.border-color' as TokenPath)],
-            ['Logo', 'Wordmark 19 / 24 bold, “Skill” teal + “Wiz” indigo, 48px after', toks('top-nav.logo-font-size' as TokenPath, 'top-nav.logo-color-skill' as TokenPath, 'top-nav.logo-color-wiz' as TokenPath)],
+            ['Logo', 'SVG drawn at 24px high, width follows the artwork. SkillWiz mark: 19px bold, “Skill” teal + “Wiz” indigo. 48px after', toks('top-nav.logo-font-size' as TokenPath, 'top-nav.logo-color-skill' as TokenPath, 'top-nav.logo-color-wiz' as TokenPath)],
             ['Nav item', '36px tall, 8px padding, 16 / 20 semibold, 12px gap', toks('top-nav.item-height' as TokenPath, 'top-nav.item-padding-x' as TokenPath, 'top-nav.item-gap' as TokenPath)],
             ['Current page', 'Tinted pill + link colour', toks('top-nav.item-current-bg' as TokenPath, 'top-nav.item-current-text' as TokenPath)],
           ]}
@@ -218,7 +219,7 @@ export function TopNavGuidelines() {
         <Table
           head={['Width', 'Items', 'Utilities', 'Side padding']}
           rows={[
-            ['≥ 1440px', 'Up to 7, rest in More', 'Selector, Mail, Messages, Notifications, avatar', '32px'],
+            ['≥ 1440px', 'Up to 7, rest in More', 'Selector, Messages, Notifications, Mail, avatar', '32px'],
             ['1024–1439px', 'As many as fit, rest in More; current page always visible', 'Mail moves into the avatar menu', '24px'],
             ['< 1024px', 'Menu button + drawer', 'Selector, Messages, Notifications, avatar', '16px'],
           ]}
@@ -248,7 +249,7 @@ export function TopNavGuidelines() {
           <DoDont ok text="Use the SkillWiz wordmark as live text, linking to Dashboard.">
             <Bar mode="medium" showAllItems items={demoItems} currentId="live-board" contexts={undefined} mail={false} messages={false} notifications={false} initials="" />
           </DoDont>
-          <DoDont ok={false} text="Ship a logo image without a fallback. When it fails to load, people see a broken image and the alt text.">
+          <DoDont ok={false} text="Ship a bitmap logo. It blurs on dense screens and can’t be recoloured. Pass an SVG.">
             <BadBar><span className={s.badImg}>SkillWiz</span><span>Dashboard</span><span>Live Board</span></BadBar>
           </DoDont>
         </div>
@@ -262,7 +263,7 @@ export function TopNavGuidelines() {
             ['Skip link', <>First focusable element is a “Skip to content” link, visible on focus, that jumps to <code>&lt;main&gt;</code>.</>],
             ['Current page', <><code>aria-current="page"</code> on the current item. Shown by fill and colour, never colour alone.</>],
             ['Items are links', <>Nav items are <code>&lt;a href&gt;</code> so they open in new tabs and work with Back. Only More is a <code>&lt;button&gt;</code>.</>],
-            ['Focus order', 'Skip link → logo → items → More → selector → Messages → Mail → Notifications → avatar.'],
+            ['Focus order', 'Skip link → logo → items → More → selector → Messages → Notifications → Mail → avatar.'],
             ['Menus', <>More, selector and avatar follow the menu button pattern: <code>aria-haspopup</code>, <code>aria-expanded</code>; ↑ / ↓ to move, Enter to choose, Esc closes and returns focus.</>],
             ['Names', 'Icon buttons have a name and a matching tooltip; the count is part of the name: “Messages, 3 unread”. New counts update silently.'],
             ['Selector', 'Name includes the current value: “Class: LPU_Class”. Changing it should announce “Showing …” (a live-region announcer is a later step).'],
@@ -274,6 +275,12 @@ export function TopNavGuidelines() {
       </Section>
 
       <Section n="07" title="Tokens & code spec" intro="The bar uses only these tokens. No raw colours. Each row shows the component token and what it maps to.">
+        <SourceLinks
+          items={[
+            { label: 'Top navigation bar source', path: 'src/components/TopNav' },
+            { label: 'Component tokens', path: 'tokens/component.json' },
+          ]}
+        />
         <Table
           head={['Element', 'Tokens']}
           rows={[

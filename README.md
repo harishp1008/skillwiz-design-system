@@ -67,6 +67,29 @@ Three small labels with one rule: square corners are labels you read, round corn
 
 Docs: **Components / Chip, tag & badge** in Storybook (Guidelines page plus one playground per part). New tokens: `badge.*`, `tag.*`, `filter-chip.*`, `count-badge.*`, and a semantic `color.feedback.*` family. The older `chip.*` tokens stay until the Live wall screens move to badges.
 
+### Select, dropdown & menu
+
+`Select` (single, multi, searchable) and `Menu` (action menu) share one floating panel. Source: `src/components/Dropdown`; page: **Components / Select, dropdown & menu** in Storybook.
+
+```tsx
+import { Select, Menu } from '@skillwiz/design-system';
+
+<Select label="Classroom" options={rooms} value={room} onChange={setRoom} />
+<Menu iconLabel="More actions for Achintya Sharma" align="end" entries={rowActions} />
+```
+
+Tokens: component groups `dropdown`, `select` and `menu`, built on the new semantic `size.control.*`, `shadow.overlay`, `layer.dropdown` and `type.helper`.
+
+### Tabs
+
+`Tabs` has four variants: underline (large and small), card, vertical list and pill. WAI-ARIA tabs pattern with roving focus and automatic or manual activation. Source: `src/components/Tabs`; page: **Components / Tabs** in Storybook. New tokens: `tabs.*`, `motion.duration.fast`, `motion.easing.standard`.
+
+```tsx
+import { Tabs } from '@skillwiz/design-system';
+
+<Tabs label="Student activity" items={[{ id: 'overview', label: 'Overview', panel: <Overview /> }, { id: 'flags', label: 'Flags', count: 3, alert: true, panel: <Flags /> }]} />
+```
+
 ### Component story convention
 
 Every component has exactly two stories under `Components/<Name>`:
