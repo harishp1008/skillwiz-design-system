@@ -1,4 +1,4 @@
-import { iconPaths, type IconName } from './icons';
+import { pathsOf, type IconName } from './icons';
 import s from './Icon.module.css';
 
 export type IconSize = 'sm' | 'md' | 'lg';
@@ -28,7 +28,7 @@ export function Icon({ name, size = 'md', label, className }: IconProps) {
       aria-hidden={label ? undefined : true}
       focusable="false"
     >
-      <path d={iconPaths[name]} />
+      {pathsOf(name).map((d) => <path key={d} d={d} />)}
     </svg>
   );
 }

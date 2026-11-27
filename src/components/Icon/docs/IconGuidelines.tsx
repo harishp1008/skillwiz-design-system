@@ -1,6 +1,10 @@
 import { type ReactNode } from 'react';
 import { tokenMeta, tokenValues, type TokenPath } from '../../../tokens/tokens.generated';
 import { Icon } from '../Icon';
+import { Button } from '../../Button';
+import { icons as btnIcons } from '../../Button/docs/icons';
+import { KeylineGrid } from './KeylineGrid';
+import { downloadIcon, downloadSprite, downloadZip } from './download';
 import { iconNames, type IconName } from '../icons';
 import { labelIcons } from '../../shared/labelIcons';
 import { SourceLinks } from '../../shared/docs/SourceLinks';
@@ -109,9 +113,7 @@ export function IconGuidelines() {
         <div className={base.card}>
           <div className={s.ana}>
             <div className={s.stage} style={{ background: 'transparent' }}>
-              <div className={s.grid}>
-                <Icon name="book-open" size="lg" />
-              </div>
+              <KeylineGrid icon="book-open" shapes={false} label="The 24 grid with two units of padding, and book-open drawn on it" />
             </div>
             <ol className={s.legend}>
               {[
@@ -130,12 +132,67 @@ export function IconGuidelines() {
         </div>
       </Section>
 
-      <Section n="02" title="Icon set" intro="All icons in the set today. Names are the Lucide names, so they are easy to look up and easy to extend.">
+      <Section n="02" title="Grid & keylines" intro="Draw every new icon on the same grid. The keyline shapes set how big each kind of shape should be, so a circle, a square and a tall rectangle all look the same size next to each other.">
+        <div className={base.card}>
+          <div className={s.ana}>
+            <div className={s.stage} style={{ background: 'transparent' }}>
+              <KeylineGrid label="The 24 grid with the four keyline shapes: circle, square, portrait and landscape" />
+            </div>
+            <ol className={s.legend}>
+              {[
+                ['Padding', 'Two units on every side (the shaded border). Nothing is drawn there. It is kept clear so icons never touch the edge of their box.'],
+                ['Live area', 'Twenty by twenty, from 2 to 22. All artwork sits inside it.'],
+                ['Keyline shapes', 'Blue outlines. Fit the icon to the shape that matches it, and let it fill the shape.'],
+              ].map(([t, d], i) => (
+                <li key={t}>
+                  <span className={s.numDark}>{i + 1}</span>
+                  <span><b className={base.strong}>{t}.</b> {d}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+        <Table
+          head={['Keyline', 'Size', 'Position', 'Use for']}
+          rows={[
+            ['Circle', '20 diameter', 'Centred', 'Round shapes: clock, user, globe.'],
+            ['Square', '18 by 18', 'From 3 to 21', 'Square shapes: grid, layout, box. It is smaller than the circle so it does not look bigger.'],
+            ['Portrait', '16 wide, 20 tall', 'From 4 to 20, 2 to 22', 'Tall shapes: file, phone, book.'],
+            ['Landscape', '20 wide, 16 tall', 'From 2 to 22, 4 to 20', 'Wide shapes: card, image, mail.'],
+          ]}
+        />
+      </Section>
+
+      <Section n="03" title="Drawing rules" intro="Follow these to draw a new icon, or to check one you have been given. If an icon breaks a rule, redraw it.">
+        <Table
+          head={['Rule', 'Value']}
+          rows={[
+            ['Canvas', 'Twenty-four by twenty-four, with a viewBox of 0 0 24 24.'],
+            ['Line', 'Two units. The same on every icon and every part of an icon.'],
+            ['Caps and joins', 'Round caps and round joins. No square ends and no sharp points.'],
+            ['Corners', 'Outer corners have a radius of at least 2 units. Inner corners have no less than 1 unit.'],
+            ['Fill', 'None. Icons are outlines only. A small dot is drawn as a line of no length with a round cap.'],
+            ['Gap between lines', 'At least 2 units, so lines never merge at 16 pixels.'],
+            ['Angles', 'Straight lines at 0, 45 or 90 degrees where you can. Curves follow circles and quarter circles.'],
+            ['Detail', 'Only what is needed to read the icon. Few strokes, no tiny parts.'],
+            ['Alignment', 'Centre the icon by its look, not its bounding box. Nudge it if it looks off.'],
+            ['Colour', 'Draw in any one colour. The file is saved with currentColor.'],
+            ['Name', 'The Lucide name in kebab case, such as book-open. A new icon outside Lucide follows the same style.'],
+          ]}
+        />
+      </Section>
+
+      <Section n="04" title="Icon set" intro="All icons in the set today. Names are the Lucide names. Every file below is built from the same source as the code, so downloads always match what is in the repository.">
+        <div className={s.downloads}>
+          <Button variant="primary" label={`Download all (${iconNames.length} SVGs, .zip)`} icon={btnIcons.download} onClick={downloadZip} />
+          <Button variant="secondary" label="Download sprite sheet (.svg)" icon={btnIcons.download} onClick={downloadSprite} />
+        </div>
         <div className={s.gallery}>
           {iconNames.map((n) => (
             <div key={n} className={s.tile}>
               <Icon name={n} size="lg" />
               <code>{n}</code>
+              <Button variant="link" label="Download" icon={btnIcons.download} onClick={() => downloadIcon(n)} />
             </div>
           ))}
         </div>
@@ -145,7 +202,7 @@ export function IconGuidelines() {
         />
       </Section>
 
-      <Section n="03" title="Sizes" intro="Three sizes. Match the icon to the text beside it.">
+      <Section n="05" title="Sizes" intro="Three sizes. Match the icon to the text beside it.">
         <Table
           head={['Size', 'Pixels', 'Token', 'Use']}
           rows={[
@@ -156,7 +213,7 @@ export function IconGuidelines() {
         />
       </Section>
 
-      <Section n="04" title="Colour" intro="An icon never has a colour of its own. It inherits the text colour, so it always matches its label and its state.">
+      <Section n="06" title="Colour" intro="An icon never has a colour of its own. It inherits the text colour, so it always matches its label and its state.">
         <div className={`${base.cards} ${base.cols2}`}>
           <Card title="Inherits text colour" white text="Set the colour on the parent. Here: heading, body, muted and the action blue.">
             <span className={s.row} style={{ color: 'var(--sw-color-text-heading)' }}><Icon name="layout-dashboard" /> Dashboard</span>
@@ -170,7 +227,7 @@ export function IconGuidelines() {
         </div>
       </Section>
 
-      <Section n="05" title="Usage guidelines">
+      <Section n="07" title="Usage guidelines">
         <div className={s.usage}>
           <DoDont ok text="Pair an icon with a text label so the meaning is clear.">
             <span className={s.row}><Icon name="layout-dashboard" /> Dashboard</span>
@@ -187,7 +244,7 @@ export function IconGuidelines() {
         </div>
       </Section>
 
-      <Section n="06" title="Accessibility">
+      <Section n="08" title="Accessibility">
         <Table
           head={['Case', 'Rule']}
           rows={[
@@ -200,7 +257,7 @@ export function IconGuidelines() {
         />
       </Section>
 
-      <Section n="07" title="Tokens" intro="Sizes come from semantic size tokens, which come from primitives. The line weight is one component token.">
+      <Section n="09" title="Tokens" intro="Sizes come from semantic size tokens, which come from primitives. The line weight is one component token.">
         <Table
           head={['Part', 'Tokens']}
           rows={[
@@ -210,7 +267,7 @@ export function IconGuidelines() {
         />
       </Section>
 
-      <Section n="08" title="Spec for code">
+      <Section n="10" title="Spec for code">
         <SourceLinks
           items={[
             { label: 'Icon source', path: 'src/components/Icon' },
