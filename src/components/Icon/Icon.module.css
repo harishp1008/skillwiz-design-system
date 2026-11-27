@@ -1,0 +1,3 @@
+.icon { flex: none; display: inline-block; vertical-align: middle; width: var(--sw-icon-size-md); height: var(--sw-icon-size-md); stroke-width: var(--sw-icon-stroke-width); }
+.icon[data-size='sm'] { width: var(--sw-icon-size-sm); height: var(--sw-icon-size-sm); }
+.icon[data-size='lg'] { width: var(--sw-icon-size-lg); height: var(--sw-icon-size-lg); }

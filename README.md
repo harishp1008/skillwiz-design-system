@@ -90,6 +90,17 @@ import { Tabs } from '@skillwiz/design-system';
 <Tabs label="Student activity" items={[{ id: 'overview', label: 'Overview', panel: <Overview /> }, { id: 'flags', label: 'Flags', count: 3, alert: true, panel: <Flags /> }]} />
 ```
 
+### Icons
+
+`Icon` is the shared line icon (Lucide shapes, 24 grid, 2 unit line, `currentColor`). Add an icon by pasting its path into `src/components/Icon/icons.ts`. Page: **Icons / Icon set** in Storybook. New tokens: `icon.*`, `size.icon.*`, primitives `size.16`, `size.20`, `size.24`.
+
+```tsx
+import { Icon } from '@skillwiz/design-system';
+
+<Icon name="book-open" />
+<Icon name="link" size="lg" label="Copy link" />
+```
+
 ### Component story convention
 
 Every component has exactly two stories under `Components/<Name>`:

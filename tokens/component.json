@@ -2208,5 +2208,25 @@
       "$value": "{color.text.muted}",
       "$description": "Status with no tone."
     }
+  },
+  "icon": {
+    "$description": "Shared line icon: size and stroke.",
+    "size-sm": {
+      "$value": "{size.icon.sm}",
+      "$description": "Small icon."
+    },
+    "size-md": {
+      "$value": "{size.icon.md}",
+      "$description": "Default icon."
+    },
+    "size-lg": {
+      "$value": "{size.icon.lg}",
+      "$description": "Large icon."
+    },
+    "stroke-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Line weight in drawing units. It scales with the icon, so every icon keeps the same proportions."
+    }
   }
 }

@@ -664,6 +664,20 @@
         "$value": "{size.44}",
         "$description": "Control height, roomy: sign-up and the student exam."
       }
+    },
+    "icon": {
+      "sm": {
+        "$value": "{size.16}",
+        "$description": "Icon beside small text, in dense controls and chips."
+      },
+      "md": {
+        "$value": "{size.20}",
+        "$description": "Icon in buttons, menus and the top bar."
+      },
+      "lg": {
+        "$value": "{size.24}",
+        "$description": "Icon on its own, in empty states and tiles."
+      }
     }
   },
   "shadow": {

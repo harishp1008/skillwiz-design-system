@@ -101,6 +101,9 @@
   --sw-radius-12: 12px;
   --sw-radius-100: 100px;
   --sw-shadow-md: 0 8px 24px rgb(16 24 40 / 0.12);
+  --sw-size-16: 16px;
+  --sw-size-20: 20px;
+  --sw-size-24: 24px;
   --sw-size-28: 28px;
   --sw-size-36: 36px;
   --sw-size-44: 44px;
@@ -200,6 +203,9 @@
   --sw-size-control-lg: var(--sw-size-44);
   --sw-size-control-md: var(--sw-size-36);
   --sw-size-control-sm: var(--sw-size-28);
+  --sw-size-icon-lg: var(--sw-size-24);
+  --sw-size-icon-md: var(--sw-size-20);
+  --sw-size-icon-sm: var(--sw-size-16);
   --sw-space-card-gap: var(--sw-space-14);
   --sw-space-control-padding-icon-side: var(--sw-space-12);
   --sw-space-control-padding-icon-side-lg: var(--sw-space-16);
@@ -510,6 +516,10 @@
   --sw-filter-chip-selected-border: var(--sw-color-focus-outline);
   --sw-filter-chip-selected-text: var(--sw-color-action-text);
   --sw-filter-chip-text: var(--sw-color-text-heading);
+  --sw-icon-size-lg: var(--sw-size-icon-lg);
+  --sw-icon-size-md: var(--sw-size-icon-md);
+  --sw-icon-size-sm: var(--sw-size-icon-sm);
+  --sw-icon-stroke-width: 2px;
   --sw-menu-arrow-size: 16px;
   --sw-menu-submenu-offset: 4px;
   --sw-menu-trigger-bg-hover: var(--sw-color-surface-muted);
