@@ -96,6 +96,15 @@ const meaning: Record<IconName, string> = {
   'book-open': 'Learning, courses, reading material',
   'layout-dashboard': 'Dashboard, overview',
   link: 'A link, copy or share a link',
+  user: 'A person with no name or photo',
+  'circle-alert': 'An error or warning message',
+  search: 'Search a list',
+  x: 'Clear a value or close',
+  eye: 'Show a hidden value, like a password',
+  'eye-off': 'Hide a shown value',
+  mail: 'An email address or message',
+  lock: 'A password or locked item',
+  send: 'Send a message',
 };
 
 export function IconGuidelines() {

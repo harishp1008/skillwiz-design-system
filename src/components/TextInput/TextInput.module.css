@@ -1,0 +1,36 @@
+/* Text input. Every visual value comes from a --sw-text-input-* token. */
+.field { display: flex; flex-direction: column; gap: var(--sw-text-input-field-gap); font-family: var(--sw-font-family-base); min-width: 0; --h: var(--sw-text-input-height-md); --px: var(--sw-text-input-padding-x-md); --fs: var(--sw-text-input-font-size-md); }
+.field[data-size='sm'] { --h: var(--sw-text-input-height-sm); --px: var(--sw-text-input-padding-x-sm); --fs: var(--sw-text-input-font-size-sm); }
+.field[data-size='lg'] { --h: var(--sw-text-input-height-lg); --px: var(--sw-text-input-padding-x-lg); --fs: var(--sw-text-input-font-size-lg); }
+
+.label { color: var(--sw-text-input-label-text); font-size: var(--sw-text-input-label-font-size); line-height: var(--sw-text-input-label-line-height); font-weight: var(--sw-text-input-label-weight); }
+.optional { color: var(--sw-text-input-optional-text); font-weight: var(--sw-text-input-optional-weight); }
+
+.box { box-sizing: border-box; display: flex; align-items: center; gap: var(--sw-text-input-icon-gap); height: var(--h); padding: 0 var(--px); border: var(--sw-text-input-border-width) solid var(--sw-text-input-border); border-radius: var(--sw-text-input-radius); background: var(--sw-text-input-bg); transition: border-color var(--sw-text-input-duration) var(--sw-text-input-easing); }
+@media (hover: hover) { .box:hover:not([data-disabled]):not([data-readonly]):not([data-error]) { border-color: var(--sw-text-input-border-hover); } }
+.box[data-force='hover'] { border-color: var(--sw-text-input-border-hover); }
+/* Focus: border colour plus a ring of the same colour. The ring is a shadow, so nothing moves. */
+.box:focus-within, .box[data-force='focus'] { border-color: var(--sw-text-input-focus-color); box-shadow: 0 0 0 var(--sw-text-input-focus-ring-width) var(--sw-text-input-focus-color); }
+.box[data-error] { border-color: var(--sw-text-input-error-color); }
+.box[data-error]:focus-within { box-shadow: 0 0 0 var(--sw-text-input-focus-ring-width) var(--sw-text-input-error-color); }
+.box[data-disabled] { background: var(--sw-text-input-disabled-bg); border-color: var(--sw-text-input-disabled-border); cursor: not-allowed; }
+.box[data-readonly] { background: var(--sw-text-input-readonly-bg); border-color: var(--sw-text-input-readonly-border); }
+
+.input { flex: 1 1 auto; min-width: 0; height: 100%; padding: 0; margin: 0; border: 0; outline: 0; background: transparent; color: var(--sw-text-input-text); font: inherit; font-size: var(--fs); line-height: var(--sw-text-input-line-height); text-overflow: ellipsis; }
+.input::placeholder { color: var(--sw-text-input-placeholder); opacity: 1; }
+.input:disabled { color: var(--sw-text-input-disabled-text); cursor: not-allowed; }
+.input:disabled::placeholder { color: var(--sw-text-input-disabled-text); }
+
+.icon.icon { flex: none; width: var(--sw-text-input-icon-size); height: var(--sw-text-input-icon-size); color: var(--sw-text-input-icon-color); }
+.suffix { flex: none; color: var(--sw-text-input-suffix-text); font-size: var(--fs); line-height: var(--sw-text-input-line-height); }
+.action { flex: none; display: inline-flex; align-items: center; justify-content: center; width: var(--sw-text-input-action-size); height: var(--sw-text-input-action-size); margin: 0 calc(var(--sw-text-input-icon-gap) * -0.5) 0 0; padding: 0; border: 0; border-radius: var(--sw-text-input-action-radius); background: transparent; color: var(--sw-text-input-icon-color); cursor: pointer; }
+.action:hover { background: var(--sw-text-input-action-bg-hover); }
+.action:focus-visible { outline: var(--sw-text-input-focus-ring-width) solid var(--sw-text-input-focus-color); outline-offset: 0; }
+
+/* Reserve nothing when empty: the line only takes space once it has text, so a message appears below without moving the field. */
+.help { display: flex; align-items: flex-start; gap: var(--sw-text-input-icon-gap); margin: 0; color: var(--sw-text-input-helper-text); font-size: var(--sw-text-input-helper-font-size); line-height: var(--sw-text-input-helper-line-height); }
+.help:empty { display: none; }
+.help[data-error] { color: var(--sw-text-input-error-text); }
+.errorIcon.errorIcon { width: var(--sw-text-input-error-icon-size); height: var(--sw-text-input-error-icon-size); margin-top: 1px; color: var(--sw-text-input-error-color); }
+
+@media (max-width: 480px) { .field { width: 100%; } }

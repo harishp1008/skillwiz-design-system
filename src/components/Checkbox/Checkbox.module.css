@@ -1,0 +1,54 @@
+/* Checkbox. Every visual value comes from a --sw-checkbox-* token. */
+.wrap { display: flex; flex-direction: column; gap: var(--sw-checkbox-description-gap); font-family: var(--sw-font-family-base); --box: var(--sw-checkbox-size-md); --lh: var(--sw-checkbox-label-line-height-md); --gap: var(--sw-checkbox-gap-md); --mark: var(--sw-checkbox-mark-size-md); --dash: var(--sw-checkbox-dash-width); --r: var(--sw-checkbox-radius); }
+.wrap[data-size='sm'] { --box: var(--sw-checkbox-size-sm); --lh: var(--sw-checkbox-label-line-height-sm); --gap: var(--sw-checkbox-gap-sm); --mark: var(--sw-checkbox-mark-size-sm); --dash: var(--sw-checkbox-dash-width-sm); --r: var(--sw-checkbox-radius-sm); }
+
+/* The box and label are one label: the whole row is the target, at least as tall as the minimum. */
+.root { position: relative; display: flex; align-items: flex-start; gap: var(--gap); box-sizing: border-box; min-height: var(--sw-checkbox-row-min-height); padding-block: calc((var(--sw-checkbox-row-min-height) - var(--lh)) / 2); cursor: pointer; color: var(--sw-checkbox-label-text); }
+.root[data-disabled] { cursor: not-allowed; color: var(--sw-checkbox-disabled-text); }
+
+.control { position: relative; flex: none; display: inline-flex; width: var(--box); height: var(--box); margin-top: calc((var(--lh) - var(--box)) / 2); }
+.input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: inherit; }
+.box { box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; border: var(--sw-checkbox-border-width) solid var(--sw-checkbox-border); border-radius: var(--r); background: var(--sw-checkbox-bg); color: var(--sw-checkbox-mark); transition: background-color var(--sw-checkbox-duration) var(--sw-checkbox-easing), border-color var(--sw-checkbox-duration) var(--sw-checkbox-easing); }
+.check, .dash { position: absolute; opacity: 0; stroke-width: var(--sw-checkbox-mark-stroke); vector-effect: non-scaling-stroke; pointer-events: none; }
+.check { width: var(--mark); height: var(--mark); }
+.dash { width: var(--dash); height: var(--dash); }
+.check *, .dash * { vector-effect: non-scaling-stroke; }
+
+.input:checked + .box, .input:indeterminate + .box { background: var(--sw-checkbox-bg-checked); border-color: var(--sw-checkbox-bg-checked); }
+.input:checked + .box .check { opacity: 1; }
+.input:indeterminate + .box .check { opacity: 0; }
+.input:indeterminate + .box .dash { opacity: 1; }
+
+@media (hover: hover) {
+  .root:not([data-disabled]):hover .input:not(:checked):not(:indeterminate) + .box { background: var(--sw-checkbox-bg-hover); border-color: var(--sw-checkbox-border-hover); }
+  .root:not([data-disabled]):hover .input:is(:checked, :indeterminate) + .box { background: var(--sw-checkbox-bg-checked-hover); border-color: var(--sw-checkbox-bg-checked-hover); }
+}
+.root[data-force='hover'] .input:not(:checked):not(:indeterminate) + .box { background: var(--sw-checkbox-bg-hover); border-color: var(--sw-checkbox-border-hover); }
+.input:focus-visible + .box, .root[data-force='focus'] .box { outline: var(--sw-checkbox-focus-width) solid var(--sw-checkbox-focus-color); outline-offset: var(--sw-checkbox-focus-offset); }
+
+.root[data-error] .input:not(:checked):not(:indeterminate) + .box { border-color: var(--sw-checkbox-error-border); }
+
+.root[data-disabled] .box { background: var(--sw-checkbox-disabled-bg); border-color: var(--sw-checkbox-disabled-border); }
+.root[data-disabled] .input:is(:checked, :indeterminate) + .box { background: var(--sw-checkbox-disabled-checked-bg); border-color: var(--sw-checkbox-disabled-checked-bg); color: var(--sw-checkbox-disabled-checked-mark); }
+
+.text { display: flex; flex-direction: column; gap: var(--sw-checkbox-description-gap); min-width: 0; }
+.label { font-size: var(--sw-checkbox-label-font-size-md); line-height: var(--sw-checkbox-label-line-height-md); font-weight: var(--sw-checkbox-label-weight); }
+.wrap[data-size='sm'] .label { font-size: var(--sw-checkbox-label-font-size-sm); line-height: var(--sw-checkbox-label-line-height-sm); }
+.description { font-size: var(--sw-checkbox-description-font-size); line-height: var(--sw-checkbox-description-line-height); color: var(--sw-checkbox-description-text); }
+.root[data-disabled] .description { color: var(--sw-checkbox-disabled-text); }
+
+.error { display: flex; align-items: flex-start; gap: var(--sw-checkbox-description-gap); margin: 0; padding-left: calc(var(--box) + var(--gap)); color: var(--sw-checkbox-error-text); font-size: var(--sw-checkbox-description-font-size); line-height: var(--sw-checkbox-description-line-height); }
+.errorIcon.errorIcon { width: var(--sw-checkbox-error-icon-size); height: var(--sw-checkbox-error-icon-size); margin-top: 1px; }
+
+/* Group */
+.group { margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-direction: column; gap: var(--sw-checkbox-group-legend-gap); font-family: var(--sw-font-family-base); }
+.legend { padding: 0; margin-bottom: var(--sw-checkbox-group-legend-gap); color: var(--sw-checkbox-group-legend-text); font-size: var(--sw-checkbox-group-legend-font-size); line-height: var(--sw-checkbox-group-legend-line-height); font-weight: var(--sw-checkbox-group-legend-weight); }
+.meta { margin-left: var(--sw-checkbox-group-legend-gap); color: var(--sw-checkbox-description-text); font-size: var(--sw-checkbox-description-font-size); font-weight: var(--sw-checkbox-label-weight); }
+.items { display: flex; flex-direction: column; gap: var(--sw-checkbox-group-gap); }
+
+/* Option card */
+.wrap[data-variant='card'] .root { align-items: center; gap: var(--sw-checkbox-card-gap); min-height: 0; padding: var(--sw-checkbox-card-padding-y) var(--sw-checkbox-card-padding-x); border: var(--sw-checkbox-border-width) solid var(--sw-checkbox-card-border); border-radius: var(--sw-checkbox-card-radius); background: var(--sw-checkbox-card-bg); }
+.wrap[data-variant='card'] .control { margin-top: 0; }
+.wrap[data-variant='card'] .root:has(.input:checked) { background: var(--sw-checkbox-card-bg-checked); border-color: var(--sw-checkbox-card-border-checked); }
+.wrap[data-variant='card'] .root[data-disabled] { background: var(--sw-checkbox-disabled-bg); }
+.marker { flex: none; color: var(--sw-checkbox-card-marker-text); font-weight: var(--sw-checkbox-card-marker-weight); font-size: var(--sw-checkbox-label-font-size-md); line-height: var(--sw-checkbox-label-line-height-md); }

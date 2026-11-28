@@ -5,6 +5,10 @@
       "000000": {
         "$value": "#000000",
         "$description": "Style guide: Heading."
+      },
+      "000000-10": {
+        "$value": "rgba(0, 0, 0, 0.1)",
+        "$description": "Black at a tenth of full strength: a faint outline."
       }
     },
     "white": {
@@ -89,6 +93,10 @@
         "$ramp": "grey",
         "$scale": "950",
         "$description": "Style guide colour scale."
+      },
+      "8a94a3": {
+        "$value": "#8A94A3",
+        "$description": "Control border that meets the contrast rule for form controls on a white page."
       }
     },
     "blue": {
@@ -167,18 +175,42 @@
         "$ramp": "blue",
         "$scale": "950",
         "$description": "Style guide colour scale."
+      },
+      "d5e8fd": {
+        "$value": "#D5E8FD",
+        "$description": "Avatar background, blue. The centre colour of the paper-cut art."
+      },
+      "1b4c9c": {
+        "$value": "#1B4C9C",
+        "$description": "Avatar initials, blue. A darker shade of the same hue."
       }
     },
     "teal": {
       "41b8d1": {
         "$value": "#41B8D1",
         "$description": "Style guide: Skillwiz Teal."
+      },
+      "cff5f8": {
+        "$value": "#CFF5F8",
+        "$description": "Avatar background, teal. The centre colour of the paper-cut art."
+      },
+      "0c5f70": {
+        "$value": "#0C5F70",
+        "$description": "Avatar initials, teal. A darker shade of the same hue."
       }
     },
     "indigo": {
       "44439d": {
         "$value": "#44439D",
         "$description": "Style guide: Skillwiz Indigo."
+      },
+      "c8d1fd": {
+        "$value": "#C8D1FD",
+        "$description": "Avatar background, indigo. The centre colour of the paper-cut art."
+      },
+      "28348f": {
+        "$value": "#28348F",
+        "$description": "Avatar initials, indigo. A darker shade of the same hue."
       }
     },
     "red": {
@@ -316,6 +348,14 @@
         "$ramp": "amber",
         "$scale": "950",
         "$description": "Style guide colour scale."
+      },
+      "fde5d3": {
+        "$value": "#FDE5D3",
+        "$description": "Avatar background, orange. The centre colour of the paper-cut art."
+      },
+      "94400f": {
+        "$value": "#94400F",
+        "$description": "Avatar initials, orange. A darker shade of the same hue."
       }
     },
     "green": {
@@ -384,6 +424,44 @@
         "$ramp": "teal",
         "$scale": "950",
         "$description": "Style guide colour scale."
+      },
+      "e3f7ea": {
+        "$value": "#E3F7EA",
+        "$description": "Avatar background, green. The centre colour of the paper-cut art."
+      },
+      "11654a": {
+        "$value": "#11654A",
+        "$description": "Avatar initials, green. A darker shade of the same hue."
+      }
+    },
+    "violet": {
+      "ebdefd": {
+        "$value": "#EBDEFD",
+        "$description": "Avatar background, violet. The centre colour of the paper-cut art."
+      },
+      "5530a8": {
+        "$value": "#5530A8",
+        "$description": "Avatar initials, violet. A darker shade of the same hue."
+      }
+    },
+    "yellow": {
+      "fef3cf": {
+        "$value": "#FEF3CF",
+        "$description": "Avatar background, yellow. The centre colour of the paper-cut art."
+      },
+      "744e00": {
+        "$value": "#744E00",
+        "$description": "Avatar initials, yellow. A darker shade of the same hue."
+      }
+    },
+    "pink": {
+      "fddbee": {
+        "$value": "#FDDBEE",
+        "$description": "Avatar background, pink. The centre colour of the paper-cut art."
+      },
+      "9c1f55": {
+        "$value": "#9C1F55",
+        "$description": "Avatar initials, pink. A darker shade of the same hue."
       }
     }
   },
@@ -516,6 +594,10 @@
       "$value": "4px",
       "$description": "Style guide spacing scale."
     },
+    "6": {
+      "$value": "6px",
+      "$description": "Style guide spacing scale, label and helper gap."
+    },
     "8": {
       "$value": "8px",
       "$description": "Style guide spacing scale."
@@ -524,9 +606,19 @@
       "$value": "12px",
       "$description": "Style guide spacing scale."
     },
+    "14": {
+      "$value": "14px",
+      "$description": "Documented as card padding (axis order not stated) and as the gap between cards, but not on the spacing scale. Provisional until reviewed.",
+      "$status": "provisional"
+    },
     "16": {
       "$value": "16px",
       "$description": "Style guide spacing scale."
+    },
+    "18": {
+      "$value": "18px",
+      "$description": "Documented as card padding (axis order not stated), but not on the spacing scale. Provisional until reviewed.",
+      "$status": "provisional"
     },
     "20": {
       "$value": "20px",
@@ -547,16 +639,6 @@
     "64": {
       "$value": "64px",
       "$description": "Style guide spacing scale."
-    },
-    "14": {
-      "$value": "14px",
-      "$description": "Documented as card padding (axis order not stated) and as the gap between cards, but not on the spacing scale. Provisional until reviewed.",
-      "$status": "provisional"
-    },
-    "18": {
-      "$value": "18px",
-      "$description": "Documented as card padding (axis order not stated), but not on the spacing scale. Provisional until reviewed.",
-      "$status": "provisional"
     }
   },
   "radius": {
@@ -605,12 +687,36 @@
     "24": {
       "$value": "24px",
       "$description": "Icon size, large. Same as the drawing grid."
+    },
+    "32": {
+      "$value": "32px",
+      "$description": "Avatar size."
+    },
+    "40": {
+      "$value": "40px",
+      "$description": "Avatar size."
+    },
+    "56": {
+      "$value": "56px",
+      "$description": "Avatar size."
+    },
+    "80": {
+      "$value": "80px",
+      "$description": "Avatar size."
+    },
+    "120": {
+      "$value": "120px",
+      "$description": "Avatar size."
     }
   },
   "shadow": {
     "md": {
       "$value": "0 8px 24px rgb(16 24 40 / 0.12)",
       "$description": "Floating panel elevation. Same value the Top navigation menu used."
+    },
+    "sm": {
+      "$value": "0 1px 2px rgb(16 24 40 / 0.2)",
+      "$description": "Small elevation for a thumb or a raised handle."
     }
   },
   "z-index": {

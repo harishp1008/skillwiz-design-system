@@ -92,6 +92,10 @@
       "selected": {
         "$value": "{color.blue.50}",
         "$description": "Selected or hovered tint behind accent-outlined controls."
+      },
+      "toggle-off": {
+        "$value": "{color.grey.8a94a3}",
+        "$description": "Track of a switch that is off, strong enough to meet contrast for controls."
       }
     },
     "border": {
@@ -110,6 +114,14 @@
       "disabled": {
         "$value": "{color.grey.300}",
         "$description": "Disabled control border (dashed)."
+      },
+      "photo": {
+        "$value": "{color.black.000000-10}",
+        "$description": "Thin inner outline on photos, so light photos do not melt into a white page."
+      },
+      "input": {
+        "$value": "{color.grey.8a94a3}",
+        "$description": "Border of a form control that must be seen on its own: checkbox and radio. Meets three to one on white."
       }
     },
     "risk": {
@@ -330,6 +342,89 @@
           "$description": "Text and icon on the danger subtle fill."
         }
       }
+    },
+    "avatar": {
+      "blue": {
+        "bg": {
+          "$value": "{color.blue.d5e8fd}",
+          "$description": "Avatar flat fill, blue."
+        },
+        "text": {
+          "$value": "{color.blue.1b4c9c}",
+          "$description": "Avatar initials, blue."
+        }
+      },
+      "violet": {
+        "bg": {
+          "$value": "{color.violet.ebdefd}",
+          "$description": "Avatar flat fill, violet."
+        },
+        "text": {
+          "$value": "{color.violet.5530a8}",
+          "$description": "Avatar initials, violet."
+        }
+      },
+      "green": {
+        "bg": {
+          "$value": "{color.green.e3f7ea}",
+          "$description": "Avatar flat fill, green."
+        },
+        "text": {
+          "$value": "{color.green.11654a}",
+          "$description": "Avatar initials, green."
+        }
+      },
+      "orange": {
+        "bg": {
+          "$value": "{color.orange.fde5d3}",
+          "$description": "Avatar flat fill, orange."
+        },
+        "text": {
+          "$value": "{color.orange.94400f}",
+          "$description": "Avatar initials, orange."
+        }
+      },
+      "yellow": {
+        "bg": {
+          "$value": "{color.yellow.fef3cf}",
+          "$description": "Avatar flat fill, yellow."
+        },
+        "text": {
+          "$value": "{color.yellow.744e00}",
+          "$description": "Avatar initials, yellow."
+        }
+      },
+      "pink": {
+        "bg": {
+          "$value": "{color.pink.fddbee}",
+          "$description": "Avatar flat fill, pink."
+        },
+        "text": {
+          "$value": "{color.pink.9c1f55}",
+          "$description": "Avatar initials, pink."
+        }
+      },
+      "teal": {
+        "bg": {
+          "$value": "{color.teal.cff5f8}",
+          "$description": "Avatar flat fill, teal."
+        },
+        "text": {
+          "$value": "{color.teal.0c5f70}",
+          "$description": "Avatar initials, teal."
+        }
+      },
+      "indigo": {
+        "bg": {
+          "$value": "{color.indigo.c8d1fd}",
+          "$description": "Avatar flat fill, indigo."
+        },
+        "text": {
+          "$value": "{color.indigo.28348f}",
+          "$description": "Avatar initials, indigo."
+        }
+      },
+      "$description": "Avatar tones. Identity only, never status."
     }
   },
   "font": {
@@ -588,6 +683,48 @@
         "$value": "{font-weight.regular}"
       },
       "$description": "Helper text, option descriptions and group headers."
+    },
+    "avatar": {
+      "xs": {
+        "size": {
+          "$value": "{font-size.11}",
+          "$description": "Initials size inside an avatar, xs."
+        }
+      },
+      "sm": {
+        "size": {
+          "$value": "{font-size.12}",
+          "$description": "Initials size inside an avatar, sm."
+        }
+      },
+      "md": {
+        "size": {
+          "$value": "{font-size.14}",
+          "$description": "Initials size inside an avatar, md."
+        }
+      },
+      "lg": {
+        "size": {
+          "$value": "{font-size.18}",
+          "$description": "Initials size inside an avatar, lg."
+        }
+      },
+      "xl": {
+        "size": {
+          "$value": "{font-size.28}",
+          "$description": "Initials size inside an avatar, xl."
+        }
+      },
+      "2xl": {
+        "size": {
+          "$value": "{font-size.48}",
+          "$description": "Initials size inside an avatar, 2xl."
+        }
+      },
+      "weight": {
+        "$value": "{font-weight.bold}",
+        "$description": "Initials weight."
+      }
     }
   },
   "space": {
@@ -626,6 +763,38 @@
     "control-padding-icon-side-lg": {
       "$value": "{space.16}",
       "$description": "Padding on the icon side of a large control."
+    },
+    "input-padding-sm": {
+      "$value": "{space.8}",
+      "$description": "Text field side padding, small."
+    },
+    "input-padding-md": {
+      "$value": "{space.12}",
+      "$description": "Text field side padding, default."
+    },
+    "input-padding-lg": {
+      "$value": "{space.16}",
+      "$description": "Text field side padding, large."
+    },
+    "field-gap": {
+      "$value": "{space.6}",
+      "$description": "Gap between a field label, the field and its helper text."
+    },
+    "input-icon-gap": {
+      "$value": "{space.8}",
+      "$description": "Gap between an icon, the value and a suffix inside a text field."
+    },
+    "toggle-gap-inline": {
+      "$value": "{space.8}",
+      "$description": "Between an inline switch and its label."
+    },
+    "toggle-gap-row": {
+      "$value": "{space.16}",
+      "$description": "Between the label and the switch in a settings row."
+    },
+    "input-padding-y": {
+      "$value": "{space.8}",
+      "$description": "Top and bottom padding of a multi-line text field."
     }
   },
   "radius": {
@@ -678,12 +847,86 @@
         "$value": "{size.24}",
         "$description": "Icon on its own, in empty states and tiles."
       }
+    },
+    "avatar": {
+      "xs": {
+        "$value": "{size.24}",
+        "$description": "Avatar size, xs."
+      },
+      "sm": {
+        "$value": "{size.32}",
+        "$description": "Avatar size, sm."
+      },
+      "md": {
+        "$value": "{size.40}",
+        "$description": "Avatar size, md."
+      },
+      "lg": {
+        "$value": "{size.56}",
+        "$description": "Avatar size, lg."
+      },
+      "xl": {
+        "$value": "{size.80}",
+        "$description": "Avatar size, xl."
+      },
+      "2xl": {
+        "$value": "{size.120}",
+        "$description": "Avatar size, 2xl."
+      }
+    },
+    "checkbox": {
+      "md": {
+        "$value": "{size.20}",
+        "$description": "Checkbox box, default."
+      },
+      "sm": {
+        "$value": "{size.16}",
+        "$description": "Checkbox box, small: table rows and menus."
+      }
+    },
+    "input-action": {
+      "$value": "{size.24}",
+      "$description": "Hit area of the clear and show buttons inside a text field."
+    },
+    "toggle": {
+      "md": {
+        "width": {
+          "$value": "{size.36}",
+          "$description": "Switch track width, default."
+        },
+        "height": {
+          "$value": "{size.20}",
+          "$description": "Switch track height, default."
+        },
+        "thumb": {
+          "$value": "{size.16}",
+          "$description": "Switch thumb, default."
+        }
+      },
+      "sm": {
+        "width": {
+          "$value": "{size.28}",
+          "$description": "Switch track width, small."
+        },
+        "height": {
+          "$value": "{size.16}",
+          "$description": "Switch track height, small."
+        },
+        "thumb": {
+          "$value": "{space.12}",
+          "$description": "Switch thumb, small."
+        }
+      }
     }
   },
   "shadow": {
     "overlay": {
       "$value": "{shadow.md}",
       "$description": "Elevation of panels that float over the page: menus, dropdown panels."
+    },
+    "thumb": {
+      "$value": "{shadow.sm}",
+      "$description": "Elevation of a switch thumb."
     }
   },
   "layer": {

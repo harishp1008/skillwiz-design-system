@@ -101,6 +101,55 @@ import { Icon } from '@skillwiz/design-system';
 <Icon name="link" size="lg" label="Copy link" />
 ```
 
+### Avatar
+
+`Avatar` shows a person's photo, or their initials on one of eight paper-cut tones picked from the user ID (same person, same colour). Art from 40px up, flat tone fill at 32px and below. Optional presence dot (proctor screens), muted state, and `AvatarGroup` (four, then +N). Source: `src/components/Avatar`; page: **Components / Avatar** in Storybook. New tokens: `color.avatar.*` (eight tone pairs), `color.border.photo`, `size.avatar.*`, `type.avatar.*`, `avatar.*`.
+
+```tsx
+import { Avatar, AvatarGroup } from '@skillwiz/design-system';
+
+<Avatar name="Aarav Nair" userId="AARAV2026" />
+<Avatar name="Rohit Das" userId="ROHIT2026" size="sm" status="idle" statusLabel="Idle 2 min" decorative />
+```
+
+The tone art in `src/components/Avatar/art/` was taken from the design PDF at 160px. Replace the eight files with the 256px originals when you have them.
+
+### Checkbox
+
+`Checkbox` (native input inside a label) with M 20 and S 16 sizes, description, indeterminate, error and disabled states, an option-card variant for multi-answer questions, and `CheckboxGroup` (fieldset + legend). Source: `src/components/Checkbox`; page: **Components / Checkbox** in Storybook. New tokens: `color.border.input` (3 to 1 on white), `size.checkbox.*`, `checkbox.*`.
+
+```tsx
+import { Checkbox, CheckboxGroup } from '@skillwiz/design-system';
+
+<Checkbox label="Send results by email" description="Students get their score when results are published." />
+```
+
+The multi-select menu in Select/Dropdown still has its own checkbox look; moving it onto `Checkbox` size S is a separate step.
+
+### Text input
+
+`TextInput`: one-line field with label, optional mark, helper/error text, leading icon, suffix, clear button (`clearable`), password Show/Hide, `trim` on blur, and S 28 / M 36 / L 44 sizes. Source: `src/components/TextInput`; page: **Components / Text input** in Storybook. New tokens: `space.input-padding-*`, `space.field-gap`, `space.input-icon-gap`, `size.input-action`, `text-input.*`.
+
+```tsx
+<TextInput label="Student ID" placeholder="e.g. VK3456789" error={error} onChange={setId} />
+```
+
+### Toggle
+
+`Toggle`: a switch for a setting that applies at once. M 36 × 20 and S 28 × 16, inline or settings-row layout with On/Off text, description, saving state (spinner + `aria-busy`), disabled. Native checkbox with `role="switch"`. Source: `src/components/Toggle`; page: **Components / Toggle**. New tokens: `color.surface.toggle-off`, `shadow.thumb`, `size.toggle.*`, `space.toggle-gap-*`, `toggle.*`.
+
+```tsx
+<Toggle label="On watchlist" description="Alerts for this student ring first" checked={on} onChange={setOn} />
+```
+
+### Textarea
+
+`Textarea`: multi-line field that starts at 3 rows and grows to 8, then scrolls. Label, optional mark, helper/error, character `limit` with a count (text is kept past the limit, never cut), disabled, read-only, and a `composer` variant (1 → 6 rows, send button inside, Enter sends). Source: `src/components/Textarea`; page: **Components / Textarea**. New tokens: `space.input-padding-y`, `textarea.*`.
+
+```tsx
+<Textarea label="Describe the issue" limit={500} helper="Our team reads every report." onChange={setText} />
+```
+
 ### Component story convention
 
 Every component has exactly two stories under `Components/<Name>`:

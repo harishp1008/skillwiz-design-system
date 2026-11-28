@@ -6,3 +6,8 @@ export * from './Chip';
 export * from './Dropdown';
 export * from './Tabs';
 export * from './Icon';
+export * from './Avatar';
+export * from './Checkbox';
+export * from './TextInput';
+export * from './Toggle';
+export * from './Textarea';

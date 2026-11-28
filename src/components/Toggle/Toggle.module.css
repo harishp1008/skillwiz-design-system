@@ -1,0 +1,38 @@
+/* Toggle switch. Every visual value comes from a --sw-toggle-* token. */
+.root { display: flex; align-items: flex-start; gap: var(--sw-toggle-gap-inline); font-family: var(--sw-font-family-base); color: var(--sw-toggle-label-text); cursor: pointer; --w: var(--sw-toggle-width-md); --h: var(--sw-toggle-height-md); --t: var(--sw-toggle-thumb-md); --fs: var(--sw-toggle-label-font-size-md); --lh: var(--sw-toggle-label-line-height-md); }
+.root[data-size='sm'] { --w: var(--sw-toggle-width-sm); --h: var(--sw-toggle-height-sm); --t: var(--sw-toggle-thumb-sm); --fs: var(--sw-toggle-label-font-size-sm); --lh: var(--sw-toggle-label-line-height-sm); }
+.root[data-layout='row'] { justify-content: space-between; align-items: center; gap: var(--sw-toggle-gap-row); }
+.root[data-disabled] { cursor: not-allowed; color: var(--sw-toggle-disabled-text); }
+
+.control { position: relative; flex: none; display: inline-flex; width: var(--w); height: var(--h); margin-top: calc((var(--lh) - var(--h)) / 2); }
+.root[data-layout='row'] .control { margin-top: 0; }
+.input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: inherit; }
+.track { box-sizing: border-box; display: flex; align-items: center; width: 100%; height: 100%; padding: var(--sw-toggle-inset); border-radius: var(--sw-toggle-radius); background: var(--sw-toggle-track-off); transition: background-color var(--sw-toggle-duration) var(--sw-toggle-easing); }
+.thumb { position: relative; display: flex; align-items: center; justify-content: center; width: var(--t); height: var(--t); border-radius: var(--sw-toggle-radius); background: var(--sw-toggle-thumb-bg); box-shadow: var(--sw-toggle-thumb-shadow); transform: translateX(0); transition: transform var(--sw-toggle-duration) var(--sw-toggle-easing); }
+.input:checked + .track { background: var(--sw-toggle-track-on); }
+.input:checked + .track .thumb { transform: translateX(calc(var(--w) - var(--t) - 2 * var(--sw-toggle-inset))); }
+
+@media (hover: hover) {
+  .root:not([data-disabled]):hover .input:not(:checked) + .track { background: var(--sw-toggle-track-off-hover); }
+  .root:not([data-disabled]):hover .input:checked + .track { background: var(--sw-toggle-track-on-hover); }
+}
+.root[data-force='hover'] .input:not(:checked) + .track { background: var(--sw-toggle-track-off-hover); }
+.root[data-force='hover'] .input:checked + .track { background: var(--sw-toggle-track-on-hover); }
+.input:focus-visible + .track, .root[data-force='focus'] .track { outline: var(--sw-toggle-focus-width) solid var(--sw-toggle-focus-color); outline-offset: var(--sw-toggle-focus-offset); }
+
+.root[data-disabled] .track { background: var(--sw-toggle-disabled-off-bg); box-shadow: inset 0 0 0 1px var(--sw-toggle-disabled-off-ring); }
+.root[data-disabled] .input:checked + .track { background: var(--sw-toggle-disabled-on-bg); box-shadow: none; }
+
+.text { display: flex; flex-direction: column; gap: var(--sw-toggle-row-gap); min-width: 0; }
+.label { font-size: var(--fs); line-height: var(--lh); }
+.description { font-size: var(--sw-toggle-description-font-size); line-height: var(--sw-toggle-description-line-height); color: var(--sw-toggle-description-text); }
+.root[data-disabled] .description { color: var(--sw-toggle-disabled-text); }
+.root[data-layout='row'] .text { flex: 1 1 auto; }
+.state { flex: none; margin-left: auto; color: var(--sw-toggle-state-text); font-size: var(--sw-toggle-state-font-size); line-height: var(--sw-toggle-state-line-height); }
+.root[data-layout='row'] .state { margin-left: 0; margin-right: calc(var(--sw-toggle-gap-row) * -0.5); }
+
+.spinner { box-sizing: border-box; width: 70%; height: 70%; border-radius: var(--sw-toggle-radius); border: var(--sw-toggle-spinner-width) solid transparent; border-top-color: var(--sw-toggle-spinner-color); animation: spin 700ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* With reduced motion the thumb jumps and the track does not fade; position and colour still show the state. */
+@media (prefers-reduced-motion: reduce) { .track, .thumb { transition: none; } .spinner { animation-duration: 2s; } }

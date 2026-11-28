@@ -2228,5 +2228,1062 @@
       "$source": "documented",
       "$description": "Line weight in drawing units. It scales with the icon, so every icon keeps the same proportions."
     }
+  },
+  "avatar": {
+    "$description": "Avatar: a person's photo or initials on a tone, with presence dot and group stack.",
+    "size-xs": {
+      "$value": "{size.avatar.xs}",
+      "$description": "Avatar size, xs."
+    },
+    "size-sm": {
+      "$value": "{size.avatar.sm}",
+      "$description": "Avatar size, sm."
+    },
+    "size-md": {
+      "$value": "{size.avatar.md}",
+      "$description": "Avatar size, md."
+    },
+    "size-lg": {
+      "$value": "{size.avatar.lg}",
+      "$description": "Avatar size, lg."
+    },
+    "size-xl": {
+      "$value": "{size.avatar.xl}",
+      "$description": "Avatar size, xl."
+    },
+    "size-2xl": {
+      "$value": "{size.avatar.2xl}",
+      "$description": "Avatar size, 2xl."
+    },
+    "font-size-xs": {
+      "$value": "{type.avatar.xs.size}",
+      "$description": "Initials size, xs."
+    },
+    "font-size-sm": {
+      "$value": "{type.avatar.sm.size}",
+      "$description": "Initials size, sm."
+    },
+    "font-size-md": {
+      "$value": "{type.avatar.md.size}",
+      "$description": "Initials size, md."
+    },
+    "font-size-lg": {
+      "$value": "{type.avatar.lg.size}",
+      "$description": "Initials size, lg."
+    },
+    "font-size-xl": {
+      "$value": "{type.avatar.xl.size}",
+      "$description": "Initials size, xl."
+    },
+    "font-size-2xl": {
+      "$value": "{type.avatar.2xl.size}",
+      "$description": "Initials size, 2xl."
+    },
+    "font-weight": {
+      "$value": "{type.avatar.weight}",
+      "$description": "Initials weight."
+    },
+    "line-height": {
+      "$value": "1",
+      "$source": "documented",
+      "$description": "Initials line height, so the letters centre exactly."
+    },
+    "radius": {
+      "$value": "{radius.pill}",
+      "$description": "Every avatar is a circle."
+    },
+    "tone-blue-bg": {
+      "$value": "{color.avatar.blue.bg}",
+      "$description": "Flat fill, blue."
+    },
+    "tone-blue-text": {
+      "$value": "{color.avatar.blue.text}",
+      "$description": "Initials, blue."
+    },
+    "tone-violet-bg": {
+      "$value": "{color.avatar.violet.bg}",
+      "$description": "Flat fill, violet."
+    },
+    "tone-violet-text": {
+      "$value": "{color.avatar.violet.text}",
+      "$description": "Initials, violet."
+    },
+    "tone-green-bg": {
+      "$value": "{color.avatar.green.bg}",
+      "$description": "Flat fill, green."
+    },
+    "tone-green-text": {
+      "$value": "{color.avatar.green.text}",
+      "$description": "Initials, green."
+    },
+    "tone-orange-bg": {
+      "$value": "{color.avatar.orange.bg}",
+      "$description": "Flat fill, orange."
+    },
+    "tone-orange-text": {
+      "$value": "{color.avatar.orange.text}",
+      "$description": "Initials, orange."
+    },
+    "tone-yellow-bg": {
+      "$value": "{color.avatar.yellow.bg}",
+      "$description": "Flat fill, yellow."
+    },
+    "tone-yellow-text": {
+      "$value": "{color.avatar.yellow.text}",
+      "$description": "Initials, yellow."
+    },
+    "tone-pink-bg": {
+      "$value": "{color.avatar.pink.bg}",
+      "$description": "Flat fill, pink."
+    },
+    "tone-pink-text": {
+      "$value": "{color.avatar.pink.text}",
+      "$description": "Initials, pink."
+    },
+    "tone-teal-bg": {
+      "$value": "{color.avatar.teal.bg}",
+      "$description": "Flat fill, teal."
+    },
+    "tone-teal-text": {
+      "$value": "{color.avatar.teal.text}",
+      "$description": "Initials, teal."
+    },
+    "tone-indigo-bg": {
+      "$value": "{color.avatar.indigo.bg}",
+      "$description": "Flat fill, indigo."
+    },
+    "tone-indigo-text": {
+      "$value": "{color.avatar.indigo.text}",
+      "$description": "Initials, indigo."
+    },
+    "bg-muted": {
+      "$value": "{color.surface.muted}",
+      "$description": "No name, and offline or not joined."
+    },
+    "text-muted": {
+      "$value": "{color.text.muted}",
+      "$description": "Initials and icon when muted or without a name."
+    },
+    "outline-photo": {
+      "$value": "{color.border.photo}",
+      "$description": "Inner outline on photos."
+    },
+    "outline-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Photo outline width."
+    },
+    "ring-color": {
+      "$value": "{color.surface.default}",
+      "$description": "Ring around the status dot and between grouped avatars."
+    },
+    "ring-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Ring width."
+    },
+    "dot-xs": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Status dot, xs: about a third of the avatar."
+    },
+    "dot-sm": {
+      "$value": "10px",
+      "$source": "documented",
+      "$description": "Status dot, sm: about a third of the avatar."
+    },
+    "dot-md": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Status dot, md: about a third of the avatar."
+    },
+    "dot-lg": {
+      "$value": "14px",
+      "$source": "documented",
+      "$description": "Status dot, lg: about a third of the avatar."
+    },
+    "dot-xl": {
+      "$value": "18px",
+      "$source": "documented",
+      "$description": "Status dot, xl: about a third of the avatar."
+    },
+    "dot-2xl": {
+      "$value": "24px",
+      "$source": "documented",
+      "$description": "Status dot, 2xl: about a third of the avatar."
+    },
+    "dot-active": {
+      "$value": "{color.feedback.success.solid}",
+      "$description": "Status dot, active."
+    },
+    "dot-idle": {
+      "$value": "{color.feedback.warning.solid}",
+      "$description": "Status dot, idle."
+    },
+    "dot-reconnecting": {
+      "$value": "{color.feedback.info.solid}",
+      "$description": "Status dot, reconnecting."
+    },
+    "dot-offline": {
+      "$value": "{color.text.muted}",
+      "$description": "Status dot ring, offline. The dot is hollow."
+    },
+    "dot-offline-fill": {
+      "$value": "{color.surface.default}",
+      "$description": "Status dot fill, offline."
+    },
+    "group-overlap": {
+      "$value": "-8px",
+      "$source": "documented",
+      "$description": "How far grouped avatars overlap."
+    },
+    "group-more-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "The plus count in a group."
+    },
+    "group-more-text": {
+      "$value": "{color.text.muted}",
+      "$description": "The plus count text."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Focus ring when the avatar is a button."
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring width."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring offset."
+    },
+    "fade-duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Photo fade-in."
+    },
+    "fade-easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Photo fade-in easing."
+    }
+  },
+  "checkbox": {
+    "$description": "Checkbox: single, group with select all, table row and option card.",
+    "size-md": {
+      "$value": "{size.checkbox.md}",
+      "$description": "Box, default."
+    },
+    "size-sm": {
+      "$value": "{size.checkbox.sm}",
+      "$description": "Box, small."
+    },
+    "radius": {
+      "$value": "{radius.chip}",
+      "$description": "Box corners, default."
+    },
+    "radius-sm": {
+      "$value": "3px",
+      "$source": "documented",
+      "$description": "Box corners at the small size."
+    },
+    "border-width": {
+      "$value": "1.5px",
+      "$source": "documented",
+      "$description": "Box outline."
+    },
+    "bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Unchecked box."
+    },
+    "border": {
+      "$value": "{color.border.input}",
+      "$description": "Unchecked outline."
+    },
+    "bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "Unchecked box on hover."
+    },
+    "border-hover": {
+      "$value": "{color.text.muted}",
+      "$description": "Outline on hover."
+    },
+    "bg-checked": {
+      "$value": "{color.action.default}",
+      "$description": "Checked and mixed fill."
+    },
+    "bg-checked-hover": {
+      "$value": "{color.action.hover}",
+      "$description": "Checked and mixed fill on hover."
+    },
+    "mark": {
+      "$value": "{color.text.on-action}",
+      "$description": "Check mark and dash on the fill."
+    },
+    "mark-size-md": {
+      "$value": "14px",
+      "$source": "documented",
+      "$description": "Check mark, default."
+    },
+    "mark-size-sm": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Check mark, small."
+    },
+    "mark-stroke": {
+      "$value": "3px",
+      "$source": "documented",
+      "$description": "Check mark line weight."
+    },
+    "dash-width": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Dash for a mixed box, default."
+    },
+    "dash-width-sm": {
+      "$value": "10px",
+      "$source": "observed",
+      "$status": "provisional",
+      "$description": "Dash for a mixed box, small. Not given in the spec; scaled from the default."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Keyboard focus ring."
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring width."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Focus ring offset."
+    },
+    "error-border": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Outline when in error."
+    },
+    "error-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Error message."
+    },
+    "error-icon-size": {
+      "$value": "{size.icon.sm}",
+      "$description": "Icon before the error message."
+    },
+    "disabled-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Unavailable box."
+    },
+    "disabled-border": {
+      "$value": "{color.border.default}",
+      "$description": "Unavailable outline."
+    },
+    "disabled-checked-bg": {
+      "$value": "{color.border.control}",
+      "$description": "Unavailable box that is checked: grey fill keeps the value readable."
+    },
+    "disabled-checked-mark": {
+      "$value": "{color.text.disabled}",
+      "$description": "Check on an unavailable checked box. The spec does not name it."
+    },
+    "disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Unavailable label and description."
+    },
+    "gap-md": {
+      "$value": "10px",
+      "$source": "documented",
+      "$description": "Space between box and label, default."
+    },
+    "gap-sm": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Space between box and label, small."
+    },
+    "row-min-height": {
+      "$value": "32px",
+      "$source": "documented",
+      "$description": "Smallest row height. The label counts as the target."
+    },
+    "label-text": {
+      "$value": "{color.text.body}",
+      "$description": "Label."
+    },
+    "label-font-size-md": {
+      "$value": "{type.body.md.size}",
+      "$description": "Label size, default."
+    },
+    "label-line-height-md": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Label line height, default."
+    },
+    "label-font-size-sm": {
+      "$value": "{type.helper.size}",
+      "$description": "Label size, small."
+    },
+    "label-line-height-sm": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Label line height, small."
+    },
+    "label-weight": {
+      "$value": "{type.body.md.weight}",
+      "$description": "Label weight."
+    },
+    "description-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Description under the label."
+    },
+    "description-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Description size."
+    },
+    "description-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Description line height."
+    },
+    "description-gap": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Space between label and description."
+    },
+    "group-gap": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Space between items in a group."
+    },
+    "group-legend-gap": {
+      "$value": "8px",
+      "$source": "documented",
+      "$description": "Space between the group label and the first item."
+    },
+    "group-legend-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Group label."
+    },
+    "group-legend-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Group label size."
+    },
+    "group-legend-line-height": {
+      "$value": "{type.label.md.line-height}",
+      "$description": "Group label line height."
+    },
+    "group-legend-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Group label weight, semibold."
+    },
+    "card-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Option card."
+    },
+    "card-border": {
+      "$value": "{color.border.default}",
+      "$description": "Option card outline."
+    },
+    "card-bg-checked": {
+      "$value": "{color.action.tint}",
+      "$description": "Checked option card tint."
+    },
+    "card-border-checked": {
+      "$value": "{color.action.default}",
+      "$description": "Checked option card outline."
+    },
+    "card-radius": {
+      "$value": "{radius.card}",
+      "$description": "Option card corners."
+    },
+    "card-padding-x": {
+      "$value": "{space.control-padding-md}",
+      "$description": "Option card side padding."
+    },
+    "card-padding-y": {
+      "$value": "{space.control-padding-sm}",
+      "$description": "Option card top and bottom padding."
+    },
+    "card-gap": {
+      "$value": "12px",
+      "$source": "documented",
+      "$description": "Space between box, marker and text in an option card."
+    },
+    "card-marker-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Letter before an answer."
+    },
+    "card-marker-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Letter weight."
+    },
+    "duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Fill and border change."
+    },
+    "easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Fill and border easing."
+    }
+  },
+  "text-input": {
+    "$description": "Text input: one-line field with label, icons, suffix, helper and error text.",
+    "height-sm": {
+      "$value": "{size.control.sm}",
+      "$description": "Field height, small."
+    },
+    "height-md": {
+      "$value": "{size.control.md}",
+      "$description": "Field height, default."
+    },
+    "height-lg": {
+      "$value": "{size.control.lg}",
+      "$description": "Field height, large."
+    },
+    "padding-x-sm": {
+      "$value": "{space.input-padding-sm}",
+      "$description": "Side padding, small."
+    },
+    "padding-x-md": {
+      "$value": "{space.input-padding-md}",
+      "$description": "Side padding, default."
+    },
+    "padding-x-lg": {
+      "$value": "{space.input-padding-lg}",
+      "$description": "Side padding, large."
+    },
+    "radius": {
+      "$value": "{radius.control}",
+      "$description": "Field corners, all sizes."
+    },
+    "font-size-sm": {
+      "$value": "{type.body.sm.size}",
+      "$description": "Value text, small."
+    },
+    "font-size-md": {
+      "$value": "{type.body.md.size}",
+      "$description": "Value text, default."
+    },
+    "font-size-lg": {
+      "$value": "{type.body.lg.size}",
+      "$description": "Value text, large. Sixteen pixels stops phones zooming in."
+    },
+    "line-height": {
+      "$value": "{type.body.sm.line-height}",
+      "$description": "Value line height, all sizes."
+    },
+    "bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Field fill."
+    },
+    "border": {
+      "$value": "{color.border.input}",
+      "$description": "Resting border, strong enough to meet contrast for controls."
+    },
+    "border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Field border."
+    },
+    "border-hover": {
+      "$value": "{color.text.muted}",
+      "$description": "Border on hover."
+    },
+    "text": {
+      "$value": "{color.text.body}",
+      "$description": "Typed value."
+    },
+    "placeholder": {
+      "$value": "{color.text.muted}",
+      "$description": "Placeholder example."
+    },
+    "icon-color": {
+      "$value": "{color.text.muted}",
+      "$description": "Leading icon and clear and show buttons."
+    },
+    "icon-size": {
+      "$value": "{size.icon.sm}",
+      "$description": "Icons inside the field."
+    },
+    "icon-gap": {
+      "$value": "{space.input-icon-gap}",
+      "$description": "Between icon, value and suffix."
+    },
+    "suffix-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Unit after the value."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Border and ring on focus."
+    },
+    "focus-ring-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Ring outside the border. With the border it makes two pixels and adds no layout shift."
+    },
+    "error-color": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Border, ring and message icon on error."
+    },
+    "error-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Error message."
+    },
+    "error-icon-size": {
+      "$value": "{size.icon.sm}",
+      "$description": "Icon beside the error message."
+    },
+    "disabled-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Disabled fill."
+    },
+    "disabled-border": {
+      "$value": "{color.border.default}",
+      "$description": "Disabled border."
+    },
+    "disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Disabled value and placeholder."
+    },
+    "readonly-bg": {
+      "$value": "{color.surface.page}",
+      "$description": "Read-only fill."
+    },
+    "readonly-border": {
+      "$value": "{color.border.default}",
+      "$description": "Read-only border."
+    },
+    "label-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Label above the field."
+    },
+    "label-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Label size."
+    },
+    "label-line-height": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Label line height."
+    },
+    "label-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Label weight."
+    },
+    "optional-text": {
+      "$value": "{color.text.muted}",
+      "$description": "The word optional after the label."
+    },
+    "optional-weight": {
+      "$value": "{type.body.md.weight}",
+      "$description": "Weight of the word optional."
+    },
+    "field-gap": {
+      "$value": "{space.field-gap}",
+      "$description": "Label to field, field to helper text."
+    },
+    "helper-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Helper text."
+    },
+    "helper-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Helper and error text size."
+    },
+    "helper-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Helper and error line height."
+    },
+    "action-size": {
+      "$value": "{size.input-action}",
+      "$description": "Clear and show button hit area."
+    },
+    "action-radius": {
+      "$value": "{radius.chip}",
+      "$description": "Clear and show button hover shape."
+    },
+    "action-bg-hover": {
+      "$value": "{color.surface.muted}",
+      "$description": "Clear and show button on hover."
+    },
+    "duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Border colour change."
+    },
+    "easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Border colour change easing."
+    }
+  },
+  "toggle": {
+    "$description": "Toggle switch: a setting that is on or off and applies at once.",
+    "width-md": {
+      "$value": "{size.toggle.md.width}",
+      "$description": "Track width, default."
+    },
+    "height-md": {
+      "$value": "{size.toggle.md.height}",
+      "$description": "Track height, default."
+    },
+    "thumb-md": {
+      "$value": "{size.toggle.md.thumb}",
+      "$description": "Thumb, default."
+    },
+    "width-sm": {
+      "$value": "{size.toggle.sm.width}",
+      "$description": "Track width, small."
+    },
+    "height-sm": {
+      "$value": "{size.toggle.sm.height}",
+      "$description": "Track height, small."
+    },
+    "thumb-sm": {
+      "$value": "{size.toggle.sm.thumb}",
+      "$description": "Thumb, small."
+    },
+    "radius": {
+      "$value": "{radius.pill}",
+      "$description": "Track and thumb are fully round."
+    },
+    "inset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Space between thumb and track on every side."
+    },
+    "track-off": {
+      "$value": "{color.surface.toggle-off}",
+      "$description": "Track when off."
+    },
+    "track-off-hover": {
+      "$value": "{color.text.muted}",
+      "$description": "Track when off, on hover."
+    },
+    "track-on": {
+      "$value": "{color.action.default}",
+      "$description": "Track when on."
+    },
+    "track-on-hover": {
+      "$value": "{color.action.hover}",
+      "$description": "Track when on, on hover."
+    },
+    "thumb-bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Thumb."
+    },
+    "thumb-shadow": {
+      "$value": "{shadow.thumb}",
+      "$description": "Thumb elevation."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Keyboard focus outline."
+    },
+    "focus-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Keyboard focus outline."
+    },
+    "focus-offset": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Keyboard focus outline offset."
+    },
+    "disabled-off-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Track when disabled and off."
+    },
+    "disabled-off-ring": {
+      "$value": "{color.border.default}",
+      "$description": "Ring around a disabled off track."
+    },
+    "disabled-on-bg": {
+      "$value": "{color.border.default}",
+      "$description": "Track when disabled and on: grey fill keeps the value readable."
+    },
+    "disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Label and description when disabled."
+    },
+    "spinner-color": {
+      "$value": "{color.action.default}",
+      "$description": "Spinner in the thumb while saving."
+    },
+    "spinner-width": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Spinner line weight."
+    },
+    "gap-inline": {
+      "$value": "{space.toggle-gap-inline}",
+      "$description": "Switch to label, inline."
+    },
+    "gap-row": {
+      "$value": "{space.toggle-gap-row}",
+      "$description": "Label to switch, settings row."
+    },
+    "label-text": {
+      "$value": "{color.text.body}",
+      "$description": "Label."
+    },
+    "label-font-size-md": {
+      "$value": "{type.body.md.size}",
+      "$description": "Label, default."
+    },
+    "label-line-height-md": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Label line height, default."
+    },
+    "label-font-size-sm": {
+      "$value": "{type.helper.size}",
+      "$description": "Label, small."
+    },
+    "label-line-height-sm": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Label line height, small."
+    },
+    "description-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Description under the label."
+    },
+    "description-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Description."
+    },
+    "description-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Description line height."
+    },
+    "state-text": {
+      "$value": "{color.text.muted}",
+      "$description": "On or Off text beside the switch."
+    },
+    "state-font-size": {
+      "$value": "{type.body.sm.size}",
+      "$description": "On or Off text."
+    },
+    "state-line-height": {
+      "$value": "{type.body.sm.line-height}",
+      "$description": "On or Off text line height."
+    },
+    "row-gap": {
+      "$value": "2px",
+      "$source": "documented",
+      "$description": "Between the label and its description."
+    },
+    "duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Thumb slide and track fade."
+    },
+    "easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Thumb slide and track fade easing."
+    }
+  },
+  "textarea": {
+    "$description": "Textarea: multi-line field that grows with its text, with count, helper, error and a composer variant.",
+    "padding-x": {
+      "$value": "{space.input-padding-md}",
+      "$description": "Side padding."
+    },
+    "padding-y": {
+      "$value": "{space.input-padding-y}",
+      "$description": "Top and bottom padding."
+    },
+    "min-height": {
+      "$value": "80px",
+      "$source": "documented",
+      "$description": "Starting height: three rows."
+    },
+    "max-height": {
+      "$value": "180px",
+      "$source": "documented",
+      "$description": "Height at eight rows. The field scrolls inside after this."
+    },
+    "radius": {
+      "$value": "{radius.control}",
+      "$description": "Field corners."
+    },
+    "font-size": {
+      "$value": "{type.body.md.size}",
+      "$description": "Value text."
+    },
+    "line-height": {
+      "$value": "{type.body.sm.line-height}",
+      "$description": "Value line height."
+    },
+    "bg": {
+      "$value": "{color.surface.default}",
+      "$description": "Field fill."
+    },
+    "border": {
+      "$value": "{color.border.input}",
+      "$description": "Resting border, strong enough to meet contrast for controls."
+    },
+    "border-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Field border."
+    },
+    "border-hover": {
+      "$value": "{color.text.muted}",
+      "$description": "Border on hover."
+    },
+    "text": {
+      "$value": "{color.text.body}",
+      "$description": "Typed value."
+    },
+    "placeholder": {
+      "$value": "{color.text.muted}",
+      "$description": "Placeholder example."
+    },
+    "focus-color": {
+      "$value": "{color.focus.outline}",
+      "$description": "Border and ring on focus."
+    },
+    "focus-ring-width": {
+      "$value": "1px",
+      "$source": "documented",
+      "$description": "Ring outside the border. With the border it makes two pixels and adds no layout shift."
+    },
+    "error-color": {
+      "$value": "{color.feedback.danger.solid}",
+      "$description": "Border, ring and message icon on error."
+    },
+    "error-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Error message."
+    },
+    "error-icon-size": {
+      "$value": "{size.icon.sm}",
+      "$description": "Icon beside the error message."
+    },
+    "disabled-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Disabled fill."
+    },
+    "disabled-border": {
+      "$value": "{color.border.default}",
+      "$description": "Disabled border."
+    },
+    "disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Disabled value and placeholder."
+    },
+    "readonly-bg": {
+      "$value": "{color.surface.page}",
+      "$description": "Read-only fill."
+    },
+    "readonly-border": {
+      "$value": "{color.border.default}",
+      "$description": "Read-only border."
+    },
+    "label-text": {
+      "$value": "{color.text.heading}",
+      "$description": "Label above the field."
+    },
+    "label-font-size": {
+      "$value": "{type.label.md.size}",
+      "$description": "Label size."
+    },
+    "label-line-height": {
+      "$value": "{type.label.lg.line-height}",
+      "$description": "Label line height."
+    },
+    "label-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Label weight."
+    },
+    "optional-text": {
+      "$value": "{color.text.muted}",
+      "$description": "The word optional after the label."
+    },
+    "optional-weight": {
+      "$value": "{type.body.md.weight}",
+      "$description": "Weight of the word optional."
+    },
+    "field-gap": {
+      "$value": "{space.field-gap}",
+      "$description": "Label to field, field to helper text."
+    },
+    "icon-gap": {
+      "$value": "{space.input-icon-gap}",
+      "$description": "Between the helper and the count; between the error icon and its message."
+    },
+    "helper-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Helper text."
+    },
+    "helper-font-size": {
+      "$value": "{type.helper.size}",
+      "$description": "Helper, error and count size."
+    },
+    "helper-line-height": {
+      "$value": "{type.helper.line-height}",
+      "$description": "Helper, error and count line height."
+    },
+    "count-text": {
+      "$value": "{color.text.muted}",
+      "$description": "Character count."
+    },
+    "count-over-text": {
+      "$value": "{color.feedback.danger.text}",
+      "$description": "Character count past the limit."
+    },
+    "count-over-weight": {
+      "$value": "{type.label.md.weight}",
+      "$description": "Character count past the limit is bold."
+    },
+    "composer-min-height": {
+      "$value": "{size.control.lg}",
+      "$description": "Composer starting height: one row."
+    },
+    "composer-max-height": {
+      "$value": "138px",
+      "$source": "documented",
+      "$description": "Composer height at six rows."
+    },
+    "composer-send-size": {
+      "$value": "{size.control.md}",
+      "$description": "Send button inside the composer."
+    },
+    "composer-send-inset": {
+      "$value": "4px",
+      "$source": "documented",
+      "$description": "Space between the send button and the composer edge."
+    },
+    "composer-send-radius": {
+      "$value": "{radius.control}",
+      "$description": "Send button corners."
+    },
+    "composer-send-icon-size": {
+      "$value": "{size.icon.md}",
+      "$description": "Send icon."
+    },
+    "composer-send-bg": {
+      "$value": "{color.action.default}",
+      "$description": "Send button."
+    },
+    "composer-send-bg-hover": {
+      "$value": "{color.action.hover}",
+      "$description": "Send button on hover."
+    },
+    "composer-send-text": {
+      "$value": "{color.text.on-action}",
+      "$description": "Send icon."
+    },
+    "composer-send-disabled-bg": {
+      "$value": "{color.surface.muted}",
+      "$description": "Send button while the message is empty."
+    },
+    "composer-send-disabled-text": {
+      "$value": "{color.text.disabled}",
+      "$description": "Send icon while the message is empty."
+    },
+    "duration": {
+      "$value": "{motion.duration.fast}",
+      "$description": "Border colour change."
+    },
+    "easing": {
+      "$value": "{motion.easing.standard}",
+      "$description": "Border colour change easing."
+    }
   }
 }
